@@ -18,6 +18,9 @@ body {
     box-shadow: 2px 2px 2px #4a5f40;;
     color: white;
     background-color: #7DA16C;
+    height: 80px;
+    width: 100vw;
+    position: relative;
   }
   
   .container {
@@ -25,6 +28,7 @@ body {
     width: 80%;
     margin: auto;
     justify-content: space-between;
+    align-items: center;
   }
   
   .navbar {
@@ -33,22 +37,34 @@ body {
     width: 600px;
     justify-content: space-evenly;
     align-items: center;
+    margin:1.5% 0 0 15%;
   }
   
   a {
     text-decoration: none;
     color: white;
+    
   }
 
-    a :hover {
-    font-size: 50px;
+    li :hover {
+    font-size: 20px;
     font-weight: 600;
-    color: tomato;
+    color:#9B5134;
   }
   
   .logo {
-      width: 60px;
+      width: 100px;
       float: left;
+      
+  }
+  .logo-div{
+    position: absolute;
+    margin-left: 8%;
+  }
+
+  .container{
+    width: 100vw;
+    position: fixed;
   }
 
   button {
@@ -57,15 +73,63 @@ body {
       width: 200px;
       height: 50px;
       align-self: center;
+      margin: 1% 10% 0 0;
+      font-size: 15px;
+      letter-spacing: 1.5px;
+  }
+
+  button :hover{
+    color: #9B5134;
+    
   }
 
   .banner-img{
       width: 100vw;
-      height: 90vh;
-  }
+      height: 99.5vh;
+       }
+
+
+
+  .text-banner{
+    color:#9B5134;
+    position: absolute;
+    margin: -30% 0 0 30%;
+    font-size: 50px;
+    }
+
+.title-article {
+  font-size: 30px;
+  letter-spacing: 1.5px;
+  margin: 4%;
+  margin-left: 10%;
+}
+
+.image-plant {
+  width: 500px;
+  margin-left: 6%;
+}
+.daily-article{
+  height: 100vh;
+}
+.image-article {
+  float: left;
+
+}
+
+.detail-article {
+  background-color: rgb(155, 81, 52,0.8);
+  width: 390px;
+  height: 250px;
+  margin: -30% 0 0 30%;
+}
+.content-article {
+  letter-spacing: 1.5px;
+  margin: 10% 20% 0 20%;
+}
 
   #curiosity {
       display: flex;
+      margin-top: 10%;
   }
 
  .box {
