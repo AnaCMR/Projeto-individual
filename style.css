@@ -12,6 +12,7 @@ body {
     padding: 0;
     overflow-x:hidden;
     letter-spacing: 1.5px;
+    font-family: 'Cinzel', serif;
 } 
 
 .header {
@@ -43,7 +44,8 @@ body {
   a {
     text-decoration: none;
     color: white;
-    
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
   }
 
     li :hover {
@@ -92,16 +94,15 @@ body {
 
   .text-banner{
     color:#9B5134;
-    position: absolute;
-    margin: -30% 0 0 30%;
+    margin: -30% 0 18% 30%;
     font-size: 50px;
+    font-family: 'Courgette', cursive;
     }
 
 .title-article {
   font-size: 30px;
   letter-spacing: 1.5px;
-  margin: 4%;
-  margin-left: 10%;
+  margin: 3% 10%;
 }
 
 .image-plant {
@@ -110,10 +111,8 @@ body {
 }
 .daily-article{
   height: 100vh;
-}
-.image-article {
-  float: left;
-
+  display: flex;
+  justify-content: space-between;
 }
 
 .detail-article {
@@ -121,10 +120,43 @@ body {
   width: 390px;
   height: 250px;
   margin: -30% 0 0 30%;
+  float: left;
+  position: relative;
 }
 .content-article {
   letter-spacing: 1.5px;
-  margin: 10% 20% 0 20%;
+  margin: -3% 10%;
+}
+
+p {
+  text-align: justify ;
+}
+
+.container-article{
+  display: flex;
+  justify-content: space-between;
+  padding: 0 4%;
+}
+
+.destaque {
+  background-color:rgb(151, 98, 77);
+  padding: 2px;
+  text-align: center;
+}
+
+.upper {
+  font-size: 30px;
+}
+
+.button-article {
+  border: 4px solid #7DA16C;
+  background-color: white;
+  width: 500px;
+  margin-left: 5%;
+}
+
+.button-text {
+  color: #7DA16C;
 }
 
   #curiosity {
@@ -144,3 +176,4 @@ body {
     width: 85%;
     align-self: center;
   }
+  
