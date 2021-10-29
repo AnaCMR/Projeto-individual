@@ -1,0 +1,55 @@
+#blur {
+    display: none;
+}
+
+#login {
+    display: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.grid-tamplete-area{
+    display: grid;
+    grid-template-areas: 
+    "nav"
+    "banner"
+    "banner"
+    "banner"
+    "article"
+    "article"
+    "article"
+    "article"
+    "curiosity"
+    "curiosity"
+    "about"
+    "about"
+    "about"
+    "footer";
+}
+
+#menu {
+    grid-area: nav;
+}
+
+#banner {
+    grid-area: banner;
+}
+
+#article {
+    grid-area: article;
+}
+
+#curiosity {
+    grid-area: curiosity;
+}
+
+#about {
+    grid-area: about;
+}
+
+#footer{
+    grid-area: footer;
+}
