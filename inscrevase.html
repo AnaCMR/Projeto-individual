@@ -14,9 +14,9 @@
   <body>
     <div class="container">
      <header class="header">
-      <div class="logo-div"><a href="#banner">
+      <div class="logo-div">
         <img class="logo"  src="../Projeto-individual/icons/logo.png" alt="logo">
-      </a></div>
+      </div>
       <nav class="container">
         
         <ul class="navbar">
@@ -30,6 +30,25 @@
     </header>
   </div>
 
+    <div class="blur">.
+      <div id="login">
+        <form id="subscribe-form" method="post" onsubmit="return subscribe()" >
+          <label>Nome:</label><br>
+          <input name="name" id="name_user" /><br>
+          <label>E-mail</label><br>
+          <input name="email" id="email_user"><br>
+          <label>desejo receber as atualizações:</label><br>
+          <select id="time-update">
+              <option value="daily">Diário</option>
+              <option value="weekly">Semanal</option>
+              <option value="biweekly">Quinzenal</option>
+          </select><br>
+          <input type="checkbox"> <label>Aceito receber as novidades por e-mail</label><br>
+          <input type="checkbox"> <label>Aceito as politicas de privacidade do site</label><br>
+          <button>Inscrever-se</button>
+        </form>
+      </div>
+
       <section id="banner">
         <div class="banner">
         <img class="banner-img"
@@ -38,7 +57,7 @@
         />
       </div>
       <div class="text-banner">
-        <h3 title="Já sentiu a natureza hoje?">Já sentiu a <br>natureza hoje?</h3>
+        <h3 title="Já sentiu a natureza hoje?">Já sentiu a natureza<br> hoje?</h3>
       </div>
       </section>
 
@@ -152,12 +171,13 @@
           “Quem realmente ama a natureza, <br> consegue ver beleza em todas as <br>
           coisas.” -Vincent Van Gogh.
         </p>
-      <
+     
 
       <footer id="footer">
         <p>Ana Marques &copy; 2021</p>
         <p>Todos os direitos reservados</p>
       </footer>
+    </div>
   </body>
 </html>
 <script src="functions.js"></script>
