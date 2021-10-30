@@ -30,6 +30,9 @@ body {
   margin: auto;
   justify-content: space-between;
   align-items: center;
+  width: 100vw;
+  position: fixed;
+  z-index: 2;
 }
 
 .navbar {
@@ -63,11 +66,7 @@ li :hover {
   margin-left: 8%;
 }
 
-.container {
-  width: 100vw;
-  position: fixed;
-  z-index: 2;
-}
+
 
 button {
   background-color: #7da16c;
@@ -109,9 +108,9 @@ button :hover {
 
 .detail-article {
   background-color: rgb(155, 81, 52, 0.8);
-  width: 287px;
+  width: 227px;
   height: 312px;
-  margin: -75% 0 0 50%;
+  margin: -75% 0 0 65%;
   float: left;
   position: relative;
 }
@@ -165,7 +164,7 @@ p {
   background-color: transparent;
   width: 300px;
   height: 200px;
-  perspective: 1000px;
+  
   display: flex;
   margin: 8.5% 0 0 26%;
 }
@@ -173,7 +172,7 @@ p {
   background-color: transparent;
   width: 300px;
   height: 200px;
-  perspective: 1000px;
+  
   display: flex;
   margin: 8% 5%;
 }
@@ -181,7 +180,7 @@ p {
   background-color: transparent;
   width: 300px;
   height: 200px;
-  perspective: 1000px;
+  
   display: flex;
   margin: 8% 33% 0 0;
 }
