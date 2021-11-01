@@ -1,0 +1,113 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    letter-spacing: 1.5px;
+    font-family: "Cinzel", serif;
+  }
+  
+  ::-webkit-scrollbar {
+    box-shadow: 2px 2px 2px #808080;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: #008080;
+  
+  } 
+  
+  ::-webkit-scrollbar-track {
+    background-color: #add8e6;
+  }
+
+header {
+    background-color: #7da16c;
+    color:white;
+    padding: 3%;
+    text-align: right;
+    font-size: 40px;
+}
+
+hr {
+    width: 700px;
+    margin-left: 45%;
+    border: 2px solid white;
+}
+
+.profile-dashboard {
+    border-radius: 100%;
+    margin: -15% 0 0 10%;
+}
+
+.graph-line-total {
+
+    display: inline-block;
+    width: 50vw;
+    height: 300px;
+    margin: 0 0 5% 20%;
+    padding: 5px;
+  }
+  
+  .graph-line {
+    background-color: #eaeaea;
+    display: inline-block;
+    width: 50vw;
+    height: 300px;
+    margin: 10px;
+    padding: 5px;
+  }
+  .graph {
+    background-color: #eaeaea;
+    display: inline-block;
+    width: 45%;
+    height: 250px;
+    margin: 20px;
+    padding: 5px;
+  }
+
+  .title-general{
+    font-size: 20px;
+    margin-left: 20%;
+  }
+
+  .dashboard{
+      margin: 5%;
+      width: 90%;
+  }
+
+  .title {
+      font-size: 20px;
+  }
+
+  .title-container {
+      display: flex;
+        justify-content: space-between;
+        width: 70%;
+        margin-left: 5%;
+  }
+
+  .title-1 {
+      margin-right: 20%;
+      font-size: 20px;
+  }
+
+  .container{
+    background-color: #d88a6b;
+    padding: 2%;
+    border-radius: 30px;
+  }
+
+  .flow{
+      display: flex;
+      justify-content: space-evenly;
+  }
+
+  .button-flow {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+  }
+
+  .title-flow {
+    margin-left: 15%;
+    font-size: 20px;
+  }

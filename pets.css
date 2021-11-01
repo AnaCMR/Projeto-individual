@@ -92,33 +92,40 @@ body {
     letter-spacing: 1.5px;
     margin: 7% 0 2% 20%;
   }
-  
-  .image-plant {
-    width: 500px;
-    margin-left: 50%;
+  .title-article-2 {
+    font-size: 30px;
+    letter-spacing: 1.5px;
+    margin: 2% 0 2% 13%;
   }
-  
-  
   .space {
     height: 20%;
     margin-bottom: 5%;
   }
+
+  .image-plant {
+    width: 400px;
+    margin: -5% 0 5% 0
+  }
   
   .detail-article {
     background-color: rgb(155, 81, 52, 0.8);
-    width: 487px;
-    height: 102px;
-    margin: -33% 40% 0 0;
+    width: 207px;
+    height: 52px;
+    margin: -15% 12% 0 0 ;
     float: right;
     position: relative;
-    color: white;
+    color: rgb(155, 81, 52, 0.8);
     padding: 3%;
   }
-  
-  
+
   .content-article {
     letter-spacing: 1.5px;
     margin: 2%
+  }
+
+  .content-2 {
+      width: 90%;
+      margin: 0 auto;
   }
   
   p {
@@ -129,66 +136,17 @@ body {
     display: flex;
     justify-content: space-between;
     padding: 0 4%;
-    flex-direction: column;
-  }
-
-  .hints {
-    width: 90%;
-    margin: 0 0 5% 5%;
-  }
-
-  .number {
-    color: #9b5134;
-    font-size: 70px;
-    font-weight: 800px;
-    margin-right: 3%;
-  }
-  .upper {
-    font-size: 30px;
-  }
-
-  .photo-urban {
-    margin: 0 1% 0 5%;
-    width: 35%;
-    float: left;
-    
-  }
-
-  .gallery {
-    display: flex;
-    flex-direction: column;
-
-  }
-
-  .photo-detail {
-    display: flex;
-    margin: 0 3% 1% 0;
-
-  }
-
-  .detail-urban{
-    background-color: rgb(155, 81, 52, 0.8);
-    width: 300px;
-    height: 80px;
-    margin: 5% 0 0 -5%;
-    float: right;
-    position: relative;
-color: white;
-    padding: 3%;
-  }
-
-  .photo-sink {
-    width: 84%;
   }
   
 .rate {
     margin: 6% 10%;
   }
-  
+  .upper {
+    font-size: 30px;
+  }
   .rate p {
     text-align:left
   }
-  
   .icon-like{
     width: 30px;
     cursor: pointer;
@@ -242,4 +200,3 @@ color: white;
     margin-top: 1%;
   }
 
- 

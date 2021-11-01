@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ana's Garden - Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css" />
+    <link rel="icon" href="../icons/logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Courgette&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <header>
+
+        <h2>Dashboard</h2>
+        <hr>
+    </header>
+    <img class="profile-dashboard" src="../imgs/photo-dashboard.png" alt="Foto de familia">
+
+    <section class="dashboard">
+        <h4 class="title-general">Vizualização geral</h4>
+        <div class="graph-line-total">
+            <canvas id="myChartMixed"></canvas>
+        </div>
+        <div class="container">
+            <h4 class="title"> Perfil dos assinantes</h4>
+            <div class="title-container">
+                <h4 class="title">Sexo</h4>
+                <h4 class="title-1">Idade</h4>
+            </div>
+            <div class="graph">
+                <canvas id="myChartGender"></canvas>
+            </div>
+
+            <div class="graph">
+                <canvas id="myChartAge"></canvas>
+            </div>
+            <h4 class="title-flow">Fluxo de movimento</h4>
+            <div class="flow">
+
+                <div class="graph-line">
+                    <canvas id="myChart"></canvas>
+
+                </div>
+                <div class="button-flow">
+                    <button>Horas</button>
+                    <button>Dias</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+</body>
+
+</html>
+<script src="dashboard.js"></script>

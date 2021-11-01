@@ -92,12 +92,40 @@ body {
     letter-spacing: 1.5px;
     margin: 7% 0 2% 20%;
   }
-  
+  .title-article-2 {
+      font-size: 30px;
+      letter-spacing: 1.5px;
+      margin: 2% 0 5% 60%;
+      color: #9b5134;
+  }
+
+  .content-article-2 {
+      width: 90%;
+      margin: 0 auto;
+  }
+
   .image-plant {
-    width: 500px;
-    margin-left: 50%;
+    width: 374px;
+    margin-left: 10%;
+  }
+  .upper {
+    font-size: 30px;
+  }
+
+  .container-image-plant-2{
+    margin: 2% 0 2% 20%;
+  } 
+
+  .container-image-plant-2 img{
+    width: 40%;
   }
   
+  .number {
+    color: #7da16c;
+    font-size: 40px;
+    font-weight: 800px;
+    margin-right: 2%;
+  }
   
   .space {
     height: 20%;
@@ -106,19 +134,17 @@ body {
   
   .detail-article {
     background-color: rgb(155, 81, 52, 0.8);
-    width: 487px;
-    height: 102px;
-    margin: -33% 40% 0 0;
-    float: right;
+    width: 287px;
+    height: 212px;
+    margin: -35% 0 0 50%;
+    float: left;
     position: relative;
-    color: white;
-    padding: 3%;
   }
   
   
   .content-article {
     letter-spacing: 1.5px;
-    margin: 2%
+    margin: -1% 5% 0 15%
   }
   
   p {
@@ -129,60 +155,28 @@ body {
     display: flex;
     justify-content: space-between;
     padding: 0 4%;
-    flex-direction: column;
   }
 
-  .hints {
-    width: 90%;
-    margin: 0 0 5% 5%;
-  }
-
-  .number {
-    color: #9b5134;
-    font-size: 70px;
-    font-weight: 800px;
-    margin-right: 3%;
-  }
-  .upper {
-    font-size: 30px;
-  }
-
-  .photo-urban {
-    margin: 0 1% 0 5%;
-    width: 35%;
-    float: left;
-    
-  }
-
-  .gallery {
-    display: flex;
-    flex-direction: column;
-
-  }
-
-  .photo-detail {
-    display: flex;
-    margin: 0 3% 1% 0;
-
-  }
-
-  .detail-urban{
-    background-color: rgb(155, 81, 52, 0.8);
-    width: 300px;
-    height: 80px;
-    margin: 5% 0 0 -5%;
-    float: right;
-    position: relative;
-color: white;
-    padding: 3%;
-  }
-
-  .photo-sink {
-    width: 84%;
+  
+   .image-plant-2{
+    width: 800px;
   }
   
-.rate {
-    margin: 6% 10%;
+  .detail-article2 {
+    background-color: rgb(155, 81, 52, 0.8);
+    color: white;
+    width: 587px;
+    height: 47px;
+    margin: -4% 0 0 10%;
+    float: left;
+    position: relative;
+    text-align: center;
+    padding: 3%;
+  } 
+
+  
+   .rate {
+    margin: 8% 10% 6% 10%;
   }
   
   .rate p {
@@ -223,7 +217,7 @@ color: white;
   
   .box-article a {
     color: #9b5134;
-  }
+  } 
   
   #footer {
     background-color: #7da16c;
@@ -241,5 +235,3 @@ color: white;
     text-align: center;
     margin-top: 1%;
   }
-
- 

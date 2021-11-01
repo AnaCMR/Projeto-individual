@@ -17,7 +17,10 @@ body {
 
 ::-webkit-scrollbar-track {
   background-color: #add8e6;
+}
 
+.upper {
+  font-size: 30px;
 }
 
 .header {
