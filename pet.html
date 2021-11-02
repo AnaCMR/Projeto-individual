@@ -27,11 +27,47 @@
                     <li><a href="index.html"> Home</a></li>
                     <li><a href="#contact">Fale conosco </a></li>
                 </ul>
-                <button><a href="inscrevase.html">Inscreva-se</a></button>
+                <button onclick="login()">Inscreva-se</a></button>
             </nav>
         </header>
     </div>
     <div class="space">.</div>
+
+    <div id="blur_div">.
+        <div id="login_div">
+          <p class="close" onclick="back()">X</p>
+          <form id="subscribe-form" method="post" onsubmit="return subscribe()" >
+            <label class="login_label">Nome:</label><br>
+            <input class="login_input" id="name_user" /><br>
+            <label class="login_label">E-mail:</label><br>
+            <input class="login_input" id="user_email"><br>
+            <div class="div_perfil">
+              <div class="age_data">
+              <label class="login_label">Idade:</label><br>
+              <input type="date" class="login_input age" id="age_input"><br>
+            </div>
+            <div class="gender_data">
+              <label class="genero">Gênero</label><br>
+              <select class="login_select_gender" id="gender_select">
+                <option value="f">F</option>
+                <option value="m" >M</option>
+                <option value="não informado">Prefiro não informar</option>
+                
+              </select>
+            </div>
+            </div>
+            <label class="login_label">Desejo receber atualizações:</label>
+            <select class="login_select" id="time_update">
+                <option value="diariamente">Diárias</option>
+                <option value="semanalmente">Semanais</option>
+                <option value="quinzenalmente">Quinzenais</option>
+            </select><br>
+            
+            <button onclick="welcome()" class="welcome" type="submit">Inscrever-se</button>
+          </form>
+        </div>
+      
+      </div>
 
     <section class="daily-article">
         <h3 class="title-article">Plantas e animais?</h3>

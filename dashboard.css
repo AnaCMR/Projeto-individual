@@ -54,6 +54,8 @@ hr {
     height: 300px;
     margin: 10px;
     padding: 5px;
+    border-radius: 30px;
+    box-shadow: 3px 3px 4px black;
   }
   .graph {
     background-color: #eaeaea;
@@ -62,6 +64,8 @@ hr {
     height: 250px;
     margin: 20px;
     padding: 5px;
+    border-radius: 30px;
+    box-shadow: 3px 3px 4px black;
   }
 
   .title-general{
@@ -94,6 +98,7 @@ hr {
     background-color: #d88a6b;
     padding: 2%;
     border-radius: 30px;
+    box-shadow: 3px 3px 4px black;
   }
 
   .flow{

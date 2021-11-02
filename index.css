@@ -1,10 +1,70 @@
-#blur {
+#blur_div {
   display: none;
-  color: rgb(0, 0, 0, 0.8);
+  background-color: rgb(0, 0, 0, 0.8);
+  width: 110vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 1;
+  padding: 7%;
 }
 
-#login {
+#login_div {
   display: none;
+  background-color:  white;
+  padding: 5%;
+  width: 30%;
+  margin-left: 19%;
+}
+select {
+  border: 2px solid #9b5134;
+  font-family: "Cinzel", serif;
+  font-weight: 600;
+
+}
+
+.close {
+  margin: -10% 0 4% 105% ;
+  font-size: 25px;
+}
+
+.close:hover {
+  color: #9b5134;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.login_input {
+  width: 88%;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #9b5134;
+  margin: 3% 0;
+  font-family: "Cinzel", serif;
+
+}
+.div_perfil {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 3%;
+}
+
+.login_select_gender{
+  width: 200px;
+}
+
+.age {
+  width: 150px;
+}
+
+.gender_data {
+  margin-right: 11%;
+}
+.check_input{
+  margin: 2% 0;
+}
+
+.welcome {
+  margin: 5% 0 0 25%;
 }
 
 body {
@@ -66,8 +126,6 @@ li :hover {
   margin-left: 8%;
 }
 
-
-
 button {
   background-color: #7da16c;
   border: 2px solid white;
@@ -78,10 +136,14 @@ button {
   font-size: 15px;
   letter-spacing: 1.5px;
   cursor: pointer;
+  color: white;
+  font-family: "Cinzel", serif;
+  font-weight: 600;
 }
 
-button :hover {
+button:hover {
   color: #9b5134;
+  
 }
 
 .banner-img {
@@ -153,19 +215,24 @@ p {
   margin-left: 5%;
 }
 
+.button-text:hover {
+  cursor: pointer;
+  color: #9b5134 ;
+}
+
 .button-text {
   color: #7da16c;
 }
 
 #curiosity {
   display: flex;
+  margin-right: 11%;
 }
 
 .flip-1 {
   background-color: transparent;
   width: 300px;
   height: 200px;
-  
   display: flex;
   margin: 8.5% 0 0 26%;
 }
@@ -173,7 +240,6 @@ p {
   background-color: transparent;
   width: 300px;
   height: 200px;
-  
   display: flex;
   margin: 8% 5%;
 }
@@ -181,7 +247,6 @@ p {
   background-color: transparent;
   width: 300px;
   height: 200px;
-  
   display: flex;
   margin: 8% 33% 0 0;
 }
@@ -250,7 +315,7 @@ p {
 
 .title-card-1 {
   margin-left: 10%;
-
+}
 
 #simulator {
 
@@ -264,19 +329,21 @@ p {
   width: 110vw;
   height: 550px;
 }
- #question_1{
-  display: none;
- }
-/* #question_2 {
-  display: block;
-} */
 
-/*#question_3{
+#strong_plant {
+  width: 80%;
+}
+
+ #question_2 {
   display: none;
-} */
+} 
+
+#question_3{
+  display: none;
+} 
 
 .container-questions{
-  margin: -30% 0 0 5%;
+  margin: -30% 6% 0 0;
   color: white;
   display: flex;
   flex-direction: column;
@@ -331,6 +398,63 @@ p {
   text-align: center;
 }
 
+.container-questions2{
+  margin: 0 6% 0 7%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 80%;
+}
+
+.simulator-title2 {
+  margin: -52.5% 0 8% 0;
+  font-size: 30px;
+}
+
+.simulator-content2 {
+ margin-top: -10%;
+  font-size: 20px;
+}
+
+.answer_input2 {
+  width: 500px;
+  height: 30px;
+  outline: none;
+  margin-top: -8%;
+  border: none;
+  padding-left: 3%;
+}
+
+.simulator-button2 {
+  color: white;
+  border-color: #7da16c;
+  margin-right: 2%;
+}
+.buttons2 {
+  display: flex;
+  margin: -10% 0 0 4%;
+}
+
+.answer_gif2 {
+  width: 100%;
+}
+
+.answer2 {
+  background-color: white;
+  border-radius: 20px;
+  color: black;
+  width: 300px;
+  padding: 3%;
+  margin: -35% 0 0 70%;
+  box-shadow: 2px 3px 3px black;
+  float: right;
+}
+.answer2 p {
+  text-align: center;
+}
+
+
 .plant_mood {
   width: 30%;
 }
@@ -338,6 +462,30 @@ p {
 .questions {
   display: flex;
   justify-content: space-evenly;
+}
+
+.finish {
+  background-color: white;
+  padding: 5%;
+  height: 30%;
+  width: 40%;
+  border-radius: 30px;
+  box-shadow: 3px 3px 4px black;
+  margin: -35% 0 0 25%;
+  position: absolute;
+}
+.subscribe{
+  background-color: transparent;
+  color: black;
+  border: none;
+  padding: 0;
+  margin: 0;
+  width: 130px;
+  height: 50px;
+
+}
+#finish {
+  display: none;
 }
 
 #about {

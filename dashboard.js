@@ -13,7 +13,7 @@ const configMixed = {
             datasets: [{
               type: 'bar',
               label: 'Visitantes',
-              data: [10, 10, 20, 30, 15, 9 ,25,35],
+              data: [10, 10, 20, 30, 15, 25 ,35],
               borderColor: 'rgb(125, 161, 108, 0.8);',
               backgroundColor: 'rgb(125, 161, 108, 0.6)'
             }, {
@@ -21,7 +21,8 @@ const configMixed = {
               label: 'Assinantes',
               data: [8, 5, 10, 15, 9, 20,30],
               fill: false,
-              borderColor: '#9b5134'
+              borderColor: '#9b5134',
+              backgroundColor: '#9b5134',
             }]
     },
     options: {
@@ -56,36 +57,36 @@ const config = {
       datasets: [
         {
           label: "Perfil: Gênero",
-          data: [31,10],
-          backgroundColor: ["#4C14FA","#02E6E1"],
-          hoverBorderWidth: "80px",
-          borderColor: ["#4C14FA","#02E6E1"],
+          data: [31,20],
+          backgroundColor: ["#df5382","#44afaf"],
+          hoverBorderWidth: "100px",
+          borderColor: ["#df5382","#44afaf"],
         }
       ]
     },
     options: {
       maintainAspectRatio: false,
-      cutout: "40%",
+      cutout: "0",
   }
 }
 
   const configAge = {
     type: "doughnut",
     data: {
-      labels: ["Brasil(total)","Norte","Nordeste","Sudeste","Sul","Centro-Oeste"],
+      labels: ["Menos de 30","30-40 Anos","40-50 Anos","50-60 Anos","Mais de 60"],
       datasets: [
         {
-          label: "Desemprego por região",
-          data: [11,10.6,13.6,11.4,6.8,9.3],
-          backgroundColor: ["#4C14FA","#02E6E1","#70FA00","#E6A722","#FF3630","#B104D6" ],
-          hoverBorderWidth: "80px",
-          borderColor: ["#4C14FA","#02E6E1","#70FA00","#E6A722","#FF3630","#B104D6" ],
+          label: "Idade",
+          data: [30,45,50,65,20],
+          backgroundColor: ["#5A3B94","#CDC3E0","#46E043","#94451E","#E09E7E"],
+          hoverBorderWidth: "100px",
+          borderColor: ["#5A3B94","#CDC3E0","#46E043","#94451E","#E09E7E"],
         }
       ]
     },
     options: {
       maintainAspectRatio: false,
-      cutout: "40%",
+      cutout: "0",
   }
 }
 

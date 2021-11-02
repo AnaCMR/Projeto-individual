@@ -30,17 +30,54 @@
           <li><a href="#about"> Sobre mim </a></li>
           <li><a href="#contact">Fale conosco </a></li>
         </ul>
-        <button><a href="inscrevase.html">Inscreva-se</a></button>
+        <button onclick="login()">Inscreva-se</button>
       </nav>
     </header>
   </div>
+
+<div id="blur_div">.
+  <div id="login_div">
+    <p class="close" onclick="back()">X</p>
+    <form id="subscribe-form" method="post" onsubmit="return subscribe()" >
+      <label class="login_label">Nome:</label><br>
+      <input class="login_input" id="name_user" /><br>
+      <label class="login_label">E-mail:</label><br>
+      <input class="login_input" id="user_email"><br>
+      <div class="div_perfil">
+        <div class="age_data">
+        <label class="login_label">Idade:</label><br>
+        <input type="date" class="login_input age" id="age_input"><br>
+      </div>
+      <div class="gender_data">
+        <label class="genero">Gênero</label><br>
+        <select class="login_select_gender" id="gender_select">
+          <option value="f">F</option>
+          <option value="m" >M</option>
+          <option value="não informado">Prefiro não informar</option>
+          
+        </select>
+      </div>
+      </div>
+      <label class="login_label">Desejo receber atualizações:</label>
+      <select class="login_select" id="time_update">
+          <option value="diariamente">Diárias</option>
+          <option value="semanalmente">Semanais</option>
+          <option value="quinzenalmente">Quinzenais</option>
+      </select><br>
+      
+      <button onclick="welcome()" class="welcome" type="submit">Inscrever-se</button>
+    </form>
+  </div>
+
+</div>
+
 
   <section id="banner">
     <div class="banner">
       <img class="banner-img" src="../imgs/banner.jpg" alt="Banner com formas organicas e folhagens" />
     </div>
     <div class="text-banner">
-      <h3 title="Já sentiu a natureza hoje?">
+      <h3>
         Já sentiu a <br />natureza hoje?
       </h3>
     </div>
@@ -128,13 +165,13 @@
           <img src="../imgs/card 3.jpg" alt="cartão com flores desenhadas" />
 
           <p class="title-card title-card-3">
-            Elas vivem <br />
-            em sociedade!
+            Elas unem <br />
+            as forças!
           </p>
         </div>
         <div class="card-back">
           <p>
-            E, além desse expediente, as árvores também emitem sinais de
+            As árvores também emitem sinais de
             alerta umas às outras não só pelo ar (por meio de gases), mas
             também eletricamente, através das suas raízes, em uma velocidade
             de um centímetro por segundo, de acordo com os estudos. Quando a
@@ -152,12 +189,12 @@
     <div class="container-questions">
       <h3 class="simulator-title">Vamos testar seu conhecimento?</h3>
       <label class="simulator-content">Quantas vezes por semana devo regar minha jibóia?</label>
-      <input class="answer_input" id="answer_1_input">
+      <input class="answer_input" type="number" id="answer_1_input">
       <div class="buttons">
         <button class="simulator-button" onclick="answer_1()">RESULTADO</button>
         <button class="simulator-button" onclick="change_1()">AVANÇAR</button>
       </div>
-      <div id="answer_div" class="answer">
+      <div id="answer1_div" class="answer">
         <p>Responda a pergunta para ver o resultado</p>
         <img class="answer_gif" src="https://i.pinimg.com/originals/49/f3/5d/49f35d1b64908add463992224affaad7.gif" alt="Planta sendo regada">
       </div>
@@ -165,20 +202,44 @@
     </div>
     
     <div class="questions" id="question_2">
-      <div class="container-questions">
-        <h3 class="simulator-title">Vamos testar seu conhecimento?</h3>
-        <label class="simulator-content">Quantas vezes por semana devo regar minha jibóia?</label>
-        <input class="answer_input" id="answer_2_input">
+      <div class="container-questions2">
+        <h3 class="simulator-title2">Vamos testar seu conhecimento?</h3>
+        <label class="simulator-content2">Quantos meses preciso esperar para adubar as plantas?</label>
+        <input class="answer_input2" type="number" id="answer_2_input">
         <div class="buttons">
-          <button class="simulator-button" onclick="answer_2()">RESULTADO</button>
-          <button class="simulator-button" onclick="change_2()">AVANÇAR</button>
+          <button class="simulator-button2" onclick="answer_2()">RESULTADO</button>
+          <button class="simulator-button2" onclick="change_2()">AVANÇAR</button>
         </div>
-        <div id="answer_div" class="answer">
+        <div id="answer2_div" class="answer2">
+          <p>Responda a pergunta para ver o resultado</p>
+          <img class="answer_gif" src="https://i.pinimg.com/originals/49/f3/5d/49f35d1b64908add463992224affaad7.gif" alt="Planta sendo regada">
+        </div>
+        </div>
+        </div> 
+
+         <div class="questions" id="question_3">
+      <div class="container-questions2">
+        <h3 class="simulator-title2">Vamos testar seu conhecimento?</h3>
+        <label class="simulator-content2">Plantas de meia sombra precisam de quantas horas de sol?</label>
+        <input class="answer_input2"  type="number" id="answer_3_input">
+        <div class="buttons">
+          <button class="simulator-button2" onclick="answer_3()">RESULTADO</button>
+          <button class="simulator-button2" onclick="change_3()">FINALIZAR</button>
+        </div>
+        <div id="answer3_div" class="answer2">
           <p>Responda a pergunta para ver o resultado</p>
           <img class="answer_gif" src="https://i.pinimg.com/originals/49/f3/5d/49f35d1b64908add463992224affaad7.gif" alt="Planta sendo regada">
         </div>
         </div>
       </div>
+
+      <div class="finish" id="finish">
+        <p>
+          <span class="upper"> Q</span>uer continuar recebendo dicas sobre o universo da jardinagem? <br>
+            <button class="subscribe" onclick="login()" ><span class="upper"> C</span>lique aqui</button> para se inscrever e receber diáriamente ou semanalmente nosso conteúdo.
+        </p>
+      </div>
+
   </section>
 
   <section id="about">
@@ -210,7 +271,7 @@
     consegue ver beleza em todas as <br />
     coisas.” -Vincent Van Gogh.
   </p>
-  < <footer id="footer">
+   <footer id="footer">
     <p>Ana Marques &copy; 2021</p>
     <p>Todos os direitos reservados</p>
     </footer>
