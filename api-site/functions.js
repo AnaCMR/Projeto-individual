@@ -13,26 +13,87 @@ function login(){
     login_div.style.display = "block";
 }
 
-function welcome(){
-    var name = name_user.value;
-    var email =  user_email.value;
-    var choise = time_update.value
-    var age = age_input.value;
-    var gender = gender_select.value;
+ function welcome(){
+     var name = name_user.value;
+     var email =  user_email.value;
+     var age = age_input.value;
+     var gender = gender_select.value;
+     var password = password_user.value;
+     var confPassword = confirm_password.value;
 
 
-    if (email == "ana.silva@bandtec.com.br") {
+     if (email == "ana.silva@bandtec.com.br") {
         
-    } else if (email.trim() == "" || name.trim() == "" || age.trim() == ""){
-        alert ("Por favor, preencha os campos")
-    } else if (email.indexOf("@")  < 0 ){
-        alert ("Por favor, insira um e-mail valido")
-    } else if (name.trim().length < 3){
-        alert ("Por favor, insira um nome válido")
-    } else {
-        alert (`Seja bem vindo(a) ${name}! A partir de amanhã, você receberá nosso conteúdo ${choise}!` )
+     } else if (email.trim() == "" || name.trim() == "" || age.trim() == "" || password.trim() == "" ){
+     alert ("Por favor, preencha os campos")
+ } else if (email.indexOf("@")  < 0 || email.trim() == "@.com"){
+     alert ("Por favor, insira um e-mail valido")
+ } else if (name.trim().length < 3){
+     alert ("Por favor, insira um nome válido")
+ }  else if (password != confPassword) {
+     alert("Senhas não conferem")}
+     else if (password.trim().length < 6){
+         alert("Por favor, insira uma senha de pelo menos 6 caracteres")
+     }
+      else {
+     alert (`Seja bem vindo(a) ${name}! Faça seu login para acessar nosso conteúdo.` )
+     }
     }
-}
+// function limparFormulario() {
+//     document.getElementById("subscribe_form").reset();
+// }
+
+// function cadastrar() {
+//     aguardar();
+
+//     var formulario = new URLSearchParams(new FormData(document.getElementById("subscribe_form")));
+
+//     var name = name_user.value;
+//     var email =  user_email.value;
+//     var choise = time_update.value
+//     var age = age_input.value;
+//     var gender = gender_select.value;
+
+
+//     if (email == "ana.silva@bandtec.com.br") {
+        
+//     } else if (email.trim() == "" || name.trim() == "" || age.trim() == ""){
+//         alert ("Por favor, preencha os campos")
+//     } else if (email.indexOf("@")  < 0 ){
+//         alert ("Por favor, insira um e-mail valido")
+//     } else if (name.trim().length < 3){
+//         alert ("Por favor, insira um nome válido")
+//     } else {
+//         alert (`Seja bem vindo(a) ${name}! A partir de amanhã, você receberá nosso conteúdo ${choise}!` )
+//     }
+
+//         finalizarAguardar();
+//         return false;
+//     }
+
+    
+//     fetch("/usuarios/cadastrar", {
+//         method: "POST",
+//         body: formulario
+//     }).then(function (resposta) {
+
+//         console.log("resposta: ", resposta);
+
+//         if (resposta.ok) {
+//             window.alert("Cadastro realizado com sucesso!");
+//             window.location = "login.html";
+//             limparFormulario();
+//             finalizarAguardar();
+//         } else {
+//             throw ("Houve um erro ao tentar realizar o cadastro!");
+//         }
+//     }).catch(function (resposta) {
+//         console.log(`#ERRO: ${resposta}`);
+//         finalizarAguardar();
+//     });
+
+//     return false;
+
 
 function like() {
     var numeros = numbers_like.innerHTML;
@@ -61,7 +122,7 @@ function answer_1() {
     } else if (answer == 0) {
         answer1_div.innerHTML = " ";
         answer1_div.innerHTML = `Você não rega sua planta? <br> Assim ela vai morrer rapidinho <br> Regue a cada 2 dias <br>
-            <img class="plant_mood" src="https://amz.nwstatic.co.uk/monthly_2021_04/source-1.gif.1ef5fb2a2abd7f2ebee7abecea59ca26.gif">`;
+            <img class="plant_mood_help" src="https://2.bp.blogspot.com/-wn6bewnK6IY/XgAEW8I2ZII/AAAAAAAWcrw/52-rBChiLyMJm7Q9KXOrSzUyjbGlhmvYwCLcBGAsYHQ/s1600/AW4119480_12.gif">`;
     } else if (answer > 0 && answer < 3) {
         while (contador < answer) {
             contador += 1;
@@ -87,7 +148,6 @@ function answer_1() {
 function change_1() {
     question_1.style.display = "none";
     question_2.style.display = "block";
-
 }
 
 function answer_2() {
@@ -102,7 +162,7 @@ function answer_2() {
     } else if (answer == 0) {
         answer2_div.innerHTML = " ";
         answer2_div.innerHTML = `Oh Não! <br> Adubo em excesso vira veneno!! <br> Espere no mínimo 3 meses <br>
-            <img class="plant_mood" src="https://amz.nwstatic.co.uk/monthly_2021_04/source-1.gif.1ef5fb2a2abd7f2ebee7abecea59ca26.gif">`;
+            <img class="plant_mood_help" src="https://2.bp.blogspot.com/-wn6bewnK6IY/XgAEW8I2ZII/AAAAAAAWcrw/52-rBChiLyMJm7Q9KXOrSzUyjbGlhmvYwCLcBGAsYHQ/s1600/AW4119480_12.gif">`;
     } else if (answer > 0 && answer <= 5) {
 
         if (answer == 1) {
@@ -147,7 +207,7 @@ function answer_3() {
     } else if (answer == 0) {
         answer3_div.innerHTML = " ";
         answer3_div.innerHTML = `Plantas de meia sombra precisam de no mínimo 2 horas de sol<br> Sua plantinha irá murchar <br>
-            <img class="plant_mood" src="https://amz.nwstatic.co.uk/monthly_2021_04/source-1.gif.1ef5fb2a2abd7f2ebee7abecea59ca26.gif">`;
+            <img class="plant_mood_help" src="https://amz.nwstatic.co.uk/monthly_2021_04/source-1.gif.1ef5fb2a2abd7f2ebee7abecea59ca26.gif">`;
     } else if (answer > 0 && answer <= 5) {
 
         if (answer == 1) {
@@ -176,4 +236,20 @@ function change_3() {
         question_3.style.display = "none";
         finish.style.display = "block";
     
+}
+
+function options_contact() {
+    var contact = motive_contact.value;
+    var motive = motive_cancel.value;
+
+    if (contact == "cancelamento"){
+        cancel.style.display = "block";
+        if (motive == "outro"){
+            other.style.display = "block"
+        }
+    } else if (contact == "experiencia") {
+        history_div.style.display ="block"
+    } else if (contact == "atualizacao"){
+        change_update.style.display = "block"
+    }
 }

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ana's Garden - Fale conosco</title>
+  <link rel="stylesheet" href="contato.css" />
+  <link rel="icon" href="../icons/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Courgette&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="logo-div">
+        <a href="index.html">
+          <img class="logo" src="../icons/logo.png" alt="logo" />
+        </a>
+      </div>
+      <nav class="container">
+        <ul class="navbar">
+          <li><a href="index.html"> Home</a></li>
+        </ul>
+        <button onclick="login()">Cadastre-se</a></button>
+      </nav>
+    </header>
+  </div>
+  <div class="space"> <br><br>.</div>
+
+  <div id="blur_div">.
+    <div id="login_div">
+      <p class="close" onclick="back()">X</p>
+      <form id="subscribe-form" method="post" onsubmit="return subscribe()" >
+        <label class="login_label">Nome:</label><br>
+        <input class="login_input" id="name_user" /><br>
+        <label class="login_label">E-mail:</label><br>
+        <input class="login_input" id="user_email"><br>
+        <div class="div_perfil">
+          <div class="age_data">
+          <label class="login_label">Idade:</label><br>
+          <input type="date" class="login_input age" id="age_input"><br>
+        </div>
+        <div class="gender_data">
+          <label class="genero">Gênero</label><br>
+          <select class="login_select_gender" id="gender_select">
+            <option value="f">F</option>
+            <option value="m" >M</option>
+            <option value="não informado">Prefiro não informar</option>
+            
+          </select>
+        </div>
+        </div>
+        <label class="login_label">Desejo receber atualizações:</label>
+        <select class="login_select" id="time_update">
+            <option value="diariamente">Diárias</option>
+            <option value="semanalmente">Semanais</option>
+            <option value="quinzenalmente">Quinzenais</option>
+        </select><br>
+        
+        <button onclick="welcome()" class="welcome" type="submit">Cadastrar-se</button>
+      </form>
+    </div>
+  
+  </div>
+
+
+  <section class="contact">
+
+      <div class="container_contact">
+    <label>Selecione o motivo do contato:</label> <br> <br>
+        <select id="motive_contact" onselect="options_contact()">
+            <option value="">Selecione...</option>
+        <option value="cancelamento">Quero cancelar minha inscrição</option>
+        <option value="experiencia">Quero compartilhar minha experiência</option>
+        <option value="atualizacao">Quero mudar meu período de atualização</option>
+    </select>
+
+
+        <div id="cancel">
+
+            <label>Selecione o motivo do cancelamento:</label> <br><br>
+        <select id="motive_cancel">
+            <option value="">Selecione...</option>
+            <option value="gosto">O conteúdo não é o que eu esperava</option>
+            <option value="foco">Não estou mais focada no assunto</option>
+            <option value="outro">Outro...</option>
+        </select>
+
+        <input type="text" id="other">
+        <button onclick="send_cancel()" >Enviar</button>
+    </div>
+
+    <div id="history_div">
+        <form action="">
+        <textarea class="history_text"  id="historia_text" cols="40" rows="40"></textarea>
+        
+        <button onclick="send_history()" >Enviar</button>
+    </form>
+    </div>
+
+    <div id="change_update">
+        <label>Selecione o novo período:</label> <br><br>
+        <select id="choose_update">
+            <option value="">Selecione...</option>
+            <option value="diario">Diáriamente</option>
+            <option value="semanal">Semanalmente</option>
+            <option value="quinzenal">Quinzenalmente</option>
+        </select>
+        <button onclick="send_uptdate()">Enviar</button>
+    </div>
+</div>
+<div class="photo" >
+  <img src="https://c.tenor.com/q2lP9vEriZUAAAAC/party-plants.gif" alt="">
+</div>
+  </section>
+
+  <footer id="footer">
+    <p>Ana Marques &copy; 2021</p>
+    <p>Todos os direitos reservados</p>
+    </footer>
+
+    <script src="functions.js"></script>
+</body>
+
+</html>

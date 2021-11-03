@@ -5,13 +5,13 @@
   height: 100vh;
   position: fixed;
   z-index: 1;
-  padding: 7%;
+  padding: 6%;
 }
 
 #login_div {
   display: none;
   background-color:  white;
-  padding: 5%;
+  padding: 3%;
   width: 30%;
   margin-left: 19%;
 }
@@ -23,7 +23,7 @@ select {
 }
 
 .close {
-  margin: -10% 0 4% 105% ;
+  margin: -7% 0 4% 100% ;
   font-size: 25px;
 }
 
@@ -38,7 +38,7 @@ select {
   outline: none;
   border: none;
   border-bottom: 2px solid #9b5134;
-  margin: 3% 0;
+  margin: 2% 0;
   font-family: "Cinzel", serif;
 
 }
@@ -457,6 +457,10 @@ p {
 
 .plant_mood {
   width: 30%;
+}
+
+.plant_mood_help {
+  width: 50%;
 }
 
 .questions {

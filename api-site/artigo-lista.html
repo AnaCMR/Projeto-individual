@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ana's Garden - Home</title>
+  <link rel="stylesheet" href="artigo-lista.css" />
+  <link rel="icon" href="../icons/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Courgette&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo-div">
+                <a href="index.html">
+                    <img class="logo" src="../icons/logo.png" alt="logo" />
+                </a>
+            </div>
+            <nav class="container">
+                <ul class="navbar">
+                    <li><a href="index.html"> Home</a></li>
+                    <li><a href="#contact">Fale conosco </a></li>
+                </ul>
+                <button onclick="login()">Cadastre-se</a></button>
+            </nav>
+        </header>
+    </div>
+
+<div id="blur_div">.
+  <div id="login_div">
+    <p class="close" onclick="back()">X</p>
+    <form id="subscribe_form" method="post" onsubmit="return subscribe()" >
+      <label class="login_label">Nome:</label><br>
+      <input class="login_input" id="name_user" /><br>
+      <label class="login_label">E-mail:</label><br>
+      <input class="login_input" id="user_email"><br>
+      <div class="div_perfil">
+        <div class="age_data">
+        <label class="login_label">Idade:</label><br>
+        <input type="date" class="login_input age" id="age_input"><br>
+      </div>
+      <div class="gender_data">
+        <label class="genero">Gênero</label><br>
+        <select class="login_select_gender" id="gender_select">
+          <option value="f">F</option>
+          <option value="m" >M</option>
+          <option value="não informado">Prefiro não informar</option>
+          
+        </select>
+      </div>
+      </div>
+      <label class="login_label">Desejo receber atualizações:</label>
+      <select class="login_select" id="time_update">
+          <option value="diariamente">Diárias</option>
+          <option value="semanalmente">Semanais</option>
+          <option value="quinzenalmente">Quinzenais</option>
+      </select><br>
+      
+      <button onclick="welcome()" class="welcome" type="submit">Cadastrar-se</button>
+    </form>
+  </div>
+
+</div>
+<div class="space"> <br><br>.</div>
+    
+    <article id="daily-article">
+        <h3 class="title-article">Os beneficios de ter plantas no ambiente</h3>
+        <div class="container-article">
+          <div class="image-article">
+            <img class="image-plant" src="../imgs/suculentas.png" alt="foto de plantas suculentas" />
+            <div class="detail-article">.</div>
+          </div>
+          <div class="content-article">
+            <p>
+              <span class="upper"> U</span>m estudo do Journal of Physiological
+              Anthropology descobriu que ter plantas em casa ou no escritório
+              podem trazer mais conforto e tranquilidade, reduzindo a resposta ao
+              estresse. Outros pesquisadores usaram
+              <span class="emphasis"> hortoterapia</span> – ou horticultura
+              terapêutica – para aumentar a sensação de bem-estar em pessoas com
+              depressão, ansiedade e outras condições.
+            </p>
+            <p>
+              <span class="upper"> J</span>á um outro estudo entrevistou mais de
+              440 funcionários da Amazon na Índia e nos Estados Unidos revelou que
+              as pessoas que incluíam span.destaque elementos naturais em seus
+              ambientes internos de trabalho, como plantas, sentiam
+              <span class="emphasis"> maior satisfação</span> e tinham
+              <span class="emphasis"> mais compromisso</span> do que aquelas que
+              não contavam com nenhum elemento natural no escritório.
+            </p>
+            <button class="button-article">
+              <a class="button-text" href="hortoterapia.html">SAIBA MAIS SOBRE HORTOTERAPIA</a>
+            </button>
+          </div>
+        </div>
+        <hr></article>
+
+      
+
+    
+        <article class="article">
+            <h3 class="title-article">E se eu colocar plantas no quarto?</h3>
+            <div class="container-article">
+              <div class="image-article">
+                <img class="image-plant" src="../imgs/bedroom-resume.jpg" alt="foto de plantas suculentas" />
+                <div class="detail-article">.</div>
+              </div>
+              <div class="content-article">
+                <p>
+                  <span class="upper"> V</span>ocê é do tipo que gosta tanto de plantas que não consegue mais ver nenhum canto da casa vazio?
+                  Já pensou em colocar plantas em todos os lugares, inclusive no quarto mas ficou com
+                  <span class="emphasis"> medo</span>?
+                </p>
+                <p>
+                  <span class="upper"> P</span>reparamos essa matéria para você que é amante de plantas se decidir se
+                  <span class="emphasis"> coloca</span> ou não suas plantinhas no guarda roupa ou mesa de cabeceira.
+    
+                </p>
+                <button class="button-article">
+                  <a class="button-text" href="bedroom.html">SAIBA MAIS SOBRE PLANTAS NO QUARTO</a>
+                </button>
+              </div>
+            </div>
+            <hr> </article>
+   
+
+
+<article class="article">
+    <h3 class="title-article">Você pode ter animais e plantas</h3>
+    <div class="container-article">
+      <div class="image-article">
+        <img class="image-plant" src="../imgs/pets-resume.jpg" alt="foto de plantas suculentas" />
+        <div class="detail-article">.</div>
+      </div>
+      <div class="content-article">
+        <p>
+          <span class="upper"> S</span>abemos que os animais são uma ótima companhia no dia a dia, são os 
+          <span class="emphasis"> melhores amigos</span> do homem, de crianças e idosos. Até mesmo são utilizados para 
+          <span class="emphasis"> terapias</span> contra a solidão e alivio de estresse.
+        </p>
+        <p>
+          <span class="upper"> M</span>as algumas pessoas acabam exitando em ter os dois juntos no mesmo ambiente com medo da combinação entre
+          <span class="emphasis"> animais</span> e
+          <span class="emphasis"> plantas</span>, medo de que suas plantas sejam perigosas para o seu animal ou vice versa.
+        </p>
+        <button class="button-article">
+          <a class="button-text" href="pet.html">SAIBA MAIS ANIMAIS X PLANTAS</a>
+        </button>
+      </div>
+    </div>
+    <hr></article>
+
+
+
+  <article class="article">
+    <h3 class="title-article">Sou estranho por encher minha casa de plantas?</h3>
+    <div class="container-article">
+      <div class="image-article">
+        <img class="image-plant" src="../imgs/urban-jungle-resume.jpg" alt="foto de plantas suculentas" />
+        <div class="detail-article">.</div>
+      </div>
+      <div class="content-article">
+        <p>
+          <span class="upper"> C</span>ada vez mais surgem estudos sobre a importancia de ter plantas nos
+          <span class="emphasis"> ambientes</span> e como essa ação tem impacto positivo em nossa saúde de modo geral.
+
+        </p>
+        <p>
+          <span class="upper"> P</span>or isso, é cada vez mais comum que as pessoas adotem um estilo de vida mais próximo da natureza, mesmo
+          estando na cidade ou vivendo em apartamentos, fazendo a famosa
+          <span class="emphasis"> Urban Jungle</span> .
+        </p>
+        <button class="button-article">
+          <a class="button-text" href="urban-jungle.html">SAIBA MAIS SOBRE URBAN JUNGLE</a>
+        </button>
+      </div>
+    </div>
+    <hr>
+  </article>
+
+  
+  <article class="article">
+    <h3 class="title-article">Os beneficios de ter plantas no ambiente</h3>
+    <div class="container-article">
+      <div class="image-article">
+        <img class="image-plant" src="../imgs/suculentas.png" alt="foto de plantas suculentas" />
+        <div class="detail-article">.</div>
+      </div>
+      <div class="content-article">
+        <p>
+          <span class="upper"> U</span>m estudo do Journal of Physiological
+          Anthropology descobriu que ter plantas em casa ou no escritório
+          podem trazer mais conforto e tranquilidade, reduzindo a resposta ao
+          estresse. Outros pesquisadores usaram
+          <span class="emphasis"> hortoterapia</span> – ou horticultura
+          terapêutica – para aumentar a sensação de bem-estar em pessoas com
+          depressão, ansiedade e outras condições.
+        </p>
+        <p>
+          <span class="upper"> J</span>á um outro estudo entrevistou mais de
+          440 funcionários da Amazon na Índia e nos Estados Unidos revelou que
+          as pessoas que incluíam span.destaque elementos naturais em seus
+          ambientes internos de trabalho, como plantas, sentiam
+          <span class="emphasis"> maior satisfação</span> e tinham
+          <span class="emphasis"> mais compromisso</span> do que aquelas que
+          não contavam com nenhum elemento natural no escritório.
+        </p>
+        <button class="button-article">
+          <a class="button-text" href="hortoterapia.html">SAIBA MAIS SOBRE HORTOTERAPIA</a>
+        </button>
+      </div>
+    </div>
+    <hr> </article>
+
+      <footer id="footer">
+        <p>Ana Marques &copy; 2021</p>
+        <p>Todos os direitos reservados</p>
+        </footer>
+    </body>
+    
+    </html>
+    <script src="functions.js"></script>

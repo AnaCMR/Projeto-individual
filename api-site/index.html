@@ -24,13 +24,13 @@
       </div>
       <nav class="container">
         <ul class="navbar">
-          <li><a href="#daily-article"> Artigo do dia</a></li>
+          <li><a href="artigo-lista.html"> Artigos</a></li>
           <li><a href="#curiosity"> Curiosidades </a></li>
           <li><a href="#simulator"> Teste </a></li>
           <li><a href="#about"> Sobre mim </a></li>
-          <li><a href="#contact">Fale conosco </a></li>
+          <li><a href="contato.html">Fale conosco </a></li>
         </ul>
-        <button onclick="login()">Inscreva-se</button>
+        <button onclick="login()">Cadastre-se</button>
       </nav>
     </header>
   </div>
@@ -38,7 +38,7 @@
 <div id="blur_div">.
   <div id="login_div">
     <p class="close" onclick="back()">X</p>
-    <form id="subscribe-form" method="post" onsubmit="return subscribe()" >
+    <form id="subscribe_form" method="post" onsubmit="return subscribe()" >
       <label class="login_label">Nome:</label><br>
       <input class="login_input" id="name_user" /><br>
       <label class="login_label">E-mail:</label><br>
@@ -54,18 +54,21 @@
           <option value="f">F</option>
           <option value="m" >M</option>
           <option value="não informado">Prefiro não informar</option>
-          
         </select>
+
       </div>
       </div>
-      <label class="login_label">Desejo receber atualizações:</label>
-      <select class="login_select" id="time_update">
-          <option value="diariamente">Diárias</option>
-          <option value="semanalmente">Semanais</option>
-          <option value="quinzenalmente">Quinzenais</option>
-      </select><br>
+          <label class="login_label">Senha:</label><br>
+      <input class="login_input" type="password" id="password_user" /><br>
+      <label class="login_label">Confirmar senha:</label><br>
+      <input class="login_input" type="password" id="confirm_password" /><br>
+        
       
-      <button onclick="welcome()" class="welcome" type="submit">Inscrever-se</button>
+      
+      
+      <br>
+      
+      <button onclick="welcome()" class="welcome" type="submit">Cadastrar-se</button>
     </form>
   </div>
 
@@ -236,7 +239,7 @@
       <div class="finish" id="finish">
         <p>
           <span class="upper"> Q</span>uer continuar recebendo dicas sobre o universo da jardinagem? <br>
-            <button class="subscribe" onclick="login()" ><span class="upper"> C</span>lique aqui</button> para se inscrever e receber diáriamente ou semanalmente nosso conteúdo.
+            <button class="subscribe" onclick="login()" ><span class="upper"> C</span>lique aqui</button> para se cadastrar e ter acesso a conteúdo exclusivo.
         </p>
       </div>
 
@@ -275,7 +278,8 @@
     <p>Ana Marques &copy; 2021</p>
     <p>Todos os direitos reservados</p>
     </footer>
+
+    <script src="functions.js"></script>
 </body>
 
 </html>
-<script src="functions.js"></script>

@@ -1,4 +1,4 @@
-body {
+  body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
@@ -31,6 +31,33 @@ hr {
     width: 700px;
     margin-left: 45%;
     border: 2px solid white;
+}
+
+.new {
+  text-decoration: none;
+  color: white;
+  background-color: #7da16c;
+  padding: 1%;
+  border: none;
+  letter-spacing: 1.5px;
+  font-family: "Cinzel", serif;
+  text-align: center;
+  cursor: pointer;
+}
+
+.new-btn
+{
+  text-decoration: none;
+  color: white;
+  background-color: #7da16c;
+  padding: 1%;
+  border: none;
+  letter-spacing: 1.5px;
+  font-family: "Cinzel", serif;
+  margin: 5% 0 0 45%;
+  text-align: center;
+  cursor: pointer;
+  position: absolute;
 }
 
 .profile-dashboard {
@@ -115,4 +142,24 @@ hr {
   .title-flow {
     margin-left: 15%;
     font-size: 20px;
+  }
+
+  #footer {
+    background-color: #7da16c;
+  
+    margin: 0 auto;
+    color: #ffffff;
+    font-weight: 800;
+  height: 100px;
+    justify-content: center;
+    padding: 5px;
+    margin-top: 10%;
+    width: 110%;
+  
+    
+  }
+  
+  #footer p {
+    text-align: center;
+    margin-top: 1%;
   }
