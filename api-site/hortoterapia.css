@@ -146,6 +146,10 @@ a {
   font-family: "Cinzel", serif;
   font-weight: 600;
 }
+.login {
+  margin: 1.5% -4% 0 0%;
+  border: none;
+}
 
 li :hover {
   font-size: 20px;
