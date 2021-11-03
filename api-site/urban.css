@@ -15,6 +15,9 @@
   padding: 5%;
   width: 30%;
   margin-left: 19%;
+}.login {
+  margin: 1.5% -4% 0 0%;
+  border: none;
 }
 #blur_div_cadastro {
   display: none;
@@ -23,18 +26,16 @@
   height: 100vh;
   position: fixed;
   z-index: 1;
-  padding: 6%;
+  padding: 0.5%;
+  margin-top: -2%;
 }
-.login {
-  margin: 1.5% -4% 0 0%;
-  border: none;
-}
+
 #cadastro_div {
   display: none;
   background-color:  white;
   padding: 3%;
   width: 30%;
-  margin-left: 19%;
+  margin-left: 25%;
 }
 select {
   border: 2px solid #9b5134;
@@ -144,6 +145,7 @@ body {
     color: white;
     font-family: "Cinzel", serif;
     font-weight: 600;
+    cursor: pointer;
   }
   
   li :hover {
@@ -173,6 +175,7 @@ body {
     color: white;
     font-family: "Cinzel", serif;
     font-weight: 600;
+    cursor: pointer;
   }
   
   button:hover {

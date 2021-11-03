@@ -21,14 +21,15 @@
   margin: 1.5% -4% 0 0%;
   border: none;
 }
-  #blur_div_cadastro {
+#blur_div_cadastro {
   display: none;
   background-color: rgb(0, 0, 0, 0.8);
   width: 110vw;
   height: 100vh;
   position: fixed;
   z-index: 1;
-  padding: 6%;
+  padding: 0.5%;
+  margin-top: -5%;
 }
 
 #cadastro_div {
@@ -36,7 +37,7 @@
   background-color:  white;
   padding: 3%;
   width: 30%;
-  margin-left: 19%;
+  margin-left: 25%;
 }
   select {
     border: 2px solid #9b5134;
@@ -89,7 +90,7 @@
   }
   
   .welcome {
-    margin: 5% 0 0 25%;
+    margin: 2% 0 0 25%;
   }
   
   body {

@@ -4,7 +4,7 @@ function subscribe() {
 }
 
 function back_cadastro(){
-    blur_div_cadastri.style.display = "none";
+    blur_div_cadastro.style.display = "none";
     cadastro_div.style.display = "none";
 }
 function back_login() {
