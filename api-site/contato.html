@@ -31,17 +31,16 @@
     </header>
   </div>
   <div class="space"> <br><br>.</div>
-
-  <div id="blur_div">.
-    <div id="login_div">
-      <p class="close" onclick="back()">X</p>
-      <form id="subscribe-form" method="post" onsubmit="return subscribe()" >
-        <label class="login_label">Nome:</label><br>
-        <input class="login_input" id="name_user" /><br>
-        <label class="login_label">E-mail:</label><br>
-        <input class="login_input" id="user_email"><br>
-        <div class="div_perfil">
-          <div class="age_data">
+<div id="blur_div_cadastro">.
+  <div id="cadastro_div">
+    <p class="close" onclick="back_cadastro()">X</p>
+    <form id="subscribe_form" method="post" onsubmit="return subscribe()">
+      <label class="login_label">Nome:</label><br>
+      <input class="login_input" id="name_user" /><br>
+      <label class="login_label">E-mail:</label><br>
+      <input class="login_input" id="user_email"><br>
+      <div class="div_perfil">
+        <div class="age_data">
           <label class="login_label">Idade:</label><br>
           <input type="date" class="login_input age" id="age_input"><br>
         </div>
@@ -49,25 +48,42 @@
           <label class="genero">Gênero</label><br>
           <select class="login_select_gender" id="gender_select">
             <option value="f">F</option>
-            <option value="m" >M</option>
+            <option value="m">M</option>
             <option value="não informado">Prefiro não informar</option>
-            
           </select>
+
         </div>
-        </div>
-        <label class="login_label">Desejo receber atualizações:</label>
-        <select class="login_select" id="time_update">
-            <option value="diariamente">Diárias</option>
-            <option value="semanalmente">Semanais</option>
-            <option value="quinzenalmente">Quinzenais</option>
-        </select><br>
-        
-        <button onclick="welcome()" class="welcome" type="submit">Cadastrar-se</button>
-      </form>
-    </div>
-  
+      </div>
+      <label class="login_label">Senha:</label><br>
+      <input class="login_input" type="password" id="password_user" /><br>
+      <label class="login_label">Confirmar senha:</label><br>
+      <input class="login_input" type="password" id="confirm_password" /><br>
+
+
+
+
+      <br>
+
+      <button onclick="welcome()" class="welcome" type="submit">Cadastrar-se</button>
+    </form>
   </div>
 
+</div>
+
+<div id="blur_div">.
+  <div id="login_div">
+    <p class="close" onclick="back_login()">X</p>
+    <form id="subscribe_form" method="post" onsubmit="return subscribe()">
+      <label class="login_label">E-mail:</label><br>
+      <input class="login_input" id="user_email_login"><br>
+      <label class="login_label">Senha:</label><br>
+      <input class="login_input" type="password" id="password_user_login" /><br>
+      <br>
+      <button onclick="welcome_login()" class="welcome" type="submit">Entrar</button>
+    </form>
+  </div>
+
+</div>
 
   <section class="contact">
 

@@ -15,6 +15,23 @@
     width: 30%;
     margin-left: 19%;
   }
+  #blur_div_cadastro {
+  display: none;
+  background-color: rgb(0, 0, 0, 0.8);
+  width: 110vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 1;
+  padding: 6%;
+}
+
+#cadastro_div {
+  display: none;
+  background-color:  white;
+  padding: 3%;
+  width: 30%;
+  margin-left: 19%;
+}
   select {
     border: 2px solid #9b5134;
     font-family: "Cinzel", serif;

@@ -3,12 +3,20 @@ function subscribe() {
     return false;
 }
 
-function back(){
+function back_cadastro(){
+    blur_div_cadastri.style.display = "none";
+    cadastro_div.style.display = "none";
+}
+function back_login() {
     blur_div.style.display = "none";
     login_div.style.display = "none";
 }
 
-function login(){
+function cadastro(){
+    blur_div_cadastro.style.display = "block";
+    cadastro_div.style.display = "block";
+}
+function login() {
     blur_div.style.display = "block";
     login_div.style.display = "block";
 }
@@ -38,6 +46,15 @@ function login(){
       else {
      alert (`Seja bem vindo(a) ${name}! Faça seu login para acessar nosso conteúdo.` )
      }
+    }
+
+    function welcome_login(){
+        var email = user_email_login.value
+        var senha = password_user_login.value
+
+        if (email == "" || senha == ""){
+            alert("Por favor, preencher os campos")
+        }
     }
 // function limparFormulario() {
 //     document.getElementById("subscribe_form").reset();

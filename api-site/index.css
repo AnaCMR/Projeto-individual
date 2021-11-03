@@ -1,3 +1,20 @@
+#blur_div_cadastro {
+  display: none;
+  background-color: rgb(0, 0, 0, 0.8);
+  width: 110vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 1;
+  padding: 6%;
+}
+
+#cadastro_div {
+  display: none;
+  background-color:  white;
+  padding: 3%;
+  width: 30%;
+  margin-left: 19%;
+}
 #blur_div {
   display: none;
   background-color: rgb(0, 0, 0, 0.8);
@@ -109,6 +126,11 @@ a {
   color: white;
   font-family: "Cinzel", serif;
   font-weight: 600;
+}
+
+.login {
+  margin: 1.5% -4% 0 0%;
+  border: none;
 }
 
 li :hover {

@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ana's Garden - Home</title>
   <link rel="stylesheet" href="artigo-lista.css" />
-  <link rel="icon" href="../icons/logo.png" />
+  <link rel="icon" href="../api-site/icons/logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Courgette&display=swap" rel="stylesheet" />
@@ -19,7 +19,7 @@
         <header class="header">
             <div class="logo-div">
                 <a href="index.html">
-                    <img class="logo" src="../icons/logo.png" alt="logo" />
+                    <img class="logo" src="../api-site/icons/logo.png" alt="logo" />
                 </a>
             </div>
             <nav class="container">
@@ -31,38 +31,55 @@
             </nav>
         </header>
     </div>
-
-<div id="blur_div">.
-  <div id="login_div">
-    <p class="close" onclick="back()">X</p>
-    <form id="subscribe_form" method="post" onsubmit="return subscribe()" >
+<div id="blur_div_cadastro">.
+  <div id="cadastro_div">
+    <p class="close" onclick="back_cadastro()">X</p>
+    <form id="subscribe_form" method="post" onsubmit="return subscribe()">
       <label class="login_label">Nome:</label><br>
       <input class="login_input" id="name_user" /><br>
       <label class="login_label">E-mail:</label><br>
       <input class="login_input" id="user_email"><br>
       <div class="div_perfil">
         <div class="age_data">
-        <label class="login_label">Idade:</label><br>
-        <input type="date" class="login_input age" id="age_input"><br>
+          <label class="login_label">Idade:</label><br>
+          <input type="date" class="login_input age" id="age_input"><br>
+        </div>
+        <div class="gender_data">
+          <label class="genero">Gênero</label><br>
+          <select class="login_select_gender" id="gender_select">
+            <option value="f">F</option>
+            <option value="m">M</option>
+            <option value="não informado">Prefiro não informar</option>
+          </select>
+
+        </div>
       </div>
-      <div class="gender_data">
-        <label class="genero">Gênero</label><br>
-        <select class="login_select_gender" id="gender_select">
-          <option value="f">F</option>
-          <option value="m" >M</option>
-          <option value="não informado">Prefiro não informar</option>
-          
-        </select>
-      </div>
-      </div>
-      <label class="login_label">Desejo receber atualizações:</label>
-      <select class="login_select" id="time_update">
-          <option value="diariamente">Diárias</option>
-          <option value="semanalmente">Semanais</option>
-          <option value="quinzenalmente">Quinzenais</option>
-      </select><br>
-      
+      <label class="login_label">Senha:</label><br>
+      <input class="login_input" type="password" id="password_user" /><br>
+      <label class="login_label">Confirmar senha:</label><br>
+      <input class="login_input" type="password" id="confirm_password" /><br>
+
+
+
+
+      <br>
+
       <button onclick="welcome()" class="welcome" type="submit">Cadastrar-se</button>
+    </form>
+  </div>
+
+</div>
+
+<div id="blur_div">.
+  <div id="login_div">
+    <p class="close" onclick="back_login()">X</p>
+    <form id="subscribe_form" method="post" onsubmit="return subscribe()">
+      <label class="login_label">E-mail:</label><br>
+      <input class="login_input" id="user_email_login"><br>
+      <label class="login_label">Senha:</label><br>
+      <input class="login_input" type="password" id="password_user_login" /><br>
+      <br>
+      <button onclick="welcome_login()" class="welcome" type="submit">Entrar</button>
     </form>
   </div>
 
@@ -73,7 +90,7 @@
         <h3 class="title-article">Os beneficios de ter plantas no ambiente</h3>
         <div class="container-article">
           <div class="image-article">
-            <img class="image-plant" src="../imgs/suculentas.png" alt="foto de plantas suculentas" />
+            <img class="image-plant" src="../api-site/imgs/suculentas.png" alt="foto de plantas suculentas" />
             <div class="detail-article">.</div>
           </div>
           <div class="content-article">
@@ -109,7 +126,7 @@
             <h3 class="title-article">E se eu colocar plantas no quarto?</h3>
             <div class="container-article">
               <div class="image-article">
-                <img class="image-plant" src="../imgs/bedroom-resume.jpg" alt="foto de plantas suculentas" />
+                <img class="image-plant" src="../api-site/imgs/bedroom-resume.jpg" alt="foto de plantas suculentas" />
                 <div class="detail-article">.</div>
               </div>
               <div class="content-article">
@@ -136,7 +153,7 @@
     <h3 class="title-article">Você pode ter animais e plantas</h3>
     <div class="container-article">
       <div class="image-article">
-        <img class="image-plant" src="../imgs/pets-resume.jpg" alt="foto de plantas suculentas" />
+        <img class="image-plant" src="../api-site/imgs/pets-resume.jpg" alt="foto de plantas suculentas" />
         <div class="detail-article">.</div>
       </div>
       <div class="content-article">
@@ -163,7 +180,7 @@
     <h3 class="title-article">Sou estranho por encher minha casa de plantas?</h3>
     <div class="container-article">
       <div class="image-article">
-        <img class="image-plant" src="../imgs/urban-jungle-resume.jpg" alt="foto de plantas suculentas" />
+        <img class="image-plant" src="../api-site/imgs/urban-jungle-resume.jpg" alt="foto de plantas suculentas" />
         <div class="detail-article">.</div>
       </div>
       <div class="content-article">
@@ -190,7 +207,7 @@
     <h3 class="title-article">Os beneficios de ter plantas no ambiente</h3>
     <div class="container-article">
       <div class="image-article">
-        <img class="image-plant" src="../imgs/suculentas.png" alt="foto de plantas suculentas" />
+        <img class="image-plant" src="../api-site/imgs/suculentas.png" alt="foto de plantas suculentas" />
         <div class="detail-article">.</div>
       </div>
       <div class="content-article">
