@@ -6,8 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ana's Garden - Home</title>
-  <link rel="stylesheet" href="index.css" />
-  <link rel="icon" href="../api-site/api-site/icons/logo.png" />
+  <link rel="stylesheet" href="css/index.css" />
+  <link rel="icon" href="icons/logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Courgette&display=swap" rel="stylesheet" />
@@ -19,7 +19,7 @@
     <header class="header">
       <div class="logo-div">
         <a href="#banner">
-          <img class="logo" src="../api-site/icons/logo.png" alt="logo" />
+          <img class="logo" src="icons/logo.png" alt="logo" />
         </a>
       </div>
       <nav class="container">
@@ -39,15 +39,15 @@
 <div id="blur_div_cadastro">.
   <div id="cadastro_div">
     <p class="close" onclick="back_cadastro()">X</p>
-    <form id="subscribe_form" method="post" onsubmit="return subscribe()" >
+    <form id="form_cadastro" method="post" onsubmit="return subscribe()" >
       <label class="login_label">Nome:</label><br>
-      <input class="login_input" id="name_user" /><br>
+      <input name="nome" class="login_input" id="name_user" /><br>
       <label class="login_label">E-mail:</label><br>
-      <input class="login_input" id="user_email"><br>
+      <input name="email" class="login_input" id="user_email"><br>
       <div class="div_perfil">
         <div class="age_data">
         <label class="login_label">Idade:</label><br>
-        <input type="date" class="login_input age" id="age_input"><br>
+        <input name="idade"  type="date" class="login_input age" id="age_input"><br>
       </div>
       <div class="gender_data">
         <label class="genero">Gênero</label><br>
@@ -60,16 +60,13 @@
       </div>
       </div>
           <label class="login_label">Senha:</label><br>
-      <input class="login_input" type="password" id="password_user" /><br>
+      <input name="senha" class="login_input" type="password" id="password_user" /><br>
       <label class="login_label">Confirmar senha:</label><br>
-      <input class="login_input" type="password" id="confirm_password" /><br>
-        
-      
-      
+      <input class="login_input" name="confirmacao-senha" type="password" id="confirm_password" /><br>      
       
       <br>
       
-      <button onclick="welcome()" class="welcome" type="submit">Cadastrar-se</button>
+      <button class="welcome" type="submit">Cadastrar-se</button>
     </form>
   </div>
 
@@ -78,11 +75,11 @@
 <div id="blur_div">.
   <div id="login_div">
     <p class="close" onclick="back_login()">X</p>
-    <form id="subscribe_form" method="post" onsubmit="return subscribe()">
+    <form id="subscribe_form" method="post" onsubmit="return cadastrar()">
       <label class="login_label">E-mail:</label><br>
-      <input class="login_input" id="user_email_login"><br>
+      <input name="email" class="login_input" id="user_email_login"><br>
       <label class="login_label">Senha:</label><br>
-      <input class="login_input" type="password" id="password_user_login" /><br>
+      <input name="senha" class="login_input" type="password" id="password_user_login" /><br>
       <br>
       <button onclick="welcome_login()" class="welcome" type="submit">Entrar</button>
     </form>
@@ -92,7 +89,7 @@
 
   <section id="banner">
     <div class="banner">
-      <img class="banner-img" src="../api-site/imgs/banner.jpg" alt="Banner com formas organicas e folhagens" />
+      <img class="banner-img" src="imgs/banner.jpg" alt="Banner com formas organicas e folhagens" />
     </div>
     <div class="text-banner">
       <h3>
@@ -105,7 +102,7 @@
     <h3 class="title-article">Os beneficios de ter plantas no ambiente</h3>
     <div class="container-article">
       <div class="image-article">
-        <img class="image-plant" src="../api-site/imgs/suculentas.png" alt="foto de plantas suculentas" />
+        <img class="image-plant" src="imgs/suculentas.png" alt="foto de plantas suculentas" />
         <div class="detail-article">.</div>
       </div>
       <div class="content-article">
@@ -138,7 +135,7 @@
     <div class="flip-1">
       <div class="container-box-flip">
         <div class="card-front">
-          <img src="../api-site/imgs/card 1.jpg" alt="cartão com flores desenhadas" />
+          <img src="imgs/card 1.jpg" alt="cartão com flores desenhadas" />
 
           <p class="title-card title-card-1">
             Você sabia que <br />
@@ -162,7 +159,7 @@
     <div class="flip-2">
       <div class="container-box-flip">
         <div class="card-front">
-          <img src="../api-site/imgs/card 2.jpg" alt="cartão com flores desenhadas" />
+          <img src="imgs/card 2.jpg" alt="cartão com flores desenhadas" />
 
           <p class="title-card">Algumas plantas são capazes de ouvir!</p>
         </div>
@@ -180,7 +177,7 @@
     <div class="flip-3">
       <div class="container-box-flip">
         <div class="card-front">
-          <img src="../api-site/imgs/card 3.jpg" alt="cartão com flores desenhadas" />
+          <img src="imgs/card 3.jpg" alt="cartão com flores desenhadas" />
 
           <p class="title-card title-card-3">
             Elas unem <br />
@@ -202,7 +199,7 @@
   </section>
 
   <section id="simulator">
-    <img class="image-simulator" src="../api-site/imgs/bg-simulator.png" alt="">
+    <img class="image-simulator" src="imgs/bg-simulator.png" alt="">
     <div class="questions" id="question_1">
     <div class="container-questions">
       <h3 class="simulator-title">Vamos testar seu conhecimento?</h3>
@@ -280,7 +277,7 @@
       </p>
     </div>
     <div>
-      <img class="image-about" src="../api-site/imgs/Foto Ana.jpg" alt="Foto Ana" />
+      <img class="image-about" src="imgs/Foto Ana.jpg" alt="Foto Ana" />
     </div>
   </section>
 
@@ -294,7 +291,8 @@
     <p>Todos os direitos reservados</p>
     </footer>
 
-    <script src="functions.js"></script>
+    <script src="js/functions.js"></script>
+    
 </body>
 
 </html>
