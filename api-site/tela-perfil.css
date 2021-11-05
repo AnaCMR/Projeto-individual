@@ -12,10 +12,17 @@ body {
     height: 110vh;
     margin-top: 0;
     position: absolute;
+    display: flex;
+    justify-content: space-evenly;
 }
 
 .logo {
-    width: 170%;
+    width: 100%;
+    margin-left: 15%;
+}
+
+.icons_logo {
+    
 }
 
 ul {
@@ -24,10 +31,43 @@ ul {
     
 }
 
+.tooltip {
+    position: relative;
+    display: inline-block;
+  }
+  
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 100px;
+    background-color: white;
+    color: black;
+    text-align: center;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    top: -5px;
+    left: 110%;
+    box-shadow: 3px 3px 3px darkslategrey;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
+
+li {
+    margin-bottom: 50%;
+}
+
 a {
     text-decoration: none;
     
 }
+/* 
+.container {
+    display: flex;
+    justify-content: space-evenly;
+} */
 
 .profile {
     background-image: url(../api-site/imgs/bg-profille.png);

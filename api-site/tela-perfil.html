@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ana's Garden - Novo Artigo</title>
     <link rel="stylesheet" href="tela-perfil.css" />
-    <link rel="icon" href="../icons/logo.png" />
+    <link rel="icon" href="../api-site/icons/logo.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -27,11 +27,14 @@
             <img class="logo" src="../api-site/icons/logo.png" alt="logo" />
           </a>
         <ul>
-          <li>
-            <a href="tela-perfil.html">Perfil</a>
-          </li>
-          <li><a href="videos-cliente.html">Vídeos</a></li>
-          <li><a href="conteudo-cliente.html">Aprendizado diário</a></li>
+          <li class="tooltip">
+        <span class="tooltiptext">Perfil </span>
+            <!-- <a href="tela-perfil.html"><img class="icons_menu" src="https://cdn-icons-png.flaticon.com/512/860/860784.png" alt=""> </a> -->
+          </li><br>
+          <li class="tooltip"><a href="videos-cliente.html">Vídeos</a>
+            <span class="tooltiptext">perfil </span></li>
+          <li class="tooltip"><a href="conteudo-cliente.html">Aprendizado diário</a>
+            <span class="tooltiptext">perfil </span></li>
         </ul>
       </nav>
     </menu>
@@ -69,28 +72,29 @@
                 </div>
             </div>
             <div class="preferences">
-               
+               <img src="">
                   <div class="plant">
                     <h3>Minhas plantas preferidas:</h3>
                     <div class="boxes">
                     <div class="photo-1">
-                      <div class="photo"></div>
-                      <select name="" id="">
-                        <option value="">Samambaia</option>
-                        <option value="">Jibóia</option>
-                        <option value="">Cróton</option>
-                        <option value="">Begonia</option>
-                        <option value="">Columeia</option>
-                        <option value="">Fycus</option>
-                        <option value="">Sigonio</option>
-                        <option value="">Avenca</option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
+                      <div class="photo" id="photo_1"></div>
+                      
+                      <select id="favorite_plant" onchange="change_photo()" >
+                        <option value="https://static3.tcdn.com.br/img/img_prod/350075/samambaia_americana_8677_1_20190521161357.jpg">Samambaia</option>
+                        <option value="jiboia">Jibóia</option>
+                        <option value="croton">Cróton</option>
+                        <option value="begonia">Begonia</option>
+                        <option value="columeia">Columeia</option>
+                        <option value="fycus">Fycus</option>
+                        <option value="sigonio">Sigonio</option>
+                        <option value="avenca">Avenca</option>
+                        <option value="girassol">Girassol</option>
+                        <option value="lirio">Lirio da paz</option>
+                        <option value="azaleia">Azaleia</option>
+                        <option value="violeta">Violeta</option>
+                        <option value="lambari">Lambari-Roxo</option>
+                        <option value="pacova">Pacová</option>
+                        <option value="hera">Hera</option>
                       </select>
                     </div>
                     <div class="photo-2">

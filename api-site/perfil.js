@@ -15,3 +15,11 @@ function change_password() {
 function confirm_password(){
     show_password.style.display = "none"   
 }
+
+function change_photo(){
+    var plant = favorite_plant.value;
+
+
+    photo_1.innerHTML = `<img src="${plant}" width="100%">`
+}
+
