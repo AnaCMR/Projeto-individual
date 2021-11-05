@@ -1,0 +1,149 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: "Cinzel", serif;
+  font-weight: 600;
+}
+
+.menu {
+    background-color: #7da16c;
+    width: 5%;
+    height: 110vh;
+    margin-top: 0;
+    position: absolute;
+}
+
+.logo {
+    width: 170%;
+}
+
+ul {
+    text-decoration: none;
+    list-style: none;
+    
+}
+
+a {
+    text-decoration: none;
+    
+}
+
+.profile {
+    background-image: url(../api-site/imgs/bg-profille.png);
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    }
+
+.container-profile {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 2% 17%;
+    
+}
+
+.user-profile {
+    background-color: white;
+    width: 500px;
+    height: 550px;
+    border-radius: 20px;
+    box-shadow: 3px 3px 5px darkslategrey;
+    display: flex;
+    flex-direction: column;
+}
+
+.plant {
+    background-color: white;
+    width: 400px;
+    justify-content: center;
+    height: 250px;
+    border-radius: 20px;
+    box-shadow: 3px 3px 5px darkslategrey;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    text-align: center;
+}
+
+.boxes {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.preferences {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    justify-content: space-between;
+}
+
+.photo-profile {
+    background-color: grey;
+    border-radius: 50%;
+    width: 200px;
+    height:200px;
+    margin: 0 auto;   
+}
+
+.profile-content, .buttons, #show_password, #show_email {
+    margin: 0 auto;
+}
+
+input {
+width: 88%;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #9b5134;
+  margin: 2% 0;
+  font-family: "Cinzel", serif; 
+}
+label {
+    font-size: 13px;
+}
+
+#show_password {
+    display: none;
+}
+
+#show_email {
+    display: none;
+}
+
+button {
+    background-color: #7da16c;
+    outline: none;
+    color: white;
+    border: none;
+    width:100%;
+    margin-right: 3%;
+    padding: 4%;
+    cursor: pointer;
+    font-family: "Cinzel", serif; 
+}
+
+button:hover {
+    color: #9b5134;
+}
+
+.buttons {
+    width: 50%;
+    display: flex;
+    
+}
+
+.photo {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    background-color: darkslategrey;
+}
+
+select {
+    border: 3px solid #9b5134;
+    background-color: white;
+    width: 100px;
+    margin-top: 10%;
+    font-size: 13px;
+    outline: none;
+}

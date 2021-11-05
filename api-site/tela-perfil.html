@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ana's Garden - Novo Artigo</title>
+    <link rel="stylesheet" href="tela-perfil.css" />
+    <link rel="icon" href="../icons/logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel&family=Courgette&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+
+  <body>
+    <menu class="menu">
+      <nav class="container">
+        <a href="index.html">
+            <img class="logo" src="../api-site/icons/logo.png" alt="logo" />
+          </a>
+        <ul>
+          <li>
+            <a href="tela-perfil.html">Perfil</a>
+          </li>
+          <li><a href="videos-cliente.html">Vídeos</a></li>
+          <li><a href="conteudo-cliente.html">Aprendizado diário</a></li>
+        </ul>
+      </nav>
+    </menu>
+
+    <section class="profile">
+        <div class="container-profile">
+            <div class="user-profile">
+                <div class="photo-profile">
+                </div>
+                <div class="profile-content">
+                  <h2>Fulaninho de tal</h2>
+                  <h4>fulaninho@email.com</h4>
+                </div>
+                <div class="buttons">
+                  <button onclick="change_email()" >Mudar email</button>
+                  <button onclick="change_password()">Mudar senha</button>
+                </div>
+                <br>
+                <div id="show_email">
+                  <label>Insira seu novo email:</label> <br>
+                  <input> <br>
+                  <label>Insira sua senha:</label> <br>
+                  <input>
+                  <button onclick="confirm_email()" >Confirmar</button>
+                </div>
+                <div id="show_password">
+                  <label>Insira sua senha antiga:</label><br>
+                  <input type="password"><br>
+                  <label>Insira nova senha:</label><br>
+                  <input type="password"><br>
+                  <label>Confirme a nova senha:</label><br>
+                  <input type="password">
+                  <button onclick="confirm_password()" >Confirmar</button>
+
+                </div>
+            </div>
+            <div class="preferences">
+               
+                  <div class="plant">
+                    <h3>Minhas plantas preferidas:</h3>
+                    <div class="boxes">
+                    <div class="photo-1">
+                      <div class="photo"></div>
+                      <select name="" id="">
+                        <option value="">Samambaia</option>
+                        <option value="">Jibóia</option>
+                        <option value="">Cróton</option>
+                        <option value="">Begonia</option>
+                        <option value="">Columeia</option>
+                        <option value="">Fycus</option>
+                        <option value="">Sigonio</option>
+                        <option value="">Avenca</option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                      </select>
+                    </div>
+                    <div class="photo-2">
+                      <div class="photo"></div>
+                      <select name="" id="">
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                      </select>
+                    </div>
+                    <div class="photo-3">
+                      <div class="photo"></div>
+                      <select name="" id="">
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="plant"></div>
+            </div>
+        </div>
+    </section>
+  </body>
+</html>
+<script src="perfil.js"></script>
