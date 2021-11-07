@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ana's Garden - Perfil</title>
+    <link rel="stylesheet" href="css/tela-conhecimento.css" />
+    <link rel="icon" href="icons/plant.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel&family=Courgette&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+
+  <body>
+    <menu class="menu">
+      <nav class="container">
+        <a href="index.html">
+          <img class="logo" src="icons/logo.png" alt="logo" />
+        </a>
+        <ul>
+          <li class="tooltip">
+            <span class="tooltiptext">Perfil </span>
+            <a href="tela-perfil.html"
+              ><img class="icons-menu" src="icons/user.png" alt="Perfil"
+            /></a>
+          </li>
+          <br />
+          <li class="tooltip">
+            <a href="tela-videos.html"
+              ><img class="icons-menu" src="icons/midia.png" alt="Vídeos"
+            /></a>
+            <span class="tooltiptext">Vídeos </span>
+          </li>
+          <li class="tooltip">
+            <a href="tela-conhecimento.html"
+              ><img
+                class="icons-menu"
+                src="icons/monitor.png"
+                alt="aprendizado"
+            /></a>
+            <span class="tooltiptext"> Aprendizado diário </span>
+          </li>
+        </ul>
+      </nav>
+    </menu>
+    <h3>Vamos aprender mais?</h3>
+    <section class="container_quiz">
+      <div class="none_display" id="samambaia">
+        <div class="container_content">
+          <div class="quiz">
+            <img
+              src="https://d3ugyf2ht6aenh.cloudfront.net/stores/001/245/380/products/301-b9002c95cf9a7e8d3c16107487383674-1024-1024.jpg"
+              alt=""
+            />
+            <input
+              id="input_samambaia"
+              class="login_input"
+              placeholder="Insira o nome da planta acima"
+            />
+            <button onclick="plant_samambaia()">Validar</button>
+          </div>
+          <div id="content_samambaia" class="content">
+            <div class="content_title">
+              <div class="certo none_display" id="certo_samambaia">
+                <h1>CORRETO!</h1>
+              </div>
+              <div class="errado none_display" id="errado_samambaia">
+                <h1>ERRADO!</h1>
+                <p>Na verdade é uma samambaia</p>
+              </div>
+            </div>
+            <div class="content_text">
+              <p>
+                <span class="upper"> Q</span>uando pensamos na localização de um
+                vaso, não basta analisar a estética. É importante saber se a
+                planta escolhida irá se adaptar àquele espaço. Por isso, o
+                primeiro passo de como cuidar de samambaia de metro ou não é
+                saber a localização ideal.
+                <br />
+
+                <img src="icons/sun.png" alt="" />
+              </p>
+
+              <p>
+                <span class="upper"> D</span>evemos lembrar que essas são
+                espécies tropicais, que crescem aos pés de grandes árvores. Por
+                isso, preferem uma iluminação mais suave, sem receber os raios
+                de sol de forma direta. Assim, dê preferência sempre por locais
+                bem iluminados, mas protegidos do sol.
+              </p>
+
+              <p>
+                <span class="upper"> O</span>utro ponto importante a se
+                considerar é a ventilação. Samambaias não se dão bem com
+                ventanias e preferem locais sem muitas correntes de ar. Por
+                isso, se for colocá-las na varanda ou próximo à janela,
+                lembra-se de buscar um espaço com certa proteção.
+              </p>
+
+              <img src="icons/watering-can.png" alt="" />
+              <p>
+                <span class="upper"> C</span>omo são naturais de ambientes
+                tropicais, a umidade é um ponto importante no processo de como
+                fazer muda de samambaia brotar! Portanto, o solo deve estar
+                sempre molhadinho, mas sem acumular muita água.
+              </p>
+
+              <img src="icons/pruners.png" alt="" />
+              <p>
+                <span class="upper"> G</span>alhos secos e velhos consomem
+                energia e dificultam o crescimento de novos ramos. Assim, é
+                importante verificar como cuidar de samambaia americana ou
+                chorona, além de aparar as partes secas e quebradiças.
+              </p>
+
+              <img src="icons/seed-bag.png" alt="" />
+              <p>
+                <span class="upper"> C</span>ada espécie precisa de certa
+                proporção de nutrientes para crescer de forma saudável. Em lojas
+                especializadas, você encontra fertilizantes para samambaias,
+                preparados por especialistas e com tudo que a plantinha precisa.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="none_display" id="jiboia">
+        <div class="container_content">
+          <div class="quiz">
+            <img
+              src="https://cantinho.live/wp-content/uploads/2020/06/1-3.jpg"
+              alt=""
+            />
+            <input
+              id="input_jiboia"
+              class="login_input"
+              placeholder="Insira o nome da planta acima"
+            />
+            <button onclick="plant_jiboia()">Validar</button>
+          </div>
+          <div id="content_jiboia" class="content">
+            <div class="content_title">
+              <div class="certo none_display" id="certo_jiboia">
+                <h1>CORRETO!</h1>
+              </div>
+              <div class="errado none_display" id="errado_jiboia">
+                <h1>ERRADO!</h1>
+                <p>Na verdade é uma Jibóia</p>
+              </div>
+            </div>
+            <div class="content_text">
+              <p>
+                <span class="upper"> C</span>ada vez mais popular nos lares
+                brasileiros, aprender como cuidar da planta Jiboia é importante
+                para manter o vaso sempre cheio, verdinho e saudável. Esta
+                trepadeira tropical com folhagem em formato de coração é muito
+                fácil de cuidar.
+                <br />
+
+                <img src="icons/sun.png" alt="" />
+              </p>
+
+              <p>
+                <span class="upper"> Q</span>uanto à luz, a Jiboia gosta de
+                sombra e da luz indireta. Para controlar o crescimento, é
+                aconselhável deixa-la à sombra. Já se você quer caules longos e
+                cheios de folhas, o recomendável é a luz indireta.
+              </p>
+
+              <img src="icons/watering-can.png" alt="" />
+              <p>
+                <span class="upper"> A</span> Jiboia é uma planta que adora água
+                e é recomendável fazer a rega duas vezes por semana. Durante os
+                dias mais quentes de verão, a frequência pode aumentar para três
+                vezes semanais. No inverno, a rega pode diminuir para uma vez
+                semanal ou duas vezes com menos água.
+              </p>
+
+              <img src="icons/pruners.png" alt="" />
+              <p>
+                <span class="upper"> E</span>la pode ser podada a cada 6 meses
+                com o corte dos ramos mais altos. A manutenção é indicada sempre
+                na primavera e para cuidar da planta Jiboia, o ideal é retirar
+                as folhas amarelas e podar os galhos que não estão bem formados.
+              </p>
+
+              <img src="icons/seed-bag.png" alt="" />
+              <p>
+                <span class="upper"> A</span>dube a planta a cada três meses com
+                fertilizantes orgânicos, como húmus de minhoca, e misture bem a
+                terra, para que ela fique leve e fofa — mas não faça trocas de
+                vasos por pelo menos dois anos.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="none_display" id="hera">
+        <div class="container_content">
+          <div class="quiz">
+            <img
+              src="https://casaefesta.com/wp-content/uploads/2021/05/planta-hera-1.jpeg"
+              alt="planta pendente da classe hedera"
+            />
+            <input
+              id="input_hera"
+              class="login_input"
+              placeholder="Insira o nome da planta acima"
+            />
+            <button onclick="plant_hera()">Validar</button>
+          </div>
+          <div id="content_hera" class="content">
+            <div class="content_title">
+              <div class="certo none_display" id="certo_hera">
+                <h1>CORRETO!</h1>
+              </div>
+              <div class="errado none_display" id="errado_hera">
+                <h1>ERRADO!</h1>
+                <p>Na verdade é uma Hera hedera</p>
+              </div>
+            </div>
+            <div class="content_text">
+              <p>
+                <span class="upper"> V</span>ocê pode encontrar inúmeras
+                variedades de heras, que variam no tamanho das folhas e
+                coloração. Todas são belíssimas e consideradas fáceis de
+                cultivar, pois se adaptam a diferentes climas!
+                <br />
+
+                <img src="icons/sun.png" alt="" />
+              </p>
+
+              <p>
+                <span class="upper"> A</span>s heras são plantas que se adaptam
+                bem a diferentes contextos e espaços. Podem ser cultivadas a sol
+                pleno ou meia-sombra, ou seja, em espaços abertos e ensolarados
+                ou em ambientes internos, como salas e escritórios.
+              </p>
+
+              <img src="icons/watering-can.png" alt="" />
+              <p>
+                <span class="upper"> A</span>s regas devem ser regulares, sendo
+                de aproximadamente 3 vezes por semana, mas com atenção para o
+                clima da região. Nos períodos mais quentes, faça regas mais
+                frequentes e nos mais frios, regas espaçadas..
+              </p>
+
+              <img src="icons/pruners.png" alt="" />
+              <p>
+                <span class="upper"> E</span>la pode receber a poda de
+                tutoramento, que conduz a planta para onde o cultivador prefere.
+                Caso contrário, ela vai percorrendo o próprio caminho e se
+                agarra às estruturas ou até mesmo às plantas que são próximas.
+              </p>
+
+              <img src="icons/seed-bag.png" alt="" />
+              <p>
+                <span class="upper"> O</span> solo para essa planta pode ser
+                preparado com terra comum, sempre bem soltinha, e sem se
+                esquecer de adubar com húmus de minhoca ou adubo equilibrado NPK
+                10-10-10.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="none_display" id="peperomia">
+        <div class="container_content">
+          <div class="quiz">
+            <img
+              src="https://i.pinimg.com/originals/ce/29/68/ce296807e35c1a525b8d69ee933c36c8.jpg"
+              alt=""
+            />
+            <input
+              id="input_peperomia"
+              class="login_input"
+              placeholder="Insira o nome da planta acima"
+            />
+            <button onclick="plant_peperomia()">Validar</button>
+          </div>
+          <div id="content_peperomia" class="content">
+            <div class="content_title">
+              <div class="certo none_display" id="certo_peperomia">
+                <h1>CORRETO!</h1>
+              </div>
+              <div class="errado none_display" id="errado_peperomia">
+                <h1>ERRADO!</h1>
+                <p>Na verdade é uma Peperomia</p>
+              </div>
+            </div>
+            <div class="content_text">
+              <p>
+                <span class="upper"> A</span> peperômia é uma das plantas mais
+                fáceis de cultivar dentro de casa. Ela tem em média 25
+                centímetros, não ocupa muito espaço, gosta do calor e não é
+                tóxica. Você pode deixar uma floreira ou vaso de peperômia perto
+                do seu pet sem se preocupar!
+                <br />
+
+                <img src="icons/sun.png" alt="imagem de sol" />
+              </p>
+
+              <p>
+                <span class="upper"> E</span>las gostam de luz indireta. Logo,
+                se ela ficar dentro de casa, posicione-a num ambiente bem
+                iluminado. Já no jardim, uma dica é deixá-la próxima à uma
+                espécie mais alta, para que a folha da peperômia não se queime
+                devido às luzes solares.
+              </p>
+
+              <img src="icons/watering-can.png" alt="imagem de regador" />
+              <p>
+                <span class="upper"> V</span>ocê regará mais a peperômia no
+                verão do que no inverno. Para não ter erro, confira se a terra
+                da planta está seca, antes de regá-la novamente. Para isso,
+                basta apalpar o substrato na superfície e no interior do vaso.
+              </p>
+
+              <img src="icons/pruners.png" alt="imagem de podador" />
+              <p>
+                <span class="upper"> N</span>ão é necessário podar a peperômia,
+                a não ser que você note folhas murchas, secas e amareladas.
+                Nesse caso, remova apenas as folhas mortas e doentes.
+              </p>
+
+              <img src="icons/seed-bag.png" alt="imagem de saco de terra" />
+              <p>
+                <span class="upper"> A</span>s peperômias também são muito
+                tranquilas quanto a fertilização. Uma vez que são espécies de
+                porte pequeno, basta para elas um solo rico em matéria orgânica.
+                Se você quiser adicionar fertilizantes industriais no cuidado da
+                planta, prefira a versão líquia e aplique algumas vezes durante
+                os meses da fase de crescimento..
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="none_display" id="dolar">
+        <div class="container_content">
+          <div class="quiz">
+            <img
+              src="http://4.bp.blogspot.com/-amvu49zMCW8/VacbTtGNkEI/AAAAAAAAARA/giYUKsGa2nA/s1600/dolar%2B2.jpg"
+              alt=""
+            />
+            <input
+              id="input_dolar"
+              class="login_input"
+              placeholder="Insira o nome da planta acima"
+            />
+            <button onclick="plant_dolar()">Validar</button>
+          </div>
+          <div id="content_dolar" class="content">
+            <div class="content_title">
+              <div class="certo none_display" id="certo_dolar">
+                <h1>CORRETO!</h1>
+              </div>
+              <div class="errado none_display" id="errado_dolar">
+                <h1>ERRADO!</h1>
+                <p>Na verdade é uma planta dinheiro (ou dolar)</p>
+              </div>
+            </div>
+            <div class="content_text">
+              <p>
+                <span class="upper"> E</span>mbora saibamos que esta bonita
+                planta não vem com uma varinha mágica incorporada para ajudar a
+                que os números da nossa conta bancária aumentem, a verdade é que
+                muitas pessoas a têm em casa simplesmente porque fica muito bem
+                numa varanda ou terraço.
+                <br />
+
+                <img src="icons/sun.png" alt="" />
+              </p>
+
+              <p>
+                <span class="upper"> S</span>abemos que essa planta resiste bem
+                às altas temperatura, mas o recomendável é que não receba
+                diretamente a luz do sol, por isso coloque-a preferivelmente num
+                espaço, mas ao mesmo tempo com claridade.
+              </p>
+
+              <img src="icons/watering-can.png" alt="" />
+              <p>
+                <span class="upper"> N</span>os meses mais quentes do ano
+                regue-a três vezes por semana, enquanto que no inverno pode
+                sobreviver apenas com umas doses de água a cada cinco ou sete
+                dias. Se a planta do dinheiro estiver a receber água em excesso,
+                ela se encarrega de o avisar com umas pequenas manchas pretas
+                nas suas folhas.
+              </p>
+
+              <img src="icons/pruners.png" alt="" />
+              <p>
+                <span class="upper"> A</span>lgumas pequenas podas pontuais
+                podem ser necessárias para retirar galhos e folhas velhas, que
+                acabam afetando o crescimento da planta e até a deixam feia
+                esteticamente. No geral, a planta Dólar é muito fácil de se
+                cultivar e bastante resistente.
+              </p>
+
+              <img src="icons/seed-bag.png" alt="" />
+              <p>
+                <span class="upper"> U</span>ma vez ao mês pode alimentar a sua
+                terra com fertilizantes minerais para que a sua planta do
+                dinheiro cresça forte e saudável. Como esperamos que a metáfora
+                esteja certa e que assim como a sua planta, também as suas
+                poupanças comecem a crescer!
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="js/perfil.js"></script>
+  </body>
+</html>

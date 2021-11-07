@@ -1,186 +1,246 @@
 body {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    font-family: "Cinzel", serif;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: "Cinzel", serif;
   font-weight: 600;
 }
 
+#blur_div_cadastro {
+  display: none;
+  background-color: rgb(0, 0, 0, 0.8);
+  width: 110vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 1;
+  padding: 7%;
+  margin-top: -50%;
+}
+.photo img {
+  width: 80%;
+}
+.icons-menu {
+  width: 100%;
+  margin-bottom: 100%;
+  cursor: pointer;
+}
+.close {
+  margin: -10% 0 4% 105%;
+  font-size: 25px;
+}
+
+.close:hover {
+  color: #9b5134;
+  font-weight: 600;
+  cursor: pointer;
+}
+#cadastro_div {
+  display: none;
+  background-color: white;
+  padding: 3%;
+  width: 30%;
+  margin-left: 25%;
+}
+
 .menu {
-    background-color: #7da16c;
-    width: 5%;
-    height: 110vh;
-    margin-top: 0;
-    position: absolute;
-    display: flex;
-    justify-content: space-evenly;
+  background-color: #7da16c;
+  width: 5%;
+  height: 100vh;
+  margin-top: 0;
+  position: absolute;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .logo {
-    width: 100%;
-    margin-left: 15%;
+  width: 150%;
+  margin-left: 15%;
 }
 
-
 ul {
-    text-decoration: none;
-    list-style: none;
-    
+  text-decoration: none;
+  list-style: none;
 }
 
 .tooltip {
-    position: relative;
-    display: inline-block;
-  }
-  
-  
-  .tooltip .tooltiptext {
-    visibility: hidden;
-    width: 100px;
-    background-color: white;
-    color: black;
-    text-align: center;
-    padding: 5px 0;
-    position: absolute;
-    z-index: 1;
-    top: -5px;
-    left: 110%;
-    box-shadow: 3px 3px 3px darkslategrey;
-  }
-  
-  .tooltip:hover .tooltiptext {
-    visibility: visible;
-  }
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 200px;
+  background-color: white;
+  color: black;
+  text-align: center;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  top: -5px;
+  left: 110%;
+  box-shadow: 3px 3px 3px darkslategrey;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
 
 li {
-    margin-bottom: 50%;
+  margin-bottom: 50%;
+  background-color: white;
+  border-radius: 50%;
+  width: 150%;
+  align-items: center;
+  padding: 50%;
+  height: 50px;
 }
 
 a {
-    text-decoration: none;
-    
+  text-decoration: none;
 }
-/* 
-.container {
-    display: flex;
-    justify-content: space-evenly;
-} */
+
+.plant label {
+  margin: -10% 0 0 7%;
+  position: absolute;
+}
+
+#other_motive {
+  display: block;
+  margin-top: 5%;
+}
+
+#other {
+  display: none;
+}
+#motive_cancel {
+  width: 330px;
+  position: absolute;
+  margin: -5% 0 0 3%;
+}
+
+#show_button {
+  width: 60%;
+  margin: 0 auto;
+  display: none;
+}
 
 .profile {
-    background-image: url(../api-site/imgs/bg-profille.png);
-    width: 100vw;
-    height: 100vh;
-    background-size: cover;
-    }
+  background-image: url(../imgs/bg-profile.png);
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+}
 
 .container-profile {
-    display: flex;
-    justify-content: space-evenly;
-    padding: 2% 17%;
-    
+  display: flex;
+  justify-content: space-evenly;
+  padding: 2% 17%;
 }
 
 .user-profile {
-    background-color: white;
-    width: 500px;
-    height: 550px;
-    border-radius: 20px;
-    box-shadow: 3px 3px 5px darkslategrey;
-    display: flex;
-    flex-direction: column;
+  background-color: white;
+  width: 500px;
+  height: 550px;
+  border-radius: 20px;
+  box-shadow: 3px 3px 5px darkslategrey;
+  display: flex;
+  flex-direction: column;
 }
 
 .plant {
-    background-color: white;
-    width: 400px;
-    justify-content: center;
-    height: 250px;
-    border-radius: 20px;
-    box-shadow: 3px 3px 5px darkslategrey;
-    display: flex;
-    justify-content: space-evenly;
-    flex-direction: column;
-    text-align: center;
+  background-color: white;
+  width: 400px;
+  justify-content: center;
+  height: 250px;
+  border-radius: 20px;
+  box-shadow: 3px 3px 5px darkslategrey;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  text-align: center;
 }
 
 .boxes {
-    display: flex;
-    justify-content: space-evenly;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .preferences {
-    display: flex;
-    flex-direction: column;
-    width: 300px;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  justify-content: space-between;
 }
 
 .photo-profile {
-    background-color: grey;
-    border-radius: 50%;
-    width: 200px;
-    height:200px;
-    margin: 0 auto;   
+  background-color: grey;
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
 }
 
-.profile-content, .buttons, #show_password, #show_email {
-    margin: 0 auto;
+.profile-content,
+.buttons,
+#show_password,
+#show_email {
+  margin: 0 auto;
 }
 
 input {
-width: 88%;
+  width: 88%;
   outline: none;
   border: none;
   border-bottom: 2px solid #9b5134;
   margin: 2% 0;
-  font-family: "Cinzel", serif; 
+  font-family: "Cinzel", serif;
 }
 label {
-    font-size: 13px;
+  font-size: 13px;
 }
 
 #show_password {
-    display: none;
+  display: none;
 }
 
 #show_email {
-    display: none;
+  display: none;
 }
 
 button {
-    background-color: #7da16c;
-    outline: none;
-    color: white;
-    border: none;
-    width:100%;
-    margin-right: 3%;
-    padding: 4%;
-    cursor: pointer;
-    font-family: "Cinzel", serif; 
+  background-color: #7da16c;
+  outline: none;
+  color: white;
+  border: none;
+  width: 100%;
+  margin-right: 3%;
+  padding: 4%;
+  cursor: pointer;
+  font-family: "Cinzel", serif;
 }
 
 button:hover {
-    color: #9b5134;
+  color: #9b5134;
 }
 
 .buttons {
-    width: 50%;
-    display: flex;
-    
+  width: 50%;
+  display: flex;
 }
 
 .photo {
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
-    background-color: darkslategrey;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
 }
 
 select {
-    border: 3px solid #9b5134;
-    background-color: white;
-    width: 100px;
-    margin-top: 10%;
-    font-size: 13px;
-    outline: none;
+  border: 3px solid #9b5134;
+  background-color: white;
+  width: 100px;
+  margin-top: 10%;
+  font-size: 12px;
+  font-family: "Cinzel", serif;
+  font-weight: 600;
+  outline: none;
 }

@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ana's Garden - Fale conosco</title>
   <link rel="stylesheet" href="css/contato.css" />
-  <link rel="icon" href="../icons/logo.png" />
+  <link rel="icon" href="icons/plant.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Courgette&display=swap" rel="stylesheet" />
@@ -19,12 +19,15 @@
     <header class="header">
       <div class="logo-div">
         <a href="index.html">
-          <img class="logo" src="../icons/logo.png" alt="logo" />
+          <img class="logo" src="icons/logo.png" alt="logo" />
         </a>
       </div>
       <nav class="container">
         <ul class="navbar">
+
           <li><a href="index.html"> Home</a></li>
+          <li><a href="artigo-lista.html"> Artigos</a></li>
+          
         </ul>
       <button class="login" onclick="login()">Login</button>
       <button onclick="cadastro()">Cadastre-se</button>
@@ -90,33 +93,23 @@
 
       <div class="container_contact">
     <label>Selecione o motivo do contato:</label> <br> <br>
-        <select id="motive_contact" onselect="options_contact()">
+        <select id="motive_contact" onchange="options_contact()">
             <option value="">Selecione...</option>
-        <option value="cancelamento">Quero cancelar minha inscrição</option>
         <option value="experiencia">Quero compartilhar minha experiência</option>
-        <option value="atualizacao">Quero mudar meu período de atualização</option>
+        <option value="gosto">Não gostei de algum conteúdo</option>
+        <option value="contato">Gostaria de falar com o criador da página </option>
     </select>
+    <br><br>
 
-
-        <div id="cancel">
-
-            <label>Selecione o motivo do cancelamento:</label> <br><br>
-        <select id="motive_cancel">
-            <option value="">Selecione...</option>
-            <option value="gosto">O conteúdo não é o que eu esperava</option>
-            <option value="foco">Não estou mais focada no assunto</option>
-            <option value="outro">Outro...</option>
-        </select>
-
-        <input type="text" id="other">
-        <button onclick="send_cancel()" >Enviar</button>
-    </div>
 
     <div id="history_div">
         <form action="">
-        <textarea class="history_text"  id="historia_text" cols="40" rows="40"></textarea>
+          <label>Email:</label> <br>
+          <input  class="login_input"> <br> <br>
+          <label>Texto:</label> <br> <br>
+        <textarea class="history_text"  id="historia_text" cols="60" rows="20"></textarea>
         
-        <button onclick="send_history()" >Enviar</button>
+        <button type="submit" onclick="send_history()" >Enviar</button>
     </form>
     </div>
 

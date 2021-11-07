@@ -1,0 +1,168 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Cinzel", serif;
+  background-image: url(../imgs/bg-profile.png);
+  background-size: cover;
+}
+.menu {
+  background-color: #7da16c;
+  width: 5%;
+  height: 100vh;
+  margin-top: -3%;
+  position: fixed;
+  float: left;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+::-webkit-scrollbar {
+  box-shadow: 2px 2px 2px #808080;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #008080;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #add8e6;
+}
+
+.logo {
+  width: 150%;
+  margin-left: 15%;
+}
+
+ul {
+  text-decoration: none;
+  list-style: none;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 200px;
+  background-color: white;
+  color: black;
+  text-align: center;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  top: -5px;
+  left: 110%;
+  box-shadow: 3px 3px 3px darkslategrey;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+li {
+  margin-bottom: 50%;
+  background-color: white;
+  border-radius: 50%;
+  width: 150%;
+  align-items: center;
+  padding: 50%;
+  height: 50px;
+}
+
+a {
+  text-decoration: none;
+}
+.icons-menu {
+  width: 100%;
+  margin-bottom: 100%;
+  cursor: pointer;
+}
+
+h3 {
+  margin: 3% 0 0 15%;
+  font-size: 40px;
+}
+
+.container_quiz {
+  display: flex;
+  margin: 3% 0 0 15%;
+}
+
+.container_content {
+  display: flex;
+}
+
+.none_display {
+  display: none;
+}
+
+.quiz {
+  display: flex;
+  flex-direction: column;
+}
+.quiz img {
+  width: 400px;
+}
+
+.login_input {
+  width: 100%;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #9b5134;
+  margin: 10% 0;
+  font-family: "Cinzel", serif;
+  font-size: 20px;
+  padding-left: 10%;
+  background-color: transparent;
+}
+.content {
+  margin-left: 8%;
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+  box-shadow: 3px 3px 4px black;
+  padding: 3%;
+  border-radius: 30px;
+  background-color: white;
+  display: none;
+}
+.content_text img {
+  width: 8%;
+  float: left;
+  margin: 2%;
+}
+
+.certo {
+  color: green;
+  display: none;
+}
+
+.errado h1 {
+  color: red;
+}
+
+.errado p {
+  margin-top: -5%;
+}
+
+.upper {
+  font-size: 30px;
+}
+
+button {
+  background-color: #7da16c;
+  outline: none;
+  color: white;
+  border: none;
+  width: 100%;
+  margin-right: 3%;
+  padding: 4%;
+  cursor: pointer;
+  font-family: "Cinzel", serif;
+}
+
+button:hover {
+  color: #9b5134;
+}

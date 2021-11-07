@@ -1,8 +1,3 @@
-function subscribe() {
-
-    return false;
-}
-
 function back_cadastro(){
     blur_div_cadastro.style.display = "none";
     cadastro_div.style.display = "none";
@@ -56,61 +51,6 @@ function login() {
             alert("Por favor, preencher os campos")
         }
     }
-// function limparFormulario() {
-//     document.getElementById("subscribe_form").reset();
-// }
-
-// function cadastrar() {
-//     aguardar();
-
-//     var formulario = new URLSearchParams(new FormData(document.getElementById("subscribe_form")));
-
-//     var name = name_user.value;
-//     var email =  user_email.value;
-//     var choise = time_update.value
-//     var age = age_input.value;
-//     var gender = gender_select.value;
-
-
-//     if (email == "ana.silva@bandtec.com.br") {
-        
-//     } else if (email.trim() == "" || name.trim() == "" || age.trim() == ""){
-//         alert ("Por favor, preencha os campos")
-//     } else if (email.indexOf("@")  < 0 ){
-//         alert ("Por favor, insira um e-mail valido")
-//     } else if (name.trim().length < 3){
-//         alert ("Por favor, insira um nome válido")
-//     } else {
-//         alert (`Seja bem vindo(a) ${name}! A partir de amanhã, você receberá nosso conteúdo ${choise}!` )
-//     }
-
-//         finalizarAguardar();
-//         return false;
-//     }
-
-    
-//     fetch("/usuarios/cadastrar", {
-//         method: "POST",
-//         body: formulario
-//     }).then(function (resposta) {
-
-//         console.log("resposta: ", resposta);
-
-//         if (resposta.ok) {
-//             window.alert("Cadastro realizado com sucesso!");
-//             window.location = "login.html";
-//             limparFormulario();
-//             finalizarAguardar();
-//         } else {
-//             throw ("Houve um erro ao tentar realizar o cadastro!");
-//         }
-//     }).catch(function (resposta) {
-//         console.log(`#ERRO: ${resposta}`);
-//         finalizarAguardar();
-//     });
-
-//     return false;
-
 
 function like() {
     var numeros = numbers_like.innerHTML;
@@ -134,7 +74,7 @@ function answer_1() {
 
     if (answer.trim() == "") {
         alert("Por favor, insira uma resposta");
-    } else if (answer >= 50) {
+    } else if (answer >= 21) {
         alert("Acho que você digitou errado, tente de novo");
     } else if (answer == 0) {
         answer1_div.innerHTML = " ";
@@ -153,7 +93,7 @@ function answer_1() {
     } else if (answer >= 3) {
         contador = 1
         answer1_div.innerHTML = `Você regou pela 1ª vez e depois pela `;
-        while (contador < 5) {
+        while (contador < 3) {
             contador += 1;
             answer1_div.innerHTML += `${contador}ª,`;
         }
@@ -182,11 +122,11 @@ function answer_2() {
             <img class="plant_mood_help" src="https://2.bp.blogspot.com/-wn6bewnK6IY/XgAEW8I2ZII/AAAAAAAWcrw/52-rBChiLyMJm7Q9KXOrSzUyjbGlhmvYwCLcBGAsYHQ/s1600/AW4119480_12.gif">`;
     } else if (answer > 0 && answer <= 5) {
 
-        if (answer == 1) {
+        if (answer > 0 && answer <=2) {
             answer2_div.innerHTML = " ";
             answer2_div.innerHTML += `Você aduba a cada ${answer} mês <br> Ela não vai durar muito assim, precisa de no mínimo 3 meses <br> <img class="plant_mood" id="sad_plant" src="https://media0.giphy.com/media/Yoi7H75JB38dHERFVB/giphy.gif?cid=790b76110bd2589284651c6fb384c00549ba8f5d650f8da6&rid=giphy.gif&ct=s" alt="">`;
         }
-        else if (answer >= 2 && answer < 5) {
+        else if (answer > 2 && answer < 5) {
             answer2_div.innerHTML = " ";
             answer2_div.innerHTML += `Muito bem, você aduba a cada ${answer} meses, que é o período ideal! <br> <img class="plant_mood"  id="happy_plant" src="https://i.giphy.com/media/TexEyqmPoz6dDHBCDA/giphy.webp" alt="">`;
         }
@@ -257,29 +197,30 @@ function change_3() {
 
 function options_contact() {
     var contact = motive_contact.value;
-    var motive = motive_cancel.value;
 
-    if (contact == "cancelamento"){
-        cancel.style.display = "block";
-        if (motive == "outro"){
-            other.style.display = "block"
-        }
-    } else if (contact == "experiencia") {
         history_div.style.display ="block"
-    } else if (contact == "atualizacao"){
-        change_update.style.display = "block"
-    }
+
+        if (contact == "") {
+            history_div.style.display = "none"
+        }
 }
 
+
+
+function send_history(){
+    alert("Muito obrigada pelo envio! Entraremos em contato.")
+    history_div.style.display = "none"
+}
 
       function limparFormulario() {
         document.getElementById("form_cadastro").reset();
     }
 
+    
     function cadastrar() {
         aguardar();
 
-        var formulario = new URLSearchParams(new FormData(document.getElementById("form_cadastro")));
+        var formulario = new FormData(document.getElementById("form_cadastro"));
 
         var nome = formulario.get("nome");
         var email = formulario.get("email");

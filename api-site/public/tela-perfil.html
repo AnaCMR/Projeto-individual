@@ -1,148 +1,256 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ana's Garden - Novo Artigo</title>
-    <link rel="stylesheet" href="css/tela-perfil.css" />
-    <link rel="icon" href="icons/logo.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cinzel&family=Courgette&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-    />
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  </head>
 
-  <body>
-    <menu class="menu">
-      <nav class="container">
-        <a href="index.html">
-            <img class="logo" src="icons/logo.png" alt="logo" />
-          </a>
-        <ul>
-          <li class="tooltip">
-        <span class="tooltiptext">Perfil </span>
-            <!-- <a href="tela-perfil.html"><img class="icons_menu" src="https://cdn-icons-png.flaticon.com/512/860/860784.png" alt=""> </a> -->
-          </li><br>
-          <li class="tooltip"><a href="videos-cliente.html">Vídeos</a>
-            <span class="tooltiptext">perfil </span></li>
-          <li class="tooltip"><a href="conteudo-cliente.html">Aprendizado diário</a>
-            <span class="tooltiptext">perfil </span></li>
-        </ul>
-      </nav>
-    </menu>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ana's Garden - Perfil</title>
+  <link rel="stylesheet" href="css/tela-perfil.css" />
+  <link rel="icon" href="icons/plant.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Courgette&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
 
-    <section class="profile">
-        <div class="container-profile">
-            <div class="user-profile">
-                <div class="photo-profile">
-                </div>
-                <div class="profile-content">
-                  <h2>Fulaninho de tal</h2>
-                  <h4>fulaninho@email.com</h4>
-                </div>
-                <div class="buttons">
-                  <button onclick="change_email()" >Mudar email</button>
-                  <button onclick="change_password()">Mudar senha</button>
-                </div>
-                <br>
-                <div id="show_email">
-                  <label>Insira seu novo email:</label> <br>
-                  <input> <br>
-                  <label>Insira sua senha:</label> <br>
-                  <input>
-                  <button onclick="confirm_email()" >Confirmar</button>
-                </div>
-                <div id="show_password">
-                  <label>Insira sua senha antiga:</label><br>
-                  <input type="password"><br>
-                  <label>Insira nova senha:</label><br>
-                  <input type="password"><br>
-                  <label>Confirme a nova senha:</label><br>
-                  <input type="password">
-                  <button onclick="confirm_password()" >Confirmar</button>
+<body>
+  <menu class="menu">
+    <nav class="container">
+      <a href="index.html">
+        <img class="logo" src="icons/logo.png" alt="logo" />
+      </a>
+      <ul>
+        <li class="tooltip">
+          <span class="tooltiptext">Perfil </span>
+          <img class="icons-menu" src="icons/user.png" alt="Perfil"></a>
+        </li><br>
+        <li class="tooltip"><a href="tela-videos.html"><img class="icons-menu" src="icons/midia.png"
+              alt="Vídeos"></a>
+          <span class="tooltiptext">Vídeos </span>
+        </li>
+        <li class="tooltip"><a href="tela-conhecimento.html"><img class="icons-menu" src="icons/monitor.png"
+              alt="aprendizado"></a>
+          <span class="tooltiptext"> Aprendizado diário </span>
+        </li>
+      </ul>
+    </nav>
+  </menu>
 
-                </div>
-            </div>
-            <div class="preferences">
-               <img src="">
-                  <div class="plant">
-                    <h3>Minhas plantas preferidas:</h3>
-                    <div class="boxes">
-                    <div class="photo-1">
-                      <div class="photo" id="photo_1"></div>
-                      
-                      <select id="favorite_plant" onchange="change_photo()" >
-                        <option value="https://static3.tcdn.com.br/img/img_prod/350075/samambaia_americana_8677_1_20190521161357.jpg">Samambaia</option>
-                        <option value="jiboia">Jibóia</option>
-                        <option value="croton">Cróton</option>
-                        <option value="begonia">Begonia</option>
-                        <option value="columeia">Columeia</option>
-                        <option value="fycus">Fycus</option>
-                        <option value="sigonio">Sigonio</option>
-                        <option value="avenca">Avenca</option>
-                        <option value="girassol">Girassol</option>
-                        <option value="lirio">Lirio da paz</option>
-                        <option value="azaleia">Azaleia</option>
-                        <option value="violeta">Violeta</option>
-                        <option value="lambari">Lambari-Roxo</option>
-                        <option value="pacova">Pacová</option>
-                        <option value="hera">Hera</option>
-                      </select>
-                    </div>
-                    <div class="photo-2">
-                      <div class="photo"></div>
-                      <select name="" id="">
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
-                      </select>
-                    </div>
-                    <div class="photo-3">
-                      <div class="photo"></div>
-                      <select name="" id="">
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-                <div class="plant"></div>
-            </div>
+  <section class="profile">
+    <div class="container-profile">
+      <div class="user-profile">
+        <div class="photo-profile">
+          <img class="photo-profile" width="100%"
+            src="https://c.tenor.com/ZgQlJLiapN0AAAAM/cryptogarden-cartoon-plant.gif" alt="profile-picture">
         </div>
-    </section>
-  </body>
+        <div class="profile-content">
+          <h2>Fulaninho de tal</h2>
+          <h4>fulaninho@email.com</h4>
+        </div>
+        <div class="buttons">
+          <button onclick="change_email()">Mudar email</button>
+          <button onclick="change_password()">Mudar senha</button>
+        </div>
+        <br>
+        <div id="show_email">
+          <label>Insira seu novo email:</label> <br>
+          <input> <br>
+          <label>Insira sua senha:</label> <br>
+          <input>
+          <button onclick="confirm_email()">Confirmar</button>
+        </div>
+        <div id="show_password">
+          <label>Insira sua senha antiga:</label><br>
+          <input type="password"><br>
+          <label>Insira nova senha:</label><br>
+          <input type="password"><br>
+          <label>Confirme a nova senha:</label><br>
+          <input type="password">
+          <button onclick="confirm_password()">Confirmar</button>
+
+        </div>
+      </div>
+      <div class="preferences">
+
+        <div class="plant">
+          <h3>Minhas plantas preferidas:</h3>
+          <div class="boxes">
+            <div class="photo-1">
+              <div class="photo" id="photo_1">
+                <img src="icons/hanging.png" alt="">
+              </div>
+
+              <select id="favorite_plant_1" onchange="change_photo_1()">
+                <option value="icons/hanging.png">Selecione...</option>
+                <option
+                  value="https://static3.tcdn.com.br/img/img_prod/350075/samambaia_americana_8677_1_20190521161357.jpg">
+                  Samambaia</option>
+                <option value="https://cdn.awsli.com.br/1000x1000/1112/1112786/produto/53378674/3b9dc65dc5.jpg">Jibóia
+                </option>
+                <option
+                  value="https://imagens-revista.vivadecora.com.br/uploads/2020/09/croton-petra-planta-em-casa-pinterest.jpg">
+                  Cróton</option>
+                <option
+                  value="https://www.sitiodamata.com.br/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/b/e/begonia_maculata_begonia_maculata_4.jpg">
+                  Begonia</option>
+                <option
+                  value="https://static.cloud-boxloja.com/lojas/9s0e9/produtos/1d40478c-3858-4864-824b-82636a6577c5.jpeg">
+                  Columeia</option>
+                <option
+                  value="https://www.paulistaflores.com.br/image/cache/data/produtos/plantadas/fily01---ficus-lyrata/ficus-lyata-1-926x926.jpg">
+                  Ficus Lyrata</option>
+                <option
+                  value="https://static.cloud-boxloja.com/lojas/9s0e9/produtos/17d3fa6e-9b24-4931-84c5-4899c930c7f2.png">
+                  Sigonio</option>
+                <option
+                  value="https://static.cloud-boxloja.com/lojas/9s0e9/produtos/76b1f24d-c390-41e5-9d77-32d65e77b7b0.jpg">
+                  Avenca</option>
+                <option value="https://www.flaviarocco.com.br/media/wysiwyg/categorias/Girassol1.jpg">Girassol</option>
+                <option
+                  value="https://images.tcdn.com.br/img/img_prod/798302/lirio_da_paz_185_3_591ef64368ccd4f2ea6ef9be695a80d0.jpg">
+                  Lirio da paz</option>
+                <option value="https://brasilnativas.com.br/wp-content/uploads/2021/02/azaleia-600x600-1-600x600.jpg">
+                  Azaleia</option>
+                <option
+                  value="https://lh3.googleusercontent.com/proxy/BnVVfu9rnoAkOSTPNer4iG8BdpAk_Lx2JGcBXguyalwnbF8__tsmoX6IvI7Cov6DuEA_JiL_gVLnNPnkU7FcDYQaz9-hMnWOYLlF1DdeQs4Mjt8">
+                  Violeta</option>
+                <option
+                  value="https://static.cloud-boxloja.com/lojas/9s0e9/produtos/cbdb521e-12af-40a6-8035-9552390882b3.png">
+                  Lambari-Roxo</option>
+                <option
+                  value="https://static.wixstatic.com/media/de9724_37af698808e34ae8a5de582d607eab0b~mv2.jpg/v1/fill/w_1125,h_1500,al_c,q_85/de9724_37af698808e34ae8a5de582d607eab0b~mv2.jpg">
+                  Pacová</option>
+                <option
+                  value="https://static.cloud-boxloja.com/lojas/9s0e9/produtos/5f9f913e-5434-4862-9ce2-d5c7db663c69.png">
+                  Hera</option>
+              </select>
+            </div>
+            <div class="photo-2">
+              <div class="photo" id="photo_2"><img src="icons/plants.png" alt=""></div>
+              <select id="favorite_plant_2" onchange="change_photo_2()">
+                <option value="icons/plants.png">Selecione...</option>
+                <option
+                  value="https://static3.tcdn.com.br/img/img_prod/350075/samambaia_americana_8677_1_20190521161357.jpg">
+                  Samambaia</option>
+                <option value="https://cdn.awsli.com.br/1000x1000/1112/1112786/produto/53378674/3b9dc65dc5.jpg">Jibóia
+                </option>
+                <option
+                  value="https://imagens-revista.vivadecora.com.br/uploads/2020/09/croton-petra-planta-em-casa-pinterest.jpg">
+                  Cróton</option>
+                <option
+                  value="https://www.sitiodamata.com.br/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/b/e/begonia_maculata_begonia_maculata_4.jpg">
+                  Begonia</option>
+                <option
+                  value="https://static.cloud-boxloja.com/lojas/9s0e9/produtos/1d40478c-3858-4864-824b-82636a6577c5.jpeg">
+                  Columeia</option>
+                <option
+                  value="https://www.paulistaflores.com.br/image/cache/data/produtos/plantadas/fily01---ficus-lyrata/ficus-lyata-1-926x926.jpg">
+                  Ficus Lyrata</option>
+                <option
+                  value="https://static.cloud-boxloja.com/lojas/9s0e9/produtos/17d3fa6e-9b24-4931-84c5-4899c930c7f2.png">
+                  Sigonio</option>
+                <option
+                  value="https://static.cloud-boxloja.com/lojas/9s0e9/produtos/76b1f24d-c390-41e5-9d77-32d65e77b7b0.jpg">
+                  Avenca</option>
+                <option value="https://www.flaviarocco.com.br/media/wysiwyg/categorias/Girassol1.jpg">Girassol</option>
+                <option
+                  value="https://images.tcdn.com.br/img/img_prod/798302/lirio_da_paz_185_3_591ef64368ccd4f2ea6ef9be695a80d0.jpg">
+                  Lirio da paz</option>
+                <option value="https://brasilnativas.com.br/wp-content/uploads/2021/02/azaleia-600x600-1-600x600.jpg">
+                  Azaleia</option>
+                <option
+                  value="https://lh3.googleusercontent.com/proxy/BnVVfu9rnoAkOSTPNer4iG8BdpAk_Lx2JGcBXguyalwnbF8__tsmoX6IvI7Cov6DuEA_JiL_gVLnNPnkU7FcDYQaz9-hMnWOYLlF1DdeQs4Mjt8">
+                  Violeta</option>
+                <option
+                  value="https://static.cloud-boxloja.com/lojas/9s0e9/produtos/cbdb521e-12af-40a6-8035-9552390882b3.png">
+                  Lambari-Roxo</option>
+                <option
+                  value="https://static.wixstatic.com/media/de9724_37af698808e34ae8a5de582d607eab0b~mv2.jpg/v1/fill/w_1125,h_1500,al_c,q_85/de9724_37af698808e34ae8a5de582d607eab0b~mv2.jpg">
+                  Pacová</option>
+                <option
+                  value="https://static.cloud-boxloja.com/lojas/9s0e9/produtos/5f9f913e-5434-4862-9ce2-d5c7db663c69.png">
+                  Hera</option>
+              </select>
+            </div>
+            <div class="photo-3">
+              <div class="photo" id="photo_3"><img src="icons/seed.png" alt=""></div>
+              <select id="favorite_plant_3" onchange="change_photo_3()">
+                <option value="icons/seed.png">Selecione...</option>
+                <option
+                  value="https://static3.tcdn.com.br/img/img_prod/350075/samambaia_americana_8677_1_20190521161357.jpg">
+                  Samambaia</option>
+                <option value="https://cdn.awsli.com.br/1000x1000/1112/1112786/produto/53378674/3b9dc65dc5.jpg">Jibóia
+                </option>
+                <option
+                  value="https://imagens-revista.vivadecora.com.br/uploads/2020/09/croton-petra-planta-em-casa-pinterest.jpg">
+                  Cróton</option>
+                <option
+                  value="https://www.sitiodamata.com.br/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/b/e/begonia_maculata_begonia_maculata_4.jpg">
+                  Begonia</option>
+                <option
+                  value="https://static.cloud-boxloja.com/lojas/9s0e9/produtos/1d40478c-3858-4864-824b-82636a6577c5.jpeg">
+                  Columeia</option>
+                <option
+                  value="https://www.paulistaflores.com.br/image/cache/data/produtos/plantadas/fily01---ficus-lyrata/ficus-lyata-1-926x926.jpg">
+                  Ficus Lyrata</option>
+                <option
+                  value="https://static.cloud-boxloja.com/lojas/9s0e9/produtos/17d3fa6e-9b24-4931-84c5-4899c930c7f2.png">
+                  Sigonio</option>
+                <option
+                  value="https://static.cloud-boxloja.com/lojas/9s0e9/produtos/76b1f24d-c390-41e5-9d77-32d65e77b7b0.jpg">
+                  Avenca</option>
+                <option value="https://www.flaviarocco.com.br/media/wysiwyg/categorias/Girassol1.jpg">Girassol</option>
+                <option
+                  value="https://images.tcdn.com.br/img/img_prod/798302/lirio_da_paz_185_3_591ef64368ccd4f2ea6ef9be695a80d0.jpg">
+                  Lirio da paz</option>
+                <option value="https://brasilnativas.com.br/wp-content/uploads/2021/02/azaleia-600x600-1-600x600.jpg">
+                  Azaleia</option>
+                <option
+                  value="https://lh3.googleusercontent.com/proxy/BnVVfu9rnoAkOSTPNer4iG8BdpAk_Lx2JGcBXguyalwnbF8__tsmoX6IvI7Cov6DuEA_JiL_gVLnNPnkU7FcDYQaz9-hMnWOYLlF1DdeQs4Mjt8">
+                  Violeta</option>
+                <option
+                  value="https://static.cloud-boxloja.com/lojas/9s0e9/produtos/cbdb521e-12af-40a6-8035-9552390882b3.png">
+                  Lambari-Roxo</option>
+                <option
+                  value="https://static.wixstatic.com/media/de9724_37af698808e34ae8a5de582d607eab0b~mv2.jpg/v1/fill/w_1125,h_1500,al_c,q_85/de9724_37af698808e34ae8a5de582d607eab0b~mv2.jpg">
+                  Pacová</option>
+                <option
+                  value="https://static.cloud-boxloja.com/lojas/9s0e9/produtos/5f9f913e-5434-4862-9ce2-d5c7db663c69.png">
+                  Hera</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="plant">
+
+          <label>Quero cancelar meu cadastro</label> <br><br>
+          <select id="motive_cancel" onchange="options_cancel()">
+            <option value="">Selecione...</option>
+            <option value="gosto">O conteúdo não é o que eu esperava</option>
+            <option value="foco">Não estou mais focada no assunto</option>
+            <option value="outro">Outro...</option>
+          </select>
+          <div id="other_motive">
+            <input type="text" id="other" placeholder="Escreva o motivo">
+            <button onclick="send_cancel()" type="submit" id="show_button">Enviar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="blur_div_cadastro">.
+      <div id="cadastro_div">
+        <p class="close" onclick="back_cadastro()">X</p>
+        <img
+          src="https://4.bp.blogspot.com/-cUfLvOzBmao/XgAEVeLKfTI/AAAAAAAWcrc/7hGym4ePH944P41LKqH4dNYRpqZgXdROACLcBGAsYHQ/s1600/AW4119480_07.gif?time=Sat%20Nov%2006%202021%2021:28:05%20GMT-0300%20(Hor%C3%A1rio%20Padr%C3%A3o%20de%20Bras%C3%ADlia)">
+        <h5>Você vai nos deixar? <br> <br> Por favor, envie um email para garden@garden.com. <br><br> Preciso saber o
+          que eu fiz de errado</h5>
+      </div>
+    </div>
+  </section>
+</body>
+
 </html>
 <script src="js/perfil.js"></script>
