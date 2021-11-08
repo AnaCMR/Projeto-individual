@@ -71,26 +71,28 @@
           </div>
           <label class="login_label">Senha:</label><br />
           <input
+          title="mostrar senha"
             name="senha"
             class="login_input"
             type="password"
             id="password_user"
           />
           <img
-            id="olho_aberto_login"
-            class="olho_aberto"
-            class="olho_aberto"
-            src="icons/see.png"
-            onclick="changeImage()"
-            alt="mudar para senha visivel"
-          />
-          <img
-            id="olho_fechado_login"
-            class="olho_fechado"
-            onclick="ver()"
-            src="icons/cloudy.png"
-            alt="mudar para senha não visível"
-          /><br />
+          id="olho_aberto_cadastro1"
+          title="ocultar senha"
+          class="olho_aberto"
+          src="icons/see.png"
+          onclick="changeImage()"
+          alt="mudar para senha visivel"
+        />
+        <img
+          id="olho_fechado_cadastro1"
+          class="olho_fechado"
+          onclick="ver()"
+          src="icons/cloudy.png"
+          alt="mudar para senha não visivel"
+        />
+<br />
 
           <label class="login_label">Confirmar senha:</label><br />
           <input
@@ -98,7 +100,22 @@
             name="confirmacao-senha"
             type="password"
             id="confirm_password"
-          /><br />
+            title="mostrar senha"
+          /><img
+          id="olho_aberto_cadastro2"
+          class="olho_aberto"
+          src="icons/see.png"
+          onclick="changeImage()"
+          alt="mudar para senha visivel"
+        />
+        <img
+          id="olho_fechado_cadastro2"
+          class="olho_fechado"
+          title="ocultar senha"
+          onclick="ver()"
+          src="icons/cloudy.png"
+          alt="mudar para senha não visivel"
+        /><br />
 
           <br />
 
@@ -120,7 +137,22 @@
             class="login_input"
             type="password"
             id="password_user_login"
-          /><br />
+          /><img
+          id="olho_aberto_login"
+          title="mostrar senha"
+          class="olho_aberto"
+          src="icons/see.png"
+          onclick="changeImage()"
+          alt="mudar para senha visivel"
+        />
+        <img
+          id="olho_fechado_login"
+          class="olho_fechado"
+          title="ocultar senha"
+          onclick="ver()"
+          src="icons/cloudy.png"
+          alt="mudar para senha não visível"
+        /><br />
           <br />
           <button onclick="welcome_login()" class="welcome" type="submit">
             Entrar

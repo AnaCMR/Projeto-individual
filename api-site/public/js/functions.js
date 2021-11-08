@@ -281,4 +281,27 @@ function send_history(){
 
         return false;
     }
-    
+
+    function changeImage() {
+        password_user_login.type = "text";
+        password_user.type = "text";
+        confirm_password.type = "text";
+        olho_aberto_login.style.display = "none";
+        olho_fechado_login.style.display = "block";
+        olho_aberto_cadastro1.style.display = "none";
+        olho_fechado_cadastro1.style.display = "block";
+        olho_aberto_cadastro2.style.display = "none";
+        olho_fechado_cadastro2.style.display = "block";
+      }
+      function ver() {
+        password_user_login.type = "password";
+        password_user.type = "password";
+        confirm_password.type = "password";
+        olho_aberto_login.style.display = "block";
+        olho_fechado_login.style.display = "none";
+        olho_aberto_cadastro1.style.display = "block";
+        olho_fechado_cadastro1.style.display = "none";
+        olho_aberto_cadastro2.style.display = "block";
+        olho_fechado_cadastro2.style.display = "none";
+      }
+      

@@ -7,6 +7,20 @@
     z-index: 1;
     padding: 7%;
   }
+  .olho_aberto {
+    width: 25px;
+    cursor: pointer;
+    float: right;
+    margin: -10% 13% 0 5%;
+  }
+  
+  .olho_fechado{
+    display: none;
+    width: 25px;
+    cursor: pointer;
+    float: right;
+    margin: -10% 13% 0 5%;
+  }
   
   #login_div {
     display: none;
@@ -61,6 +75,7 @@
     border-bottom: 2px solid #9b5134;
     margin: 3% 0;
     font-family: "Cinzel", serif;
+    background-color: transparent;
   
   }
   .div_perfil {
@@ -166,19 +181,7 @@
     color: #9b5134;
     
   }
-  
-  .banner-img {
-    width: 110vw;
-    height: 99.5vh;
-  }
-  
-  .text-banner {
-    color: #9b5134;
-    margin: -30% 0 18% 40%;
-    font-size: 50px;
-    font-family: "Courgette", cursive;
-  }
-  
+
   .title-article {
     font-size: 30px;
     letter-spacing: 1.5px;
@@ -189,6 +192,7 @@
     width: 374px;
     margin-left: 20%;
   }
+
   
   .detail-article {
     background-color: rgb(155, 81, 52, 0.8);
@@ -281,10 +285,4 @@ hr {
   ::-webkit-scrollbar-track {
     background-color: lightblue;
   
-  }
-  
-  .blur {
-    background-color: rgb(34, 34, 34,0.8);
-    position: absolute;
-    z-index: 3;
   }

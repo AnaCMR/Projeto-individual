@@ -31,6 +31,20 @@
   padding: 0.5%;
   margin-top: -2%;
 }
+.olho_aberto {
+  width: 25px;
+  cursor: pointer;
+  float: right;
+  margin: -10% 13% 0 5%;
+}
+
+.olho_fechado{
+  display: none;
+  width: 25px;
+  cursor: pointer;
+  float: right;
+  margin: -10% 13% 0 5%;
+}
 
 #cadastro_div {
   display: none;
@@ -64,7 +78,7 @@ select {
   border-bottom: 2px solid #9b5134;
   margin: 3% 0;
   font-family: "Cinzel", serif;
-
+background-color: transparent;
 }
 .div_perfil {
   display: flex;
