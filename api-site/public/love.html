@@ -12,7 +12,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Courgette&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-</head>
+
+    <script src="./js/funcoes.js"></script>
+
+
+  </head>
 
 <body>
     <div class="container">
@@ -146,7 +150,7 @@
             alt="mudar para senha não visível"
           /><br />
             <br />
-            <button onclick="welcome_login()" class="welcome" type="submit">
+            <button class="welcome" type="submit">
               Entrar
             </button>
           </form>
@@ -156,36 +160,45 @@
       <section class="daily-article">
         <h3 class="title-article">O que dar de presente para um louco das plantas?</h3>
         <div class="container-article">
-            "Percebi o quanto as plantas são importantes para a vida na casa. Aumenta a paz e a sensação de conforto na casa"
+            
             
             <div class="content-article">
-                <img src="imgs/foto Gui resumo.jpg" alt="" class="image-plant">
+                
                 <p><span class="upper"> A</span> mantes de plantas e flores adoram estar perto da natureza!
 
                     <p>Ainda que presentear um amigo, parente ou conhecido pareça uma tarefa difícil, conhecer suas características e gostos é a melhor forma de encontrar o presente perfeito. </p>
                     
                     <p>  Além das mudas, presente certeiro para os apreciadores de plantas, há diversos itens que remetem ao universo verde que podem encantar os apaixonados por jardinagem.</p>
                 <p>
-                    Quem tem animais de estimação sabe quanto eles demandam atenção e carinho, não é mesmo? E quem gosta
-                    de cultivar plantas em casa tem uma preocupação a mais.
+                  <span class="number">1.</span> <h4> Bulbos de flores</h4>
+                  Presentear amantes de plantas com bulbos de flores é sempre uma boa opção.</p>
+                  <p>
+                  Por investirem tempo e energia nos cuidados com o jardim e acompanharem o desenvolvimento de todas as espécies que cultivam, podem amar receber novas mudas e bulbos para plantar.
                 </p>
                 <p>
-                    Cães e gatos, por exemplo, são curiosos e adoram explorar todos os cantos do ambiente. Por isso,
-                    frequentemente nos perguntamos: afinal, existem plantas tóxicas para os pets?
+                  <span class="number">2.</span> <h4>Vasos autoirrigáveis</h4>
+                  Outro ótimo presente para quem gosta de plantas são os vasos ou jardineiras autoirrigáveis, que adicionam praticidade ao dia a dia.
                 </p>
-                <p>Muitos cachorros não conseguem evitar um vaso sem revirar a terra e até morder as folhas. Porém,
-                    dependendo da planta, esse hábito pode ser nocivo e colocar a saúde do animal em risco. </p>
-                <p>Por isso tirá-las do alcance deles. Essa é uma tarefa que se torna mais difícil quando o pet em
-                    questão é um gato. Mas, se o seu bicho de estimação é um cachorro pequeno, colocar as plantas em
-                    prateleiras será mais que suficiente.
-                </p>
-                <p>
-                    Além disso, uma boa notícia é que plantas em prateleiras ficam lindas na decoração. Então, além de
-                    protegê-las você terá uma ornamentação ainda mais bela. Outra opção para deixar as plantas em
-                    lugares altos são os hangers de macramê, que ficam super charmosos. </p>
+                <p>Por possuírem um reservatório de água e cordões que funcionam como uma raiz artificial, garantindo a umidade da planta, dispensam a rega diária que diversas plantas exigem.</p>
+                <p>Além de adicionarem muita personalidade à decoração da casa, esse tipo de vaso é ideal para pessoas que querem otimizar o tempo de cuidado com as plantas ou que viajam muito, o que pode acarretar na perda dos cultivos por falta de rega.</p>
+                <span class="number">3.</span> <h4>Cosméticos naturais</h4>
+<p>A tendência dos cosméticos naturais também pode ser aproveitada na hora de escolher presentes para amantes da natureza.</p> 
 
+<p>Os produtos naturais, que não contém aditivos químicos em sua composição, como cremes e óleos, são ótimas opções!</p>
+
+<span class="number">4.</span>  <h4>Itens de decoração</h4> <p>
+Artigos que remetem à natureza também são presentes para quem gosta de plantas!</p>
+
+<p>
+ Almofadas, quadros, xícaras, cadernos, caixas, bandejas são algumas das infinitas opções criativas de presentes para decorar diferentes ambientes.
+
+<p> Aparadores e tripés para vasos também são ótimas opções para quem gosta de integrar plantas aos ambientes internos. </p>
+          
             </div>
             <div>
+              <div class="detail-article">"Percebi o quanto as plantas são importantes para a vida na casa. Aumenta a paz e a sensação de conforto na casa"</div>
+              
+              <img src="imgs/foto Gui resumo.jpg" alt="" class="image-plant">
                 <img class="image-plant" src="imgs/love.jpg" alt="foto de cachorro coberto com folhagem" />
                 <div class="detail-article">.</div>
                 <img class="image-plant" src="imgs/love-2.jpg" alt="foto de cachorro coberto com folhagem" />
@@ -236,3 +249,75 @@
 
 </html>
 <script src="js/functions.js"></script>
+<script>
+  function limparFormulario() {
+document.getElementById("form_cadastro").reset();
+}
+
+
+function cadastrar() {
+aguardar();
+
+var formulario = new FormData(document.getElementById("form_cadastro"));
+
+var nome = formulario.get("nome");
+var email = formulario.get("email");
+var senha = formulario.get("senha");
+var confirmacaoSenha = formulario.get("confirmacao-senha");
+var dataNasc = formulario.get("idade")
+
+if (nome == "" || email == "" || senha == "" || confirmacaoSenha == "") {
+
+  window.alert("Preencha todos os campos para prosseguir!");
+  if (nome == "") {
+      console.log('nome está em branco')
+  }
+  if (email == "") {
+      console.log('email está em branco')
+  }
+  if (senha == "") {
+      console.log('senha está em branco')
+  }
+  if (confirmacaoSenha == "") {
+      console.log('confirmacaoSenha está em branco')
+  }
+  finalizarAguardar();
+  return false;
+}
+
+if (email.indexOf("@") == -1 || email.indexOf(".com") == -1) {
+  window.alert("Ops, e-mail inválido! Verifique e tente novamente.");
+  finalizarAguardar();
+  return false;
+}
+
+if (senha != confirmacaoSenha) {
+  window.alert("As senhas inseridas devem ser iguais para prosseguir!");
+  finalizarAguardar();
+  return false;
+}
+
+fetch("/usuarios/cadastrar", {
+  method: "POST",
+  body: formulario
+}).then(function (resposta) {
+
+  console.log("resposta: ", resposta);
+
+  if (resposta.ok) {
+      window.alert("Cadastro realizado com sucesso!");
+      window.location = "index.html";
+      limparFormulario();
+      finalizarAguardar();
+  } else {
+      throw ("Houve um erro ao tentar realizar o cadastro!");
+  }
+}).catch(function (resposta) {
+  console.log(`#ERRO: ${resposta}`);
+  finalizarAguardar();
+});
+
+return false;
+}
+
+</script>

@@ -202,7 +202,12 @@
       letter-spacing: 1.5px;
       margin: 7% 0 2% 20%;
     }
-
+    .number {
+      color: #9b5134;
+      font-size: 70px;
+      font-weight: 800px;
+      margin-right: 3%;
+    }
     .space {
       height: 20%;
       margin-bottom: 5%;
@@ -210,7 +215,7 @@
   
     .image-plant {
       width: 400px;
-      margin: -5% 0 5% 0
+      margin: 0 0 5% 0
     }
     
     .detail-article {
@@ -270,6 +275,11 @@
     
     .articles {
       display: flex;
+    }
+
+    .first-photo {
+width: 400px;
+float: right;
     }
     
     .box-article{
