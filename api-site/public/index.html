@@ -126,18 +126,24 @@
           <button class="welcome" type="submit">Cadastrar-se</button>
         </form>
       </div>
+      <div id="div_aguardar" class="loading-div">
+        
+    </div>
+
+    <div id="div_erros_login"></div>
+
     </div>
 
     <div id="blur_div">
       .
       <div id="login_div">
         <p class="close" onclick="back_login()">X</p>
-        <form id="subscribe_form" method="post" onsubmit="return subscribe()">
+        <form id="form_login" method="post" onsubmit="return entrar()">
           <label class="login_label">E-mail:</label><br />
-          <input name="email" class="login_input" id="user_email_login" /><br />
+          <input name="email_login" class="login_input" id="user_email_login" /><br />
           <label class="login_label">Senha:</label><br />
           <input
-            name="senha"
+            name="senha_login"
             class="login_input"
             type="password"
             id="password_user_login"
@@ -158,14 +164,14 @@
           alt="mudar para senha não visível"
         /><br />
           <br />
-          <button onclick="welcome_login()" class="welcome" type="submit">
+          <button class="welcome" type="submit">
             Entrar
           </button>
         </form>
         
       </div>
       <div id="div_aguardar" class="loading-div">
-        <img src="./assets/circle-loading.gif" id="loading-gif">
+        
     </div>
 
     <div id="div_erros_login">
@@ -375,7 +381,7 @@
         <p>
           <span class="upper"> Q</span>uer continuar recebendo dicas sobre o
           universo da jardinagem? <br />
-          <button class="subscribe" onclick="login()">
+          <button class="subscribe" onclick="cadastro()">
             <span class="upper"> C</span>lique aqui
           </button>
           para se cadastrar e ter acesso a conteúdo exclusivo.
@@ -455,11 +461,11 @@ if (nome == "" || email == "" || senha == "" || confirmacaoSenha == "") {
   return false;
 }
 
-// if (email.indexOf("@") == -1 || email.indexOf(".com") == -1) {
-//   window.alert("Ops, e-mail inválido! Verifique e tente novamente.");
-//   finalizarAguardar();
-//   return false;
-// }
+ if (email.indexOf("@") == -1 || email.indexOf(".com") == -1) {
+   window.alert("Ops, e-mail inválido! Verifique e tente novamente.");
+   finalizarAguardar();
+   return false;
+ }
 
 if (senha != confirmacaoSenha) {
   window.alert("As senhas inseridas devem ser iguais para prosseguir!");
@@ -489,5 +495,78 @@ fetch("/usuarios/cadastrar", {
 
 return false;
 }
+
+function limparFormulario() {
+        document.getElementById("form_login").reset();
+    }
+
+    function entrar() {
+        aguardar();
+
+        var formulario = new URLSearchParams(new FormData(document.getElementById("form_login")));
+
+        var email = formulario.get("email_login");
+        var senha = formulario.get("senha_login");
+
+        console.log("FORM LOGIN: ", email);
+        console.log("FORM SENHA: ", senha);
+
+        // TODO: VERIFICAR AS VALIDAÇÕES QUE ELES ESTÃO APRENDENDO EM ALGORITMOS 
+        if (email == "" || senha == "") {
+            window.alert("Preencha todos os campos para prosseguir!");
+            finalizarAguardar();
+            return false;
+        }
+
+        if (email.indexOf("@") == -1 || email.indexOf(".com") == -1) {
+            window.alert("Ops, e-mail inválido! Verifique e tente novamente.");
+            finalizarAguardar();
+            return false;
+        }
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            body: formulario
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.id;
+
+                    setTimeout(function () {
+                      if (email == "ana.silva@bandtec.com.br"){
+                        window.location = "./dashboard.html";
+                      } else {
+                        window.location = "./tela-perfil.html"
+                      }
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    alert(texto)
+                    finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
 
 </script>

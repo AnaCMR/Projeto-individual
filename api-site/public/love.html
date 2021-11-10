@@ -118,18 +118,23 @@
             <button class="welcome" type="submit">Cadastrar-se</button>
           </form>
         </div>
+        <div id="div_aguardar" class="loading-div">
+          
+      </div>
+  
+      <div id="div_erros_login"></div>
       </div>
   
       <div id="blur_div">
         .
         <div id="login_div">
           <p class="close" onclick="back_login()">X</p>
-          <form id="subscribe_form" method="post" onsubmit="return subscribe()">
+          <form id="form_login" method="post" onsubmit="return entrar()">
             <label class="login_label">E-mail:</label><br />
-            <input name="email" class="login_input" id="user_email_login" /><br />
+            <input name="email_login" class="login_input" id="user_email_login" /><br />
             <label class="login_label">Senha:</label><br />
             <input
-              name="senha"
+              name="senha_login"
               class="login_input"
               type="password"
               id="password_user_login"
@@ -155,6 +160,10 @@
             </button>
           </form>
         </div>
+        <div id="div_aguardar" class="loading-div">
+      </div>
+  
+      <div id="div_erros_login"></div>
       </div>
 
       <section class="daily-article">
@@ -164,29 +173,29 @@
             
             <div class="content-article">
                 
-                <p><span class="upper"> A</span> mantes de plantas e flores adoram estar perto da natureza!
+                <p><span class="upper"> A</span>mantes de plantas e flores adoram estar perto da natureza!
 
                     <p>Ainda que presentear um amigo, parente ou conhecido pareça uma tarefa difícil, conhecer suas características e gostos é a melhor forma de encontrar o presente perfeito. </p>
                     
                     <p>  Além das mudas, presente certeiro para os apreciadores de plantas, há diversos itens que remetem ao universo verde que podem encantar os apaixonados por jardinagem.</p>
                 <p>
-                  <span class="number">1.</span> <h4> Bulbos de flores</h4>
+                  <span class="number">1.</span> <h4 class="gift"> Bulbos de flores</h4>
                   Presentear amantes de plantas com bulbos de flores é sempre uma boa opção.</p>
                   <p>
                   Por investirem tempo e energia nos cuidados com o jardim e acompanharem o desenvolvimento de todas as espécies que cultivam, podem amar receber novas mudas e bulbos para plantar.
                 </p>
                 <p>
-                  <span class="number">2.</span> <h4>Vasos autoirrigáveis</h4>
+                  <span class="number">2.</span> <h4 class="gift">Vasos autoirrigáveis</h4>
                   Outro ótimo presente para quem gosta de plantas são os vasos ou jardineiras autoirrigáveis, que adicionam praticidade ao dia a dia.
                 </p>
                 <p>Por possuírem um reservatório de água e cordões que funcionam como uma raiz artificial, garantindo a umidade da planta, dispensam a rega diária que diversas plantas exigem.</p>
                 <p>Além de adicionarem muita personalidade à decoração da casa, esse tipo de vaso é ideal para pessoas que querem otimizar o tempo de cuidado com as plantas ou que viajam muito, o que pode acarretar na perda dos cultivos por falta de rega.</p>
-                <span class="number">3.</span> <h4>Cosméticos naturais</h4>
+                <span class="number">3.</span> <h4 class="gift">Cosméticos naturais</h4>
 <p>A tendência dos cosméticos naturais também pode ser aproveitada na hora de escolher presentes para amantes da natureza.</p> 
 
 <p>Os produtos naturais, que não contém aditivos químicos em sua composição, como cremes e óleos, são ótimas opções!</p>
 
-<span class="number">4.</span>  <h4>Itens de decoração</h4> <p>
+<span class="number">4.</span>  <h4 class="gift">Itens de decoração</h4> <p>
 Artigos que remetem à natureza também são presentes para quem gosta de plantas!</p>
 
 <p>
@@ -196,7 +205,7 @@ Artigos que remetem à natureza também são presentes para quem gosta de planta
           
             </div>
             <div>
-              <div class="detail-article">"Percebi o quanto as plantas são importantes para a vida na casa. Aumenta a paz e a sensação de conforto na casa"</div>
+              <div class="detail-article-2">"Percebi o quanto as plantas são importantes para a vida na casa. Aumenta a paz e a sensação de conforto na casa"</div>
               
               <img src="imgs/foto Gui resumo.jpg" alt="" class="image-plant">
                 <img class="image-plant" src="imgs/love.jpg" alt="foto de cachorro coberto com folhagem" />
@@ -319,5 +328,78 @@ fetch("/usuarios/cadastrar", {
 
 return false;
 }
+function limparFormulario() {
+        document.getElementById("form_login").reset();
+    }
+
+    function entrar() {
+        aguardar();
+
+        var formulario = new URLSearchParams(new FormData(document.getElementById("form_login")));
+
+        var email = formulario.get("email_login");
+        var senha = formulario.get("senha_login");
+
+        console.log("FORM LOGIN: ", email);
+        console.log("FORM SENHA: ", senha);
+
+        // TODO: VERIFICAR AS VALIDAÇÕES QUE ELES ESTÃO APRENDENDO EM ALGORITMOS 
+        if (email == "" || senha == "") {
+            window.alert("Preencha todos os campos para prosseguir!");
+            finalizarAguardar();
+            return false;
+        }
+
+        if (email.indexOf("@") == -1 || email.indexOf(".com") == -1) {
+            window.alert("Ops, e-mail inválido! Verifique e tente novamente.");
+            finalizarAguardar();
+            return false;
+        }
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            body: formulario
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.id;
+
+                    setTimeout(function () {
+                      if (email == "ana.silva@bandtec.com.br"){
+                        window.location = "./dashboard.html";
+                      } else {
+                        window.location = "./tela-perfil.html"
+                      }
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    alert(texto);
+                    finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+
 
 </script>

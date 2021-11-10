@@ -25,8 +25,8 @@ function listar(req, res) {
 }
 
 function entrar(req, res) {
-    var email = req.body.email;
-    var senha = req.body.senha;
+    var email = req.body.email_login;
+    var senha = req.body.senha_login;
 
     if (email == undefined) {
         res.status(400).send("Seu email está undefined!");

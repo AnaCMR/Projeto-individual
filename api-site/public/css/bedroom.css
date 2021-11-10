@@ -303,7 +303,8 @@ body {
   
   .small {
     font-size: 12px;
-    display: none;
+    visibility: hidden;
+    margin-left: -3%;
   }
   
   .old-articles {

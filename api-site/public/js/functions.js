@@ -16,54 +16,18 @@ function login() {
     login_div.style.display = "block";
 }
 
- function welcome(){
-     var name = name_user.value;
-     var email =  user_email.value;
-     var age = age_input.value;
-     var gender = gender_select.value;
-     var password = password_user.value;
-     var confPassword = confirm_password.value;
-
-
-     if (email == "ana.silva@bandtec.com.br") {
-        
-     } else if (email.trim() == "" || name.trim() == "" || age.trim() == "" || password.trim() == "" ){
-     alert ("Por favor, preencha os campos")
- } else if (email.indexOf("@")  < 0 || email.trim() == "@.com"){
-     alert ("Por favor, insira um e-mail valido")
- } else if (name.trim().length < 3){
-     alert ("Por favor, insira um nome válido")
- }  else if (password != confPassword) {
-     alert("Senhas não conferem")}
-     else if (password.trim().length < 6){
-         alert("Por favor, insira uma senha de pelo menos 6 caracteres")
-     }
-      else {
-     alert (`Seja bem vindo(a) ${name}! Faça seu login para acessar nosso conteúdo.` )
-     }
-    }
-
-    function welcome_login(){
-        var email = user_email_login.value
-        var senha = password_user_login.value
-
-        if (email == "" || senha == ""){
-            alert("Por favor, preencher os campos")
-        }
-    }
-
 function like() {
     var numeros = numbers_like.innerHTML;
     numbers_like.innerHTML = Number(numeros) + 1;
-    change_like.style.display = "block";
-    like_heart.style.display = "none";
+    change_like.style.visibility = "visible";
+    like_heart.style.visibility = "hidden";
 }
 
 function deslike() {
     var numeros = numbers_like.innerHTML;
     numbers_like.innerHTML = Number(numeros) - 1;
-    change_like.style.display = "none";
-    like_heart.style.display = "block";
+    change_like.style.visibility = "hidden";
+    like_heart.style.visibility = "visible";
 }
 
 var contador = 0;

@@ -207,6 +207,13 @@
       font-size: 70px;
       font-weight: 800px;
       margin-right: 3%;
+      background-color: #7da16c;
+      width: 100px;
+      padding: 2%;
+    }
+
+    .gift {
+      margin: -10% 0 10% 15%;
     }
     .space {
       height: 20%;
@@ -216,6 +223,17 @@
     .image-plant {
       width: 400px;
       margin: 0 0 5% 0
+    }
+
+    .detail-article-2 {
+      background-color: rgb(155, 81, 52, 0.8);
+      width: 207px;
+      height: 160px;
+      margin: 25% 12% -0 17% ;
+      float: right;
+      position: absolute;
+      color: white;
+      padding: 3%;
     }
     
     .detail-article {
@@ -265,7 +283,8 @@
     
     .small {
       font-size: 12px;
-      display: none;
+      visibility: hidden;
+      margin-left: -3%;
     }
     
     .old-articles {
