@@ -38,92 +38,94 @@
     </div>
     <div class="space">.</div>
     <div id="blur_div_cadastro">
-        .
-        <div id="cadastro_div">
-          <p class="close" onclick="back_cadastro()">X</p>
-          <form id="form_cadastro" method="post" onsubmit="return cadastrar()">
-            <label class="login_label">Nome:</label><br />
-            <input name="nome" class="login_input" id="name_user" /><br />
-            <label class="login_label">E-mail:</label><br />
-            <input name="email" class="login_input" id="user_email" /><br />
-            <div class="div_perfil">
-              <div class="age_data">
-                <label class="login_label">Idade:</label><br />
-                <input
-                  name="idade"
-                  type="date"
-                  class="login_input age"
-                  id="age_input"
-                /><br />
-              </div>
-              <div class="gender_data">
-                <label class="genero">Gênero</label><br />
-                <select class="login_select_gender" id="gender_select">
-                  <option value="f">F</option>
-                  <option value="m">M</option>
-                  <option value="não informado">Prefiro não informar</option>
-                </select>
-              </div>
+      .
+      <div id="cadastro_div">
+        <p class="close" onclick="back_cadastro()">X</p>
+        <!-- <form id="form_cadastro" method="post"  onsubmit="return cadastrar()"> -->
+          <label class="login_label">Nome:</label><br />
+          <input name="nome" class="login_input" id="name_user" /><br />
+          <label class="login_label">E-mail:</label><br />
+          <input name="email" class="login_input" id="user_email" /><br />
+          <div class="div_perfil">
+            <div class="age_data">
+              <label class="login_label">Data Nascimento:</label><br />
+              <input
+                name="idade"
+                type="date"
+                class="login_input age"
+                id="age_input"
+              /><br />
             </div>
-            <label class="login_label">Senha:</label><br />
-            <input
+            <div class="gender_data">
+              <label class="genero">Gênero</label><br />
+              <select class="login_select_gender" id="gender_select">
+                <option value="">Selecione...</option>
+                <option value="f">F</option>
+                <option value="m">M</option>
+                <option value="nao informado">Prefiro não informar</option>
+              </select> 
+            </div>
+          </div>
+          <label class="login_label">Senha:</label><br />
+          <input
+          title="mostrar senha"
+            name="senha"
+            class="login_input"
+            type="password"
+            id="password_user"
+          />
+          <img
+          id="olho_aberto_cadastro1"
+          title="ocultar senha"
+          class="olho_aberto"
+          src="icons/see.png"
+          onclick="changeImage()"
+          alt="mudar para senha visivel"
+        />
+        <img
+          id="olho_fechado_cadastro1"
+          class="olho_fechado"
+          onclick="ver()"
+          src="icons/cloudy.png"
+          alt="mudar para senha não visivel"
+        />
+<br />
+
+          <label class="login_label">Confirmar senha:</label><br />
+          <input
+            class="login_input"
+            name="confirmacao-senha"
+            type="password"
+            id="confirm_password"
             title="mostrar senha"
-              name="senha"
-              class="login_input"
-              type="password"
-              id="password_user"
-            />
-            <img
-            id="olho_aberto_cadastro1"
-            title="ocultar senha"
-            class="olho_aberto"
-            src="icons/see.png"
-            onclick="changeImage()"
-            alt="mudar para senha visivel"
-          />
-          <img
-            id="olho_fechado_cadastro1"
-            class="olho_fechado"
-            onclick="ver()"
-            src="icons/cloudy.png"
-            alt="mudar para senha não visivel"
-          />
-  <br />
-  
-            <label class="login_label">Confirmar senha:</label><br />
-            <input
-              class="login_input"
-              name="confirmacao-senha"
-              type="password"
-              id="confirm_password"
-              title="mostrar senha"
-            /><img
-            id="olho_aberto_cadastro2"
-            class="olho_aberto"
-            src="icons/see.png"
-            onclick="changeImage()"
-            alt="mudar para senha visivel"
-          />
-          <img
-            id="olho_fechado_cadastro2"
-            class="olho_fechado"
-            title="ocultar senha"
-            onclick="ver()"
-            src="icons/cloudy.png"
-            alt="mudar para senha não visivel"
-          /><br />
-  
-            <br />
-  
-            <button class="welcome" type="submit">Cadastrar-se</button>
-          </form>
-        </div>
-        <div id="div_aguardar" class="loading-div">
-          
+          /><img
+          id="olho_aberto_cadastro2"
+          class="olho_aberto"
+          src="icons/see.png"
+          onclick="changeImage()"
+          alt="mudar para senha visivel"
+        />
+        <img
+          id="olho_fechado_cadastro2"
+          class="olho_fechado"
+          title="ocultar senha"
+          onclick="ver()"
+          src="icons/cloudy.png"
+          alt="mudar para senha não visivel"
+        /><br />
+
+          <br />
+
+          <button class="welcome" onclick="cadastrar()">Cadastrar-se</button>
+        <!-- </form> -->
       </div>
-  
-      <div id="div_erros_login"></div>
-      </div>
+      <div id="div_aguardar" class="loading-div">
+        
+    </div>
+
+    <div id="div_erros_login"></div>
+
+    </div>
   
       <div id="blur_div">
         .
@@ -267,55 +269,71 @@ document.getElementById("form_cadastro").reset();
 function cadastrar() {
 aguardar();
 
-var formulario = new FormData(document.getElementById("form_cadastro"));
+// var formulario = new FormData(document.getElementById("form_cadastro"));
 
-var nome = formulario.get("nome");
-var email = formulario.get("email");
-var senha = formulario.get("senha");
-var confirmacaoSenha = formulario.get("confirmacao-senha");
-var dataNasc = formulario.get("idade")
+var nomeVar = name_user.value;
+var emailVar = user_email.value;
+var senhaVar = password_user.value;
+var confirmacaoSenha = confirm_password.value;
+var idadeVar = age_input.value
+var generoVar = gender_select.value
 
-if (nome == "" || email == "" || senha == "" || confirmacaoSenha == "") {
+if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenha == "") {
 
   window.alert("Preencha todos os campos para prosseguir!");
-  if (nome == "") {
+  if (nomeVar == "") {
       console.log('nome está em branco')
   }
-  if (email == "") {
+  if (emailVar == "") {
       console.log('email está em branco')
   }
-  if (senha == "") {
+  if (senhaVar == "") {
       console.log('senha está em branco')
   }
   if (confirmacaoSenha == "") {
       console.log('confirmacaoSenha está em branco')
   }
+  if (idadeVar == "") {
+      console.log('idade está em branco')
+  }
+  if (generoVar == "") {
+      console.log('genero está em branco')
+  }
   finalizarAguardar();
   return false;
 }
 
-if (email.indexOf("@") == -1 || email.indexOf(".com") == -1) {
-  window.alert("Ops, e-mail inválido! Verifique e tente novamente.");
-  finalizarAguardar();
-  return false;
-}
+ if (emailVar.indexOf("@") == -1 || emailVar.indexOf(".com") == -1) {
+   window.alert("Ops, e-mail inválido! Verifique e tente novamente.");
+   finalizarAguardar();
+   return false;
+ }
 
-if (senha != confirmacaoSenha) {
+if (senhaVar != confirmacaoSenha) {
   window.alert("As senhas inseridas devem ser iguais para prosseguir!");
   finalizarAguardar();
   return false;
 }
 
 fetch("/usuarios/cadastrar", {
-  method: "POST",
-  body: formulario
-}).then(function (resposta) {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                nome: nomeVar,
+                email: emailVar,
+                senha: senhaVar,
+                idade: idadeVar,
+                genero: generoVar,
+            })
+          }).then(function (resposta) {
 
   console.log("resposta: ", resposta);
 
   if (resposta.ok) {
       window.alert("Cadastro realizado com sucesso!");
-      window.location = "index.html";
+      location.reload();;
       limparFormulario();
       finalizarAguardar();
   } else {
