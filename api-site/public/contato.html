@@ -186,24 +186,14 @@
     <div id="history_div">
         <form action="">
           <label>Email:</label> <br>
-          <input  class="login_input"> <br> <br>
+          <input id="email_contact" class="login_input"> <br> <br>
           <label>Texto:</label> <br> <br>
-        <textarea class="history_text"  id="historia_text" cols="60" rows="20"></textarea>
+        <textarea id="text_contact" class="history_text"  id="historia_text" cols="60" rows="20"></textarea>
         
-        <button type="submit" onclick="send_history()" >Enviar</button>
+        <button onclick="contatar()" >Enviar</button>
     </form>
     </div>
 
-    <div id="change_update">
-        <label>Selecione o novo período:</label> <br><br>
-        <select id="choose_update">
-            <option value="">Selecione...</option>
-            <option value="diario">Diáriamente</option>
-            <option value="semanal">Semanalmente</option>
-            <option value="quinzenal">Quinzenalmente</option>
-        </select>
-        <button onclick="send_uptdate()">Enviar</button>
-    </div>
 </div>
 <div class="photo" >
   <img src="https://c.tenor.com/q2lP9vEriZUAAAAC/party-plants.gif" alt="">
@@ -378,5 +368,57 @@ function limparFormulario() {
 
         return false;
     }
+
+    function contatar(){
+      var motivovar = motive_contact.value;
+      var emailvar = email_contact.value;
+      var textvar = text_contact.value;
+
+      if (emailvar == "" || text == "") {
+
+window.alert("Preencha todos os campos para prosseguir!");
+if (emailvar == "") {
+    console.log('email está em branco')
+}
+if (textvar == "") {
+    console.log('text está em branco')
+}
+
+finalizarAguardar();
+return false;
+}
+
+fetch("/usuarios/contatar", {
+          method: "POST",
+          headers: {
+              "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+              motivo: motivovar,
+              email: emailvar,
+              texto: textovar,
+          })
+        }).then(function (resposta) {
+
+console.log("resposta: ", resposta);
+
+if (resposta.ok) {
+    window.alert("Informação enviada com sucesso!");
+    location.reload();
+    limparFormulario();
+    finalizarAguardar();
+} else {
+    throw ("Houve um erro ao tentar realizar o cadastro!");
+}
+}).catch(function (resposta) {
+console.log(`#ERRO: ${resposta}`);
+finalizarAguardar();
+});
+
+return false;
+}
+
+
+    
 
 </script>

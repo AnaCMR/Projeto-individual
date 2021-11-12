@@ -9,7 +9,7 @@ senha varchar (50),
 dataNasc date,
 genero varchar(13),
 check (genero = 'm' or genero = 'f' or genero = 'nao informado'),
-dataCadastro timestamp default current_timestamp
+dataCadastro date
 );
 
 create table reclamacao (
@@ -17,5 +17,5 @@ idReclamacao int primary key auto_increment,
 motivo varchar(20),
 email_reclamacao varchar(45),
 texto varchar(200),
-dataReclamacao timestamp default current_timestamp 
+dataReclamacao date 
 );
