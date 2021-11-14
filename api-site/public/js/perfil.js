@@ -36,20 +36,35 @@ function options_cancel() {
   var motive = motive_cancel.value;
 
   if (motive == "outro") {
-    other.style.display = "block";
-    show_button.style.display = "block";
+    other.style.visibility = "visible";
+    show_button.style.visibility = "visible";
+    confirm_title.style.visibility = "visible"
+    confirm_cancel_input.style.visibility = "visible"
   } else if (motive == "") {
-    other.style.display = "none";
-    show_button.style.display = "none";
+    other.style.visibility = "hidden";
+    show_button.style.visibility = "hidden";
+    confirm_cancel.style.visibility = "hidden"
+    confirm_cancel_input.style.visibility = "hidden"
   } else {
-    show_button.style.display = "block";
-    other.style.display = "none";
+    show_button.style.visibility = "visible";
+    confirm_title.style.visibility = "visible"
+    confirm_cancel_input.style.visibility = "visible"
+    other.style.visibility = "hidden";
   }
 }
 
 function send_cancel() {
-  blur_div_cadastro.style.display = "block";
+  
+
+  var senhaCancelamentVar = confirm_cancel_input.value;
+
+    if (senhaCancelamentVar == "") {
+
+window.alert("Preencha todos os campos para prosseguir!");
+    } else {
+      blur_div_cadastro.style.display = "block";
   cadastro_div.style.display = "block";
+    }
 }
 
 function back_cadastro() {
@@ -65,6 +80,16 @@ function quizRandom(quizArr) {
 }
 
 console.log(quizRandom(quiz));
+
+var photo_profile = [profile_1, profile_2, profile_3, profile_4];
+
+function profileRandom(photoArr) {
+  var content_photo = photoArr[Math.floor(Math.random() * photoArr.length)];
+  return (content_photo.style.display = "block");
+  }
+
+
+console.log(profileRandom(photo_profile));
 
 function plant_samambaia() {
   var name = input_samambaia.value;
@@ -140,4 +165,28 @@ function plant_dolar() {
     errado_dolar.style.display = "block";
     certo_dolar.style.display = "none";
   }
+}
+
+function changeImage() {
+
+    novaSenha_input.type = "text";
+    senhaAntiga_input.type = "text";
+    confirmPassword.type = "text";
+  olho_aberto_antiga.style.visibility = "hidden";
+  olho_fechado_antiga.style.visibility = "visible";
+  olho_aberto_nova.style.visibility = "hidden";
+  olho_fechado_nova.style.visibility = "visible";
+  olho_aberto_confirmar.style.visibility = "hidden";
+  olho_fechado_confirmar.style.visibility = "visible";
+}
+function ver() {
+  novaSenha_input.type = "password";
+    senhaAntiga_input.type = "password";
+    confirmPassword.type = "password";
+  olho_aberto_antiga.style.visibility = "visible";
+  olho_fechado_antiga.style.visibility = "hidden";
+  olho_aberto_nova.style.visibility = "visible";
+  olho_fechado_nova.style.visibility = "hidden";
+  olho_aberto_confirmar.style.visibility = "visible";
+  olho_fechado_confirmar.style.visibility = "hidden";
 }

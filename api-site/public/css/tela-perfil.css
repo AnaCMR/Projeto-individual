@@ -14,7 +14,7 @@ body {
   position: fixed;
   z-index: 1;
   padding: 7%;
-  margin-top: -50%;
+  margin-top: -52%;
 }
 .photo img {
   width: 80%;
@@ -99,29 +99,43 @@ a {
   text-decoration: none;
 }
 
-.plant label {
-  margin: -10% 0 0 7%;
+.motive-title {
+  margin: -15% 0 0 7%;
   position: absolute;
-}
-
-#other_motive {
-  display: block;
-  margin-top: 5%;
 }
 
 #other {
-  display: none;
+  visibility: hidden;
+  margin: 0 auto;
+  height: 30px;
+  margin-top: -10%;
 }
+.buttons-cancel {
+  width: 80%;
+  display: flex;
+  margin: 0 auto;
+}
+
+#confirm_title{
+  visibility: hidden;
+}
+
+#confirm_cancel_input {
+  margin-left: 0.5%;
+  visibility: hidden;
+}
+
 #motive_cancel {
   width: 330px;
   position: absolute;
-  margin: -5% 0 0 3%;
+  margin: -10% 0 0 3%;
 }
 
 #show_button {
   width: 60%;
   margin: 0 auto;
-  display: none;
+  visibility: hidden;
+  margin-top: 5%;
 }
 
 .profile {
@@ -172,7 +186,7 @@ a {
   justify-content: space-between;
 }
 
-.photo-profile {
+.photo-profile-div {
   background-color: grey;
   border-radius: 50%;
   width: 200px;
@@ -199,11 +213,9 @@ label {
   font-size: 13px;
 }
 
-#show_password {
-  display: none;
-}
-
-#show_email {
+#show_password,
+#show_email,
+.photo-profile {
   display: none;
 }
 
@@ -243,4 +255,27 @@ select {
   font-family: "Cinzel", serif;
   font-weight: 600;
   outline: none;
+}
+
+.olho_aberto {
+  width: 25px;
+  cursor: pointer;
+  float: right;
+  z-index: 3;
+  position: absolute;
+  margin-left: -2%;
+}
+
+.olho_fechado {
+  visibility: hidden;
+  width: 25px;
+  cursor: pointer;
+  float: right;
+  z-index: 3;
+  position: absolute;
+  margin-left: -2%;
+}
+
+#h1_login_usuario {
+  margin-left: 15%;
 }

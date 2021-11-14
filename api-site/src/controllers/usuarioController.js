@@ -116,7 +116,7 @@ function contatar(req, res) {
                 function (erro) {
                     console.log(erro);
                     console.log(
-                        "\nHouve um erro ao realizar o cadastro! Erro: ",
+                        "\nHouve um erro ao realizar o contato! Erro: ",
                         erro.sqlMessage
                     );
                     res.status(500).json(erro.sqlMessage);
@@ -125,10 +125,116 @@ function contatar(req, res) {
     }
 }
 
+function novoemail(req, res) {
+    var email = req.body.email;
+    var senha = req.body.senha;
+
+    if (email == undefined) {
+        res.status(400).send("Seu email está undefined!");
+    } else if (senha == undefined) {
+        res.status(400).send("Sua senha está indefinida!");
+    } else {
+        usuarioModel.novoemail(email, senha)
+            .then(
+                function (resultado) {
+                    console.log(`\nResultados encontrados: ${resultado.length}`);
+                    console.log(`Resultados: ${JSON.stringify(resultado)}`); // transforma JSON em String
+
+                    if (resultado.length == 1) {
+                        console.log(resultado);
+                        res.json(resultado[0]);
+                    } else if (resultado.length == 0) {
+                        res.status(403).send("Email e/ou senha inválido(s)");
+                    } else {
+                        res.status(403).send("Mais de um usuário com o mesmo login e senha!");
+                    }
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log("\nHouve um erro ao realizar a alteração! Erro: ", erro.sqlMessage);
+                    res.status(500).json(erro.sqlMessage);
+                    alert("Alteração realizada com sucesso");
+                    // location.reload();
+                }
+            );
+    }
+
+}
+function novasenha(req, res) {
+    var nova_senha = req.body.nova_senha;
+    var senha_antiga = req.body.senha_antiga;
+
+    if (nova_senha == undefined) {
+        res.status(400).send("Seu nova_senha está undefined!");
+    } else if (senha_antiga == undefined) {
+        res.status(400).send("Sua senha_antiga está indefinida!");
+    } else {
+        usuarioModel.novasenha(nova_senha, senha_antiga)
+            .then(
+                function (resultado) {
+                    console.log(`\nResultados encontrados: ${resultado.length}`);
+                    console.log(`Resultados: ${JSON.stringify(resultado)}`); // transforma JSON em String
+
+                    if (resultado.length == 1) {
+                        console.log(resultado);
+                        res.json(resultado[0]);
+                    } else if (resultado.length == 0) {
+                        res.status(403).send("Email e/ou senha inválido(s)");
+                    } else {
+                        res.status(403).send("Mais de um usuário com o mesmo login e senha!");
+                    }
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log("\nHouve um erro ao alterar a senha! Erro: ", erro.sqlMessage);
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+
+}
+
+function cancelarusuario(req, res) {
+    var cancelar = req.body.cancelar;
+
+    if (cancelar == undefined) {
+        res.status(400).send("Seu nova_senha está undefined!");
+    } else {
+        usuarioModel.cancelarusuario(cancelar)
+            .then(
+                function (resultado) {
+                    console.log(`\nResultados encontrados: ${resultado.length}`);
+                    console.log(`Resultados: ${JSON.stringify(resultado)}`); // transforma JSON em String
+
+                    if (resultado.length == 1) {
+                        console.log(resultado);
+                        res.json(resultado[0]);
+                    } else if (resultado.length == 0) {
+                        res.status(403).send("Email e/ou senha inválido(s)");
+                    } else {
+                        res.status(403).send("Mais de um usuário com o mesmo login e senha!");
+                    }
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log("\nHouve um erro ao deletar usuario! Erro: ", erro.sqlMessage);
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+
+}
+
 module.exports = {
     entrar,
     cadastrar,
     listar,
     contatar,
-    testar
+    testar,
+    novoemail,
+    novasenha,
+    cancelarusuario,
 }

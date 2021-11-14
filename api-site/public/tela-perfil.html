@@ -16,7 +16,7 @@
   <script src="js/funcoes.js"></script>
 </head>
 
-<body>
+<body onload="validarSessao()" >
   <menu class="menu">
     <nav class="container">
       <a href="index.html">
@@ -42,13 +42,19 @@
   <section class="profile">
     <div class="container-profile">
       <div class="user-profile">
-        <div class="photo-profile">
-          <img class="photo-profile" width="100%"
-            src="https://c.tenor.com/ZgQlJLiapN0AAAAM/cryptogarden-cartoon-plant.gif" alt="profile-picture">
+        <div class="photo-profile-div">
+          <img class="photo-profile" id="profile_1" width="100%"
+            src="imgs/profile-1.gif" alt="foto de perfil">
+            <img class="photo-profile" id="profile_2" width="100%"
+            src="imgs/profile-2.gif" alt="foto de perfil">
+            <img class="photo-profile" id="profile_3" width="100%"
+            src="imgs/profile-3.gif" alt="foto de perfil">
+            <img class="photo-profile" id="profile_4" width="100%"
+            src="imgs/profile-4.gif" alt="foto de perfil">
         </div>
         <div class="profile-content">
-          <h2 id="h1_login_usuario">Fulaninho de tal</h2>
-          <h4>fulaninho@email.com</h4>
+          <h2 id="b_usuario"></h2>
+          <h4 id="h1_login_usuario" ></h4>
         </div>
         <div class="buttons">
           <button onclick="change_email()">Mudar email</button>
@@ -57,18 +63,64 @@
         <br>
         <div id="show_email">
           <label>Insira seu novo email:</label> <br>
-          <input> <br>
+          <input id="email_input" > <br>
           <label>Insira sua senha:</label> <br>
-          <input>
+          <input id="password_input" type="password" >
           <button onclick="confirm_email()">Confirmar</button>
         </div>
         <div id="show_password">
           <label>Insira sua senha antiga:</label><br>
-          <input type="password"><br>
-          <label>Insira nova senha:</label><br>
-          <input type="password"><br>
+          <input id="senhaAntiga_input" type="password">
+          <img
+          id="olho_aberto_antiga"
+          title="ocultar senha"
+          class="olho_aberto"
+          src="icons/see.png"
+          onclick="changeImage()"
+          alt="mudar para senha visivel"
+        />
+        <img
+          id="olho_fechado_antiga"
+          class="olho_fechado"
+          onclick="ver()"
+          src="icons/cloudy.png"
+          alt="mudar para senha não visivel"
+        /><br>
+          <label>Insira nova senha:</label>
+          <br>
+          <input id="novaSenha_input" type="password">
+          <img
+          id="olho_aberto_nova"
+          title="ocultar senha"
+          class="olho_aberto"
+          src="icons/see.png"
+          onclick="changeImage()"
+          alt="mudar para senha visivel"
+        />
+        <img
+          id="olho_fechado_nova"
+          class="olho_fechado"
+          onclick="ver()"
+          src="icons/cloudy.png"
+          alt="mudar para senha não visivel"
+        /><br>
           <label>Confirme a nova senha:</label><br>
-          <input type="password">
+          <input id="confirmPassword" type="password">
+          <img
+          id="olho_aberto_confirmar"
+          title="ocultar senha"
+          class="olho_aberto"
+          src="icons/see.png"
+          onclick="changeImage()"
+          alt="mudar para senha visivel"
+        />
+        <img
+          id="olho_fechado_confirmar"
+          class="olho_fechado"
+          onclick="ver()"
+          src="icons/cloudy.png"
+          alt="mudar para senha não visivel"
+        />
           <button onclick="confirm_password()">Confirmar</button>
 
         </div>
@@ -225,17 +277,21 @@
           </div>
         </div>
         <div class="plant">
-
-          <label>Quero cancelar meu cadastro</label> <br><br>
+        
+          <label class="motive-title">Quero cancelar meu cadastro</label> <br><br>
           <select id="motive_cancel" onchange="options_cancel()">
             <option value="">Selecione...</option>
             <option value="gosto">O conteúdo não é o que eu esperava</option>
             <option value="foco">Não estou mais focada no assunto</option>
             <option value="outro">Outro...</option>
           </select>
-          <div id="other_motive">
+          <div>
+            
+            <label id="confirm_title">Insira sua senha:</label> <br>
+          <input id="confirm_cancel_input" type="password" >
             <input type="text" id="other" placeholder="Escreva o motivo">
-            <button onclick="send_cancel()" type="submit" id="show_button">Enviar</button>
+            <button onclick="send_cancel()" id="show_button">Enviar</button>
+          </div>
           </div>
         </div>
       </div>
@@ -243,11 +299,14 @@
 
     <div id="blur_div_cadastro">.
       <div id="cadastro_div">
-        <p class="close" onclick="back_cadastro()">X</p>
         <img
           src="https://4.bp.blogspot.com/-cUfLvOzBmao/XgAEVeLKfTI/AAAAAAAWcrc/7hGym4ePH944P41LKqH4dNYRpqZgXdROACLcBGAsYHQ/s1600/AW4119480_07.gif?time=Sat%20Nov%2006%202021%2021:28:05%20GMT-0300%20(Hor%C3%A1rio%20Padr%C3%A3o%20de%20Bras%C3%ADlia)">
         <h5>Você vai nos deixar? <br> <br> Por favor, envie um email para garden@garden.com. <br><br> Preciso saber o
           que eu fiz de errado</h5>
+          <div class="buttons-cancel" >
+          <button onclick="back_cadastro()">Mudei de ideia!</button>
+          <button onclick="confirm_cancel()">Quero mesmo cancelar</button>
+        </div>
       </div>
     </div>
   </section>
@@ -255,3 +314,155 @@
 
 </html>
 <script src="js/perfil.js"></script>
+<script>
+  function confirm_email() {
+    var emailVar = email_input.value;
+    var passwordVar = password_input.value;
+
+    if (emailVar == "" || passwordVar == "") {
+
+window.alert("Preencha todos os campos para prosseguir!");
+if (emailVar == "") {
+    console.log('email está em branco')
+}
+if (passwordVar == "") {
+    console.log('text está em branco')
+}
+
+return false;
+}
+
+fetch("/usuarios/novoemail", {
+          method: "POST",
+          headers: {
+              "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+              email: emailVar,
+              senha: passwordVar,
+          })
+        }).then(function (resposta) {
+
+console.log("resposta: ", resposta);
+
+if (resposta.ok) {
+    window.alert("Informação enviada com sucesso!");
+    window.location = "./index.html"
+    limparFormulario();
+   
+} else {
+    throw ("Houve um erro ao tentar realizar a alteração!");
+}
+}).catch(function (resposta) {
+console.log(`#ERRO: ${resposta}`);
+window.alert("Informação enviada com sucesso! Por favor, faça o login novamente");
+window.location = "./index.html"
+
+});
+
+return false;
+}
+
+function confirm_password() {
+    var novasenhaVar = novaSenha_input.value;
+    var senhaantigaVar = senhaAntiga_input.value;
+    var confirmarSenha = confirmPassword.value;
+
+    if (novasenhaVar == "" || senhaantigaVar == "" || confirmarSenha == "") {
+
+window.alert("Preencha todos os campos para prosseguir!");
+if (novasenhaVar == "") {
+    console.log('nova senha está em branco')
+}
+if (senhaantigaVar == "") {
+    console.log('senha antiga está em branco')
+}
+if (confirmarSenha == "") {
+  console.log('confirmar senha está em branco')
+}
+
+return false;
+}
+
+if (novasenhaVar == confirmarSenha){
+  
+fetch("/usuarios/novasenha", {
+          method: "POST",
+          headers: {
+              "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+              nova_senha: novasenhaVar,
+              senha_antiga: senhaantigaVar,
+          })
+        }).then(function (resposta) {
+
+console.log("resposta: ", resposta);
+
+if (resposta.ok) {
+    window.alert("Informação enviada com sucesso!");
+    location.reload();
+    limparFormulario();
+   
+} else {
+    throw ("Houve um erro ao tentar realizar a alteração");
+
+}
+}).catch(function (resposta) {
+console.log(`#ERRO: ${resposta}`);
+window.alert("Informação enviada com sucesso!");
+    location.reload();
+});
+
+} else {
+  alert('Senhas não conferem');
+}
+
+return false;
+}
+
+
+function confirm_cancel() {
+    var senhaCancelamentVar = confirm_cancel_input.value;
+
+    if (senhaCancelamentVar == "") {
+
+window.alert("Preencha todos os campos para prosseguir!");
+if (senhaCancelamentVar == "") {
+    console.log('nova senha está em branco')
+}
+
+return false;
+}
+  
+fetch("/usuarios/cancelarusuario", {
+          method: "POST",
+          headers: {
+              "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            cancelar: senhaCancelamentVar,
+          })
+        }).then(function (resposta) {
+
+console.log("resposta: ", resposta);
+
+if (resposta.ok) {
+    window.alert("Espero que não seja um adeus! Caso mude de ideia, é só se cadastrar novamente");
+    window.location = "./index.html";
+    limparFormulario();
+   
+} else {
+    throw ("Houve um erro ao tentar deletar o cadastro");
+
+}
+}).catch(function (resposta) {
+console.log(`#ERRO: ${resposta}`);
+window.alert("Espero que não seja um adeus! Caso mude de ideia, é só se cadastrar novamente");
+window.location = "./index.html";
+
+});
+return false;
+} 
+    
+</script>

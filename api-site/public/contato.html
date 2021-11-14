@@ -374,7 +374,7 @@ function limparFormulario() {
       var emailvar = email_contact.value;
       var textvar = text_contact.value;
 
-      if (emailvar == "" || text == "") {
+      if (emailvar == "" || textvar == "") {
 
 window.alert("Preencha todos os campos para prosseguir!");
 if (emailvar == "") {
@@ -384,7 +384,6 @@ if (textvar == "") {
     console.log('text está em branco')
 }
 
-finalizarAguardar();
 return false;
 }
 
@@ -396,7 +395,7 @@ fetch("/usuarios/contatar", {
           body: JSON.stringify({
               motivo: motivovar,
               email: emailvar,
-              texto: textovar,
+              texto: textvar,
           })
         }).then(function (resposta) {
 
