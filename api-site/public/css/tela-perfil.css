@@ -186,6 +186,9 @@ a {
   justify-content: space-between;
 }
 
+.photo-profile{
+  border-radius: 50%;
+}
 .photo-profile-div {
   background-color: grey;
   border-radius: 50%;
