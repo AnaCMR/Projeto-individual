@@ -57,7 +57,7 @@ const config = {
       datasets: [
         {
           label: "Perfil: Gênero",
-          data: [31,20],
+          data: [generoF,generoM],
           backgroundColor: ["#df5382","#44afaf"],
           hoverBorderWidth: "100px",
           borderColor: ["#df5382","#44afaf"],
@@ -94,3 +94,53 @@ const config = {
  var myChartGender = new Chart(document.getElementById("myChartGender"),configGender);
  var myChartAge = new Chart(document.getElementById("myChartAge"),configAge);
  var myChartMixed = new Chart(document.getElementById("myChartMixed"), configMixed); 
+
+ var generoF = [];
+ var generoM = [];
+
+ function atualizarGraficoGeneroM(){
+
+ fetch("/usuarios/usuariosGeneroM").then(function (resposta) {
+  if (resposta.ok) {
+    if (resposta.status == 204) {
+      generoM.push(0[1])
+  }
+    
+      resposta.json().then(function (resposta) {
+        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+          for (let i = 0; i < 1; i++) {
+              generoM.push(resposta[1]) 
+          }
+        });
+      
+ }else {
+  throw ('Houve um erro na API! (GeneroM)');
+}
+     }). catch(function (resposta) {
+      console.error(resposta); 
+    });
+  }
+    function atualizarGraficoGeneroF(){
+
+    fetch("/usuarios/usuariosGeneroF").then(function (resposta) {
+      if (resposta.ok) {
+        if (resposta.status == 204) {
+          generoF.push(0[0])
+      }
+         
+    
+          resposta.json().then(function (resposta) {
+              console.log("Dados recebidos: ", JSON.stringify(resposta));
+    
+              for (let i = 0; i < 1; i++) {
+                  generoF.push(resposta[0]) 
+              }
+            });
+          
+     }else {
+      throw ('Houve um erro na API!(generoF)');
+    }
+         }). catch(function (resposta) {
+          console.error(resposta); 
+        });
+      };

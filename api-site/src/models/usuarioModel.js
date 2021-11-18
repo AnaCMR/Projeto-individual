@@ -36,7 +36,8 @@ function usuariosGeneroM() {
 function usuariosIdade() {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function usuarioIdade()");
     var instrucao = `
-    SELECT dataNasc FROM usuario
+    SELECT count(dataNasc) FROM usuario where dataNasc in (30,40);
+    
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
@@ -90,7 +91,7 @@ function contatar(motivo, email, texto) {
 function cancelarusuario(cancelar) {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function contatar():",cancelar);
     var instrucao = `
-        DELETE FROM usuario WHERE idUser = '${sessionStorage.ID_USUARIO}';
+        DELETE FROM usuario WHERE senha = SHA2('${senha}',224);
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
