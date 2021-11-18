@@ -33,5 +33,17 @@ router.post("/autenticar", function (req, res) {
 router.post("/cancelarusuario", function (req, res) {
     usuarioController.cancelarusuario(req, res);
 });
+router.post("/usuariosCadastrados", function (req, res) {
+    usuarioController.usuariosCadastrados(req, res);
+});
+router.post("/usuariosGeneroF", function (req, res) {
+    usuarioController.usuariosGeneroF(req, res);
+});
+router.post("/usuariosGeneroM", function (req, res) {
+    usuarioController.usuariosGeneroM(req, res);
+});
+router.post("/usuariosIdade", function (req, res) {
+    usuarioController.usuariosIdade(req, res);
+});
 
 module.exports = router;

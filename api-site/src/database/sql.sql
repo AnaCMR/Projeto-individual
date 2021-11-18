@@ -5,7 +5,7 @@ create table usuario (
 idUser int auto_increment primary key,
 nome varchar (100),
 email varchar (50),
-senha varchar (50),
+senha varchar (100),
 dataNasc date,
 genero varchar(13),
 check (genero = 'm' or genero = 'f' or genero = 'nao informado'),
