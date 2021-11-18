@@ -55,7 +55,7 @@ function usuariosGeneroF(req, res) {
             }
         );
 }
-function listar(req, res) {
+function usuariosGeneroM(req, res) {
     usuarioModel.listar()
         .then(function (resultado) {
             if (resultado.length > 0) {
