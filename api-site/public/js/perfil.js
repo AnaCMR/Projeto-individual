@@ -81,15 +81,7 @@ function quizRandom(quizArr) {
 
 console.log(quizRandom(quiz));
 
-var photo_profile = [profile_1, profile_2, profile_3, profile_4];
 
-function profileRandom(photoArr) {
-  var content_photo = photoArr[Math.floor(Math.random() * photoArr.length)];
-  return (content_photo.style.display = "block");
-  }
-
-
-console.log(profileRandom(photo_profile));
 
 function plant_samambaia() {
   var name = input_samambaia.value;

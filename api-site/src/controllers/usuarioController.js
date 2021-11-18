@@ -23,8 +23,8 @@ function listar(req, res) {
             }
         );
 }
-function listar(req, res) {
-    usuarioModel.listar()
+function usuariosCadastrados(req, res) {
+    usuarioModel.usuariosCadastrados()
         .then(function (resultado) {
             if (resultado.length > 0) {
                 res.status(200).json(resultado);
@@ -39,8 +39,8 @@ function listar(req, res) {
             }
         );
 }
-function listar(req, res) {
-    usuarioModel.listar()
+function usuariosGeneroF(req, res) {
+    usuarioModel.usuariosGeneroF()
         .then(function (resultado) {
             if (resultado.length > 0) {
                 res.status(200).json(resultado);
@@ -55,7 +55,7 @@ function listar(req, res) {
             }
         );
 }
-function listar(req, res) {
+function usuariosGeneroM(req, res) {
     usuarioModel.listar()
         .then(function (resultado) {
             if (resultado.length > 0) {
