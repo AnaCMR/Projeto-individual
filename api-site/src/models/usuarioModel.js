@@ -11,7 +11,7 @@ function listar() {
 function usuariosCadastrados() {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function usuarioGeneroF()");
     var instrucao = `
-        SELECT count(genero) FROM usuario where genero = 'f';
+        SELECT count(genero) as genero FROM usuario where genero = 'f';
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
@@ -19,7 +19,7 @@ function usuariosCadastrados() {
 function usuariosGeneroF() {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function usuarioGeneroF()");
     var instrucao = `
-        SELECT count(genero) FROM usuario where genero = 'f';
+        SELECT count(genero) as genero FROM usuario where genero = 'f';
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
@@ -27,7 +27,7 @@ function usuariosGeneroF() {
 function usuariosGeneroM() {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function usuarioGeneroM()");
     var instrucao = `
-    SELECT count(genero) FROM usuario where genero = 'm';
+    SELECT count(genero)  as genero FROM usuario where genero = 'm';
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
@@ -71,8 +71,8 @@ function cadastrar(nome, email, senha, idade, genero) {
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }
-function novasenha(nova_senha,senha_antiga) {
-    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function nova(): ", nova_senha,senha_antiga )
+function novasenha(nova_senha, senha_antiga) {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function nova(): ", nova_senha, senha_antiga)
     var instrucao = `
     UPDATE usuario SET senha = SHA2('${nova_senha}',224) where senha = SHA2('${senha_antiga}',224);
     `;
@@ -89,7 +89,7 @@ function contatar(motivo, email, texto) {
     return database.executar(instrucao);
 }
 function cancelarusuario(cancelar) {
-    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function contatar():",cancelar);
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function contatar():", cancelar);
     var instrucao = `
         DELETE FROM usuario WHERE senha = SHA2('${senha}',224);
     `;

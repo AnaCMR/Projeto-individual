@@ -36,10 +36,10 @@ router.post("/cancelarusuario", function (req, res) {
 router.post("/usuariosCadastrados", function (req, res) {
     usuarioController.usuariosCadastrados(req, res);
 });
-router.post("/usuariosGeneroF", function (req, res) {
+router.get("/usuariosGeneroF", function (req, res) {
     usuarioController.usuariosGeneroF(req, res);
 });
-router.post("/usuariosGeneroM", function (req, res) {
+router.get("/usuariosGeneroM", function (req, res) {
     usuarioController.usuariosGeneroM(req, res);
 });
 router.post("/usuariosIdade", function (req, res) {
