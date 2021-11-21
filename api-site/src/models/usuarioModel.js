@@ -1,17 +1,9 @@
 var database = require("../database/config")
 
-function listar() {
-    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listar()");
-    var instrucao = `
-        SELECT * FROM usuario;
-    `;
-    console.log("Executando a instrução SQL: \n" + instrucao);
-    return database.executar(instrucao);
-}
 function usuariosCadastrados() {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function usuarioGeneroF()");
     var instrucao = `
-        SELECT count(genero) as genero FROM usuario where genero = 'f';
+    SELECT dataCadastro as data_cadastro FROM usuario order by idUser desc;
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
@@ -82,7 +74,7 @@ function novasenha(nova_senha, senha_antiga) {
 function contatar(motivo, email, texto) {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function contatar():", motivo, email, texto);
     var instrucao = `
-        INSERT INTO reclamacao (motivo, email_reclamacao, texto, dataReclamacao) VALUES ('${motivo}', '${email}', '${texto}', current_date() );
+        INSERT INTO contato (motivo, email_contato, texto, dataContato) VALUES ('${motivo}', '${email}', '${texto}', current_date() );
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
@@ -100,12 +92,7 @@ module.exports = {
     entrar,
     cadastrar,
     contatar,
-    listar,
     novoemail,
     novasenha,
     cancelarusuario,
-    usuariosGeneroM,
-    usuariosGeneroF,
-    usuariosIdade,
-    usuariosCadastrados,
 };
