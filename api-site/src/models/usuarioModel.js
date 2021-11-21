@@ -36,8 +36,7 @@ function usuariosGeneroM() {
 function usuariosIdade() {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function usuarioIdade()");
     var instrucao = `
-    SELECT count(dataNasc) FROM usuario where dataNasc in (30,40);
-    
+    SELECT dataNasc as data_nascimento FROM usuario;
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);

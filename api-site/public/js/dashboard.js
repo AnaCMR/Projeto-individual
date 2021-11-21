@@ -1,106 +1,129 @@
-
 var generoF = 0;
 var generoM = 0;
+var menos30 = 0;
+var entre30_40 = 0;
+var entre40_50 = 0;
+var entre50_60 = 0;
+var mais60 = 0;
+var resultado = 0
+var hoje = new Date(),
+        ano_atual = hoje.getFullYear(),
+        mes_atual = hoje.getMonth()+1,
+        dia_atual = hoje.getDate();
 
 
 function atualizarGraficoGenero() {
+  fetch("/usuarios/usuariosGeneroM")
+    .then(function (resposta) {
+      if (resposta.ok) {
+        if (resposta.status == 204) {
+          generoM = 0;
+        }
 
-  fetch("/usuarios/usuariosGeneroM").then(function (resposta) {
-    if (resposta.ok) {
-      if (resposta.status == 204) {
-        generoM = 0
+        resposta.json().then(function (json) {
+          console.log(`Dados recebidos: ${JSON.stringify(json)}`);
+          generoM = json[0].genero;
+        });
+
+        fetch("/usuarios/usuariosGeneroF")
+          .then(function (reposta1) {
+            if (reposta1.ok) {
+              if (reposta1.status == 204) {
+                generoF = 0;
+              }
+
+              // console.log(reposta1.json())
+              reposta1.json().then(function (json1) {
+                console.log("Dados recebidos: ", JSON.stringify(json1));
+                generoF = json1[0].genero;
+                plotarGraficoGenero();
+              });
+            } else {
+              throw "Houve um erro na API!(generoF)";
+            }
+          })
+          .catch(function (erro1) {
+            console.error(erro1);
+          });
+      } else {
+        throw "Houve um erro na API! (GeneroM)";
       }
+    })
+    .catch(function (erro) {
+      console.error(erro);
+    });
+}
 
-      resposta.json().then(function (json) {
-        console.log(`Dados recebidos: ${JSON.stringify(json)}`);
-        generoM = json[0].genero
-      });
+var idades = [];
+function atualizarGraficoIdade() {
+  fetch("/usuarios/usuariosIdade")
+    .then(function (resposta2) {
+      if (resposta2.ok) {
 
-      fetch("/usuarios/usuariosGeneroF").then(function (reposta1) {
-        if (reposta1.ok) {
-          if (reposta1.status == 204) {
-            generoF = 0;
+        resposta2.json().then(function (json2) {
+          console.log(`Dados recebidos: ${JSON.stringify(json2)}`);
+          for (var posicao = 0; posicao < json2.length; posicao++) {
+            idades.push(new Date(json2[posicao].data_nascimento));
+          }
+    
+          for (var contador = 0; contador < idades.length; contador++) {
+            
+            resultado = hoje.getFullYear() - idades[contador].getFullYear();
+    
+            // '1996-09-29T03:00:00.000Z';
+          
+            if (resultado < 30) {
+              menos30++;
+            } else if (resultado >= 30 && resultado < 40) {
+              entre30_40++;
+            } else if (resultado >= 40 && resultado < 50) {
+              entre40_50++;
+            } else if (resultado >= 50 && resultado < 60) {
+              entre50_60++;
+            } else if (resultado >= 60) {
+              mais60++;
+            }
           }
 
-          // console.log(reposta1.json())
-          reposta1.json().then(function (json1) {
-            console.log("Dados recebidos: ", JSON.stringify(json1));
-            generoF = json1[0].genero;
-            plotarGrafico()
-          });
-
-
-
-        } else {
-          throw ('Houve um erro na API!(generoF)');
-        }
-      }).catch(function (erro1) {
-        console.error(erro1);
-      });
-
-    } else {
-      throw ('Houve um erro na API! (GeneroM)');
-    }
-  }).catch(function (erro) {
-    console.error(erro);
-  })
+          plotarGraficoIdade();
+        });
+      } else {
+        throw "Houve um erro na API!(generoIdade)";
+      }
+    })
+    .catch(function (erro2) {
+      console.error(erro2);
+    });
 }
 
 const configMixed = {
-  type: 'scatter',
+  type: "scatter",
   data: {
-    labels: [
-      'Seg',
-      'Ter',
-      'Qua',
-      'Qui',
-      'Sex',
-      'Sab',
-      'Dom'
-    ],
-    datasets: [{
-      type: 'bar',
-      label: 'Visitantes',
-      data: [10, 10, 20, 30, 15, 25, 35],
-      borderColor: 'rgb(125, 161, 108, 0.8);',
-      backgroundColor: 'rgb(125, 161, 108, 0.6)'
-    }, {
-      type: 'line',
-      label: 'Assinantes',
-      data: [8, 5, 10, 15, 9, 20, 30],
-      fill: false,
-      borderColor: '#9b5134',
-      backgroundColor: '#9b5134',
-    }]
-  },
-  options: {
-    maintainAspectRatio: false
-  }
-};
-
-
-
-const config = {
-  type: "line",
-  data: {
-    labels: ["2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021"],
+    labels: ["Seg", "Ter", "Qua", "Qui", "Sex", "Sab", "Dom"],
     datasets: [
       {
-        label: "Salário Mínimo",
-        data: [540.00, 622.00, 678.00, 724.00, 788.00, 880.00, 937.00, 954.00, 998.00, 1045.00, 1100.00],
-        backgroundColor: "#aa0e95",
-        borderColor: "#338a33"
-      }
-    ]
+        type: "bar",
+        label: "Visitantes",
+        data: [10, 10, 20, 30, 15, 25, 35],
+        borderColor: "rgb(125, 161, 108, 0.8);",
+        backgroundColor: "rgb(125, 161, 108, 0.6)",
+      },
+      {
+        type: "line",
+        label: "Assinantes",
+        data: [8, 5, 10, 15, 9, 20, 30],
+        fill: false,
+        borderColor: "#9b5134",
+        backgroundColor: "#9b5134",
+      },
+    ],
   },
   options: {
-    maintainAspectRatio: false
-  }
-}
+    maintainAspectRatio: false,
+  },
+};
 
-
-function plotarGrafico() {
-
+function plotarGraficoGenero() {
   console.log(generoM, generoF);
 
   const configGender = {
@@ -114,41 +137,57 @@ function plotarGrafico() {
           backgroundColor: ["#df5382", "#44afaf"],
           hoverBorderWidth: "100px",
           borderColor: ["#df5382", "#44afaf"],
-        }
-      ]
+        },
+      ],
     },
     options: {
       maintainAspectRatio: false,
       cutout: "0",
-    }
-  }
+    },
+  };
 
-  var myChartGender = new Chart(document.getElementById("myChartGender"), configGender);
-
+  var myChartGender = new Chart(
+    document.getElementById("myChartGender"),
+    configGender
+  );
 }
 
-const configAge = {
-  type: "doughnut",
-  data: {
-    labels: ["Menos de 30", "30-40 Anos", "40-50 Anos", "50-60 Anos", "Mais de 60"],
-    datasets: [
-      {
-        label: "Idade",
-        data: [30, 45, 50, 65, 20],
-        backgroundColor: ["#5A3B94", "#CDC3E0", "#46E043", "#94451E", "#E09E7E"],
-        hoverBorderWidth: "100px",
-        borderColor: ["#5A3B94", "#CDC3E0", "#46E043", "#94451E", "#E09E7E"],
-      }
-    ]
-  },
-  options: {
-    maintainAspectRatio: false,
-    cutout: "0",
-  }
+function plotarGraficoIdade() {
+  const configAge = {
+    type: "doughnut",
+    data: {
+      labels: [
+        "Menos de 30",
+        "30-40 Anos",
+        "40-50 Anos",
+        "50-60 Anos",
+        "Mais de 60",
+      ],
+      datasets: [
+        {
+          label: "Idade",
+          data: [menos30, entre30_40, entre40_50, entre50_60, mais60],
+          backgroundColor: [
+            "#5A3B94",
+            "#CDC3E0",
+            "#46E043",
+            "#94451E",
+            "#E09E7E",
+          ],
+          hoverBorderWidth: "100px",
+          borderColor: ["#5A3B94", "#CDC3E0", "#46E043", "#94451E", "#E09E7E"],
+        },
+      ],
+    },
+    options: {
+      maintainAspectRatio: false,
+      cutout: "0",
+    },
+  };
+  var myChartAge = new Chart(document.getElementById("myChartAge"), configAge);
 }
 
-var myChartLine = new Chart(document.getElementById("myChart"), config);
-// var myChartGender = new Chart(document.getElementById("myChartGender"), configGender);
-var myChartAge = new Chart(document.getElementById("myChartAge"), configAge);
-var myChartMixed = new Chart(document.getElementById("myChartMixed"), configMixed);
-
+var myChartMixed = new Chart(
+  document.getElementById("myChartMixed"),
+  configMixed
+);

@@ -42,7 +42,7 @@ router.get("/usuariosGeneroF", function (req, res) {
 router.get("/usuariosGeneroM", function (req, res) {
     usuarioController.usuariosGeneroM(req, res);
 });
-router.post("/usuariosIdade", function (req, res) {
+router.get("/usuariosIdade", function (req, res) {
     usuarioController.usuariosIdade(req, res);
 });
 
