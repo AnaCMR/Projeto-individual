@@ -12,10 +12,10 @@ check (genero = 'm' or genero = 'f' or genero = 'nao informado'),
 dataCadastro date
 );
 
-create table reclamacao (
-idReclamacao int primary key auto_increment,
+create table contato (
+idContato int primary key auto_increment,
 motivo varchar(20),
-email_reclamacao varchar(45),
+email_contato varchar(45),
 texto varchar(200),
-dataReclamacao date 
+dataContato date 
 );

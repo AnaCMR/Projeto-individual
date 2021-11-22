@@ -177,7 +177,8 @@ function atualizarGraficoCadastro() {
           atualizacaodia5,
           atualizacaodia6,
           atualizacaodia7
-        );
+          );
+          plotarGraficoCadastro();
       });
       } else {
         throw "Houve um erro na API! (usuariosCadastrados)";
@@ -187,49 +188,6 @@ function atualizarGraficoCadastro() {
       console.error(erro3);
     });
 
-    plotarGraficoCadastro();
-}
-
-function plotarGraficoCadastro() {
-
-  const configMixed = {
-    type: "scatter",
-    data: {
-      labels: [
-        `${dia_atual - 6}/${mes_atual}/${ano_atual}`,
-        `${dia_atual - 5}/${mes_atual}/${ano_atual}`,
-        `${dia_atual - 4}/${mes_atual}/${ano_atual}`,
-        `${dia_atual - 3}/${mes_atual}/${ano_atual}`,
-        `${dia_atual - 2}/${mes_atual}/${ano_atual}`,
-        `${dia_atual - 1}/${mes_atual}/${ano_atual}`,
-        `${dia_atual}/${mes_atual}/${ano_atual}`,
-      ],
-      datasets: [
-        {
-          type: "bar",
-          label: "Visitantes",
-          data: [10, 10, 20, 30, 15, 25, 35],
-          borderColor: "rgb(125, 161, 108, 0.8);",
-          backgroundColor: "rgb(125, 161, 108, 0.6)",
-        },
-        {
-          type: "line",
-          label: "Cadastrados",
-          data: [atualizacaodia1, atualizacaodia2, atualizacaodia3, atualizacaodia4, atualizacaodia5, atualizacaodia6, atualizacaodia7],
-          fill: false,
-          borderColor: "#9b5134",
-          backgroundColor: "#9b5134",
-        },
-      ],
-    },
-    options: {
-      maintainAspectRatio: false,
-    },
-  };
-  var myChartMixed = new Chart(
-    document.getElementById("myChartMixed"),
-    configMixed
-  );
 }
 
 function plotarGraficoGenero() {
@@ -294,4 +252,57 @@ function plotarGraficoIdade() {
     },
   };
   var myChartAge = new Chart(document.getElementById("myChartAge"), configAge);
+}
+function plotarGraficoCadastro() {
+  console.log(atualizacaodia1,
+    atualizacaodia2,
+    atualizacaodia3,
+    atualizacaodia4,
+    atualizacaodia5,
+    atualizacaodia6,
+    atualizacaodia7)
+  const configMixed = {
+    type: "scatter",
+    data: {
+      labels: [
+        `${dia_atual - 6}/${mes_atual}/${ano_atual}`,
+        `${dia_atual - 5}/${mes_atual}/${ano_atual}`,
+        `${dia_atual - 4}/${mes_atual}/${ano_atual}`,
+        `${dia_atual - 3}/${mes_atual}/${ano_atual}`,
+        `${dia_atual - 2}/${mes_atual}/${ano_atual}`,
+        `${dia_atual - 1}/${mes_atual}/${ano_atual}`,
+        `${dia_atual}/${mes_atual}/${ano_atual}`,
+      ],
+      datasets: [
+        {
+          type: "bar",
+          label: "Visitantes",
+          data: [10, 10, 20, 30, 15, 25, 35],
+          borderColor: "rgb(125, 161, 108, 0.8);",
+          backgroundColor: "rgb(125, 161, 108, 0.6)",
+        },
+        {
+          type: "line",
+          label: "Cadastrados",
+          data: [atualizacaodia1,
+            atualizacaodia2,
+            atualizacaodia3,
+            atualizacaodia4,
+            atualizacaodia5,
+            atualizacaodia6,
+            atualizacaodia7],
+          fill: false,
+          borderColor: "#9b5134",
+          backgroundColor: "#9b5134",
+        },
+      ],
+    },
+    options: {
+      maintainAspectRatio: false,
+    },
+  };
+  var myChartMixed = new Chart(
+    document.getElementById("myChartMixed"),
+    configMixed
+  );
 }
