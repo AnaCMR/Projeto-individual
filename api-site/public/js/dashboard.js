@@ -7,17 +7,8 @@ var entre50_60 = 0;
 var mais60 = 0;
 var hoje = new Date();
 var ano_atual = hoje.getFullYear();
-var mes_atual = hoje.getMonth()+1;
+var mes_atual = hoje.getMonth() + 1;
 var dia_atual = hoje.getDate();
-var dia1 = 0;
-var dia2 = 0;
-var dia3 = 0;
-var dia4 = 0;
-var dia5 = 0;
-var dia6 = 0;
-var dia7 = 0;
-var atualizacaodia = 0;
-
 
 function atualizarGraficoGenero() {
   fetch("/dashboard/usuariosGeneroM")
@@ -66,19 +57,21 @@ function atualizarGraficoIdade() {
   fetch("/dashboard/usuariosIdade")
     .then(function (resposta2) {
       if (resposta2.ok) {
-
         resposta2.json().then(function (json2) {
           console.log(`Dados recebidos: ${JSON.stringify(json2)}`);
-          
+
           for (var posicao = 0; posicao < json2.length; posicao++) {
             idades.push(new Date(json2[posicao].data_nascimento));
           }
-    
+
           for (var contador = 0; contador < idades.length; contador++) {
-            
             var resultado = ano_atual - idades[contador].getFullYear();
 
-            if (mes_atual < idades[contador].getMonth || mes_atual == idades[contador].getMonth && dia_atual < idades[contador].getDate) {
+            if (
+              mes_atual < idades[contador].getMonth() + 1 ||
+              (mes_atual == idades[contador].getMonth() + 1 &&
+                dia_atual < idades[contador].getDate())
+            ) {
               resultado--;
             }
 
@@ -105,86 +98,139 @@ function atualizarGraficoIdade() {
       console.error(erro2);
     });
 }
-var dias = []
+
+var dias = [];
+var atualizacaodia7 = 0;
+var atualizacaodia6 = 0;
+var atualizacaodia5 = 0;
+var atualizacaodia4 = 0;
+var atualizacaodia3 = 0;
+var atualizacaodia2 = 0;
+var atualizacaodia1 = 0;
 function atualizarGraficoCadastro() {
   fetch("/dashboard/usuariosCadastrados")
     .then(function (resposta3) {
       if (resposta3.ok) {
-        if (resposta3.status == 204) {
-          atualizacaodia = 0;
-        }
-
         resposta3.json().then(function (json3) {
           console.log(`Dados recebidos: ${JSON.stringify(json3)}`);
-          for (var posicao = 0; posicao < json3.length; posicao++) {
-            dias.push(new Date(json3[posicao].data_nascimento));
-          }
-        });
-        plotarGraficoCadastro()
-        // fetch("/dashboard/usuariosGeneroF")
-        //   .then(function (reposta1) {
-        //     if (reposta1.ok) {
-        //       if (reposta1.status == 204) {
-        //         generoF = 0;
-        //       }
 
-        //       // console.log(reposta1.json())
-        //       reposta1.json().then(function (json1) {
-        //         console.log("Dados recebidos: ", JSON.stringify(json1));
-        //         generoF = json1[0].genero;
-        //         ;
-        //       });
-        //     } else {
-        //       throw "Houve um erro na API!(generoF)";
-        //     }
-          // })
-          // .catch(function (erro1) {
-            // console.error(erro1);
-          // });
+          for (var posicao = 0; posicao < json3.length; posicao++) {
+            dias.push(new Date(json3[posicao].data_cadastro));
+          
+
+          if (
+            dias[posicao].getDate() == dia_atual &&
+            dias[posicao].getMonth() + 1 == mes_atual &&
+            dias[posicao].getFullYear() == ano_atual
+          ) {
+            atualizacaodia7++;
+          }
+          if (
+            dias[posicao].getDate() == dia_atual - 1 &&
+            dias[posicao].getMonth() + 1 == mes_atual &&
+            dias[posicao].getFullYear() == ano_atual
+          ) {
+            atualizacaodia6++;
+          }
+          if (
+            dias[posicao].getDate() == dia_atual - 2 &&
+            dias[posicao].getMonth() + 1 == mes_atual &&
+            dias[posicao].getFullYear() == ano_atual
+          ) {
+            atualizacaodia5++;
+          }
+          if (
+            dias[posicao].getDate() == dia_atual - 3 &&
+            dias[posicao].getMonth() + 1 == mes_atual &&
+            dias[posicao].getFullYear() == ano_atual
+          ) {
+            atualizacaodia4++;
+          }
+          if (
+            dias[posicao].getDate() == dia_atual - 4 &&
+            dias[posicao].getMonth() + 1 == mes_atual &&
+            dias[posicao].getFullYear() == ano_atual
+          ) {
+            atualizacaodia3++;
+          }
+          if (
+            dias[posicao].getDate() == dia_atual - 5 &&
+            dias[posicao].getMonth() + 1 == mes_atual &&
+            dias[posicao].getFullYear() == ano_atual
+          ) {
+            atualizacaodia2++;
+          }
+          if (
+            dias[posicao].getDate() == dia_atual - 6 &&
+            dias[posicao].getMonth() + 1 == mes_atual &&
+            dias[posicao].getFullYear() == ano_atual
+          ) {
+            atualizacaodia1++;
+          }
+          
+        }
+        console.log(
+          atualizacaodia1,
+          atualizacaodia2,
+          atualizacaodia3,
+          atualizacaodia4,
+          atualizacaodia5,
+          atualizacaodia6,
+          atualizacaodia7
+        );
+      });
       } else {
-        throw "Houve um erro na API! (GeneroM)";
+        throw "Houve um erro na API! (usuariosCadastrados)";
       }
     })
     .catch(function (erro3) {
       console.error(erro3);
     });
+
+    plotarGraficoCadastro();
 }
 
 function plotarGraficoCadastro() {
-const configMixed = {
-  type: "scatter",
-  data: {
-    labels: [dia1,dia2,dia3,dia4,dia5,dia6,dia7],
-    datasets: [
-      {
-        type: "bar",
-        label: "Visitantes",
-        data: [10, 10, 20, 30, 15, 25, 35],
-        borderColor: "rgb(125, 161, 108, 0.8);",
-        backgroundColor: "rgb(125, 161, 108, 0.6)",
-      },
-      {
-        type: "line",
-        label: "Assinantes",
-        data: [],
-        fill: false,
-        borderColor: "#9b5134",
-        backgroundColor: "#9b5134",
-      },
-    ],
-  },
-  options: {
-    maintainAspectRatio: false,
-  },
-};
-var myChartMixed = new Chart(
-  document.getElementById("myChartMixed"),
-  configMixed
-);
-};
 
-
-
+  const configMixed = {
+    type: "scatter",
+    data: {
+      labels: [
+        `${dia_atual - 6}/${mes_atual}/${ano_atual}`,
+        `${dia_atual - 5}/${mes_atual}/${ano_atual}`,
+        `${dia_atual - 4}/${mes_atual}/${ano_atual}`,
+        `${dia_atual - 3}/${mes_atual}/${ano_atual}`,
+        `${dia_atual - 2}/${mes_atual}/${ano_atual}`,
+        `${dia_atual - 1}/${mes_atual}/${ano_atual}`,
+        `${dia_atual}/${mes_atual}/${ano_atual}`,
+      ],
+      datasets: [
+        {
+          type: "bar",
+          label: "Visitantes",
+          data: [10, 10, 20, 30, 15, 25, 35],
+          borderColor: "rgb(125, 161, 108, 0.8);",
+          backgroundColor: "rgb(125, 161, 108, 0.6)",
+        },
+        {
+          type: "line",
+          label: "Cadastrados",
+          data: [atualizacaodia1, atualizacaodia2, atualizacaodia3, atualizacaodia4, atualizacaodia5, atualizacaodia6, atualizacaodia7],
+          fill: false,
+          borderColor: "#9b5134",
+          backgroundColor: "#9b5134",
+        },
+      ],
+    },
+    options: {
+      maintainAspectRatio: false,
+    },
+  };
+  var myChartMixed = new Chart(
+    document.getElementById("myChartMixed"),
+    configMixed
+  );
+}
 
 function plotarGraficoGenero() {
   console.log(generoM, generoF);
@@ -249,5 +295,3 @@ function plotarGraficoIdade() {
   };
   var myChartAge = new Chart(document.getElementById("myChartAge"), configAge);
 }
-
-

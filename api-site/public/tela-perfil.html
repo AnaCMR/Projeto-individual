@@ -338,7 +338,7 @@ fetch("/usuarios/novoemail", {
               "Content-Type": "application/json"
           },
           body: JSON.stringify({
-              email: emailVar,
+              email: emailVar.toLowerCase(),
               senha: passwordVar,
           })
         }).then(function (resposta) {

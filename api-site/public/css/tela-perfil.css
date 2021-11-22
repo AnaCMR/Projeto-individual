@@ -159,6 +159,7 @@ a {
   box-shadow: 3px 3px 5px darkslategrey;
   display: flex;
   flex-direction: column;
+  text-align: center;
 }
 
 .plant {
