@@ -80,12 +80,12 @@ function contatar(motivo, email, texto) {
     return database.executar(instrucao);
 }
 function cancelarusuario(cancelar) {
-    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function contatar():", cancelar);
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cancelar():", cancelar);
     var instrucao = `
-        DELETE FROM usuario WHERE senha = SHA2('${senha}',224);
+        DELETE FROM usuario WHERE senha = SHA2('${cancelar}',224);
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
-    return database.executar(instrucao);
+    return database.executar(instrucao);f
 }
 
 module.exports = {

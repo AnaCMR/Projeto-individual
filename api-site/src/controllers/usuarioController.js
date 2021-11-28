@@ -218,4 +218,5 @@ module.exports = {
     testar,
     novoemail,
     novasenha,
+    cancelarusuario,
 }

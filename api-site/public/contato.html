@@ -394,7 +394,7 @@ fetch("/usuarios/contatar", {
           },
           body: JSON.stringify({
               motivo: motivovar,
-              email: emailVar.toLowerCase(),
+              email: emailvar.toLowerCase(),
               texto: textvar,
           })
         }).then(function (resposta) {
@@ -407,7 +407,7 @@ if (resposta.ok) {
     limparFormulario();
     finalizarAguardar();
 } else {
-    throw ("Houve um erro ao tentar realizar o cadastro!");
+    throw ("Houve um erro ao enviar a informação");
 }
 }).catch(function (resposta) {
 console.log(`#ERRO: ${resposta}`);
