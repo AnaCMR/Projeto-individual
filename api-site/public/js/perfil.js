@@ -40,6 +40,7 @@ function options_cancel() {
     show_button.style.visibility = "visible";
     confirm_title.style.visibility = "visible"
     confirm_cancel_input.style.visibility = "visible"
+    olho_aberto_cancelar.style.visibility = "visible"
   } else if (motive == "") {
     other.style.visibility = "hidden";
     show_button.style.visibility = "hidden";
@@ -49,6 +50,7 @@ function options_cancel() {
     show_button.style.visibility = "visible";
     confirm_title.style.visibility = "visible"
     confirm_cancel_input.style.visibility = "visible"
+    olho_aberto_cancelar.style.visibility = "visible"
     other.style.visibility = "hidden";
   }
 }
@@ -164,21 +166,33 @@ function changeImage() {
     novaSenha_input.type = "text";
     senhaAntiga_input.type = "text";
     confirmPassword.type = "text";
+    password_input.type = "text";
+    confirm_cancel_input.type = "text";
   olho_aberto_antiga.style.visibility = "hidden";
   olho_fechado_antiga.style.visibility = "visible";
   olho_aberto_nova.style.visibility = "hidden";
   olho_fechado_nova.style.visibility = "visible";
   olho_aberto_confirmar.style.visibility = "hidden";
   olho_fechado_confirmar.style.visibility = "visible";
+  olho_aberto_email.style.visibility = "hidden";
+  olho_fechado_email.style.visibility = "visible";
+  olho_aberto_cancelar.style.visibility = "hidden";
+  olho_fechado_cancelar.style.visibility = "visible";
 }
 function ver() {
   novaSenha_input.type = "password";
     senhaAntiga_input.type = "password";
     confirmPassword.type = "password";
+    password_input.type = "password";
+    confirm_cancel_input.type = "password"
   olho_aberto_antiga.style.visibility = "visible";
   olho_fechado_antiga.style.visibility = "hidden";
   olho_aberto_nova.style.visibility = "visible";
   olho_fechado_nova.style.visibility = "hidden";
   olho_aberto_confirmar.style.visibility = "visible";
   olho_fechado_confirmar.style.visibility = "hidden";
+  olho_aberto_email.style.visibility = "visible";
+  olho_fechado_email.style.visibility = "hidden";
+  olho_aberto_cancelar.style.visibility = "visible";
+  olho_fechado_cancelar.style.visibility = "hidden";
 }

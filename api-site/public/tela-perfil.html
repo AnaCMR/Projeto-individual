@@ -16,7 +16,7 @@
   <script src="js/funcoes.js"></script>
 </head>
 
-<body onload="validarSessao(),atualizarGraficoIdade()" >
+<body onload="validarSessao()" >
   <menu class="menu">
     <nav class="container">
       <a href="index.html">
@@ -66,6 +66,21 @@
           <input id="email_input" > <br>
           <label>Insira sua senha:</label> <br>
           <input id="password_input" type="password" >
+          <img
+          id="olho_aberto_email"
+          title="ocultar senha"
+          class="olho_aberto"
+          src="icons/see.png"
+          onclick="changeImage()"
+          alt="mudar para senha visivel"
+        />
+        <img
+          id="olho_fechado_email"
+          class="olho_fechado"
+          onclick="ver()"
+          src="icons/cloudy.png"
+          alt="mudar para senha não visivel"
+        />
           <button onclick="confirm_email()">Confirmar</button>
         </div>
         <div id="show_password">
@@ -289,6 +304,21 @@
             
             <label id="confirm_title">Insira sua senha:</label> <br>
           <input id="confirm_cancel_input" type="password" >
+          <img
+          id="olho_aberto_cancelar"
+          title="ocultar senha"
+          class="olho_aberto"
+          src="icons/see.png"
+          onclick="changeImage()"
+          alt="mudar para senha visivel"
+        />
+        <img
+          id="olho_fechado_cancelar"
+          class="olho_fechado"
+          onclick="ver()"
+          src="icons/cloudy.png"
+          alt="mudar para senha não visivel"
+        />
             <input type="text" id="other" placeholder="Escreva o motivo">
             <button onclick="send_cancel()" id="show_button">Enviar</button>
           </div>

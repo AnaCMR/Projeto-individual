@@ -120,9 +120,13 @@ a {
   visibility: hidden;
 }
 
-#confirm_cancel_input {
+#confirm_cancel_input{
   margin-left: 0.5%;
   visibility: hidden;
+}
+
+#olho_aberto_cancelar,#olho_fechado_cancelar  {
+visibility: hidden;
 }
 
 #motive_cancel {

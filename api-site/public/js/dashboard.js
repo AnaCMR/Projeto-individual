@@ -291,7 +291,7 @@ function plotarGraficoCadastro() {
         {
           type: "bar",
           label: "Visitantes",
-          data: [10, 10, 20, 30, 15, 25, 35],
+          data: [5, 10, 8, 12, 15, 4, 7],
           borderColor: "rgb(125, 161, 108, 0.8);",
           backgroundColor: "rgb(125, 161, 108, 0.6)",
         },
