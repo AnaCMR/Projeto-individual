@@ -179,6 +179,7 @@ function atualizarGraficoCadastro() {
           atualizacaodia7
           );
           plotarGraficoCadastro();
+          
       });
       } else {
         throw "Houve um erro na API! (usuariosCadastrados)";
@@ -188,6 +189,19 @@ function atualizarGraficoCadastro() {
       console.error(erro3);
     });
 
+}
+
+function goal() {
+  var goalVar = Number(goal_definition.value)
+
+          if (goalVar == ""){
+            alert("Preencha sua meta diária")
+          }else if (atualizacaodia7 >= goalVar){
+            alert("Parabéns, você atingiu a meta de cadastro do dia")
+          } 
+          else {
+            alert(`Faltam ${goalVar - atualizacaodia7} cadastros para você atingir sua meta do dia`)
+          }
 }
 
 function plotarGraficoGenero() {
