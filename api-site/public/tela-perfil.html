@@ -348,6 +348,7 @@
   function confirm_email() {
     var emailVar = email_input.value;
     var passwordVar = password_input.value;
+    var oldemail = h1_login_usuario.innerHTML;
 
     if (emailVar == "" || passwordVar == "") {
 
@@ -361,6 +362,14 @@ if (passwordVar == "") {
 
 return false;
 }
+
+if (emailVar.toLowerCase() == oldemail){
+  alert("Por favor, insira um email diferente para prosseguir!");
+} else if (emailVar.indexOf("@") == -1 || emailVar.toLowerCase().indexOf(".com") == -1) {
+   alert("Ops, e-mail inválido! Verifique e tente novamente.");
+} else {
+
+
 
 fetch("/usuarios/novoemail", {
           method: "POST",
@@ -391,6 +400,7 @@ window.location = "./index.html"
 });
 
 return false;
+}
 }
 
 function confirm_password() {
